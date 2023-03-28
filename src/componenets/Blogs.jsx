@@ -4,13 +4,14 @@ import { blogsData } from "./data";
 import img from "../assets/trending.png";
 import calender from "../assets/calender.png";
 import time from "../assets/time.png";
+import RightComponent from "./RightComponent";
 
 const Blogs = () => {
   return (
     <div className="blogsMain">
       {/*  */}
-      <div>
-        <div className="blogsPart1">
+      <div className="blogsPart1">
+        <div>
           {blogsData.slice(0, 3).map((item) => {
             return (
               <div className="singleBlog">
@@ -18,6 +19,9 @@ const Blogs = () => {
                 <div className="blogsContent">
                   <div className="travelChip">
                     <p>Travel</p>
+                  </div>
+                  <div className="blogsHead">
+                    <p>Design is the Mix of emotions</p>
                   </div>
                   <div className="trendingFlex">
                     <img src={img} />
@@ -50,6 +54,9 @@ const Blogs = () => {
                   <div className="travelChip">
                     <p>Travel</p>
                   </div>
+                  <div className="blogsHead">
+                    <p>Design is the Mix of emotions</p>
+                  </div>
                   <div className="trendingFlex">
                     <img src={img} />
                     <p>Jenny kiaa</p>
@@ -73,7 +80,7 @@ const Blogs = () => {
       {/*  */}
       
       <div className="BlogsPart2">
-        Here Come the Right Repeated Side Bar
+        <RightComponent/>
       </div>
 
 

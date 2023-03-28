@@ -14,6 +14,11 @@ import blog9 from "../assets/blog9.png"
 import blog10 from "../assets/blog10.png"
 import blog11 from "../assets/blog11.png"
 
+
+import writer1 from "../assets/writer1.png"
+import writer2 from "../assets/writer2.png"
+import writer3 from "../assets/writer3.png"
+
 let trendingData=[
     {
         head1:"I Created a Developer Rap Video - ",
@@ -164,4 +169,23 @@ let blogsData=[
     },
 ]
 
-export {trendingData,blogsData}
+ const writers=[
+    {
+      img:writer1,
+      name:"Jenny Kia",
+      bio:"Fashion designer, Blogger, activist"
+    },
+    {
+      img:writer2,
+      name:"Andress rasel",
+      bio:"Blogger, activist, content creator, part time designer at: www.gethugothemes.com"
+    },
+    {
+      img:writer3,
+      name:"Jenny Kia",
+      bio:"Fashion designer, Blogger, activist"
+    },
+
+]
+
+export {trendingData,blogsData,writers}

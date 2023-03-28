@@ -5,12 +5,24 @@
     margin-top: 20px;
 }
 .blogsMain{
-    width: 95%;
+    width: 90%;
     margin-left: 50%;
     transform: translateX(-50%);
     margin-top: 20px;
     margin-bottom: 20px;
     display: flex;
+    gap: 80px;
+}
+
+.blogsPart1{
+    flex: 1;
+}
+
+.blogsPart2{
+    flex: 1;
+}
+.BlogsPart2{
+    flex: 1;
 }
 
 
@@ -49,6 +61,21 @@
     color: #D1E4E1;
     font-size: 64px;
     font-weight: 600;
+}
+
+.blogsHead p{
+    font-size: 22px;
+    font-weight: 500;
+    color: #222222;
+    font-family: 'Noto Sans', sans-serif;
+
+}
+
+
+@media screen and (max-width:900px) {
+    .blogsMain{
+        flex-direction: column;
+    }
 }
 
 @media screen and (max-width:700px) {

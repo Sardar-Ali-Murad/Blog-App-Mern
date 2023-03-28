@@ -27,12 +27,12 @@ const Navbar = () => {
             </li>
             <li>
               <a className="fancy-link" href="#services">
-                SERVICES
+                Our Story
               </a>
             </li>
             <li>
               <a className="fancy-link" href="#faq">
-                FAQ’s
+                Write
               </a>
             </li>
             <li>
@@ -84,7 +84,7 @@ const Navbar = () => {
                 onClick={() => setHam(true)}
                 href="#services"
               >
-                SERVICES
+                Our Story
               </a>
             </li>
             <li>
@@ -93,7 +93,7 @@ const Navbar = () => {
                 onClick={() => setHam(true)}
                 href="#faq"
               >
-                FAQ’s
+                Write
               </a>
             </li>
             <li>

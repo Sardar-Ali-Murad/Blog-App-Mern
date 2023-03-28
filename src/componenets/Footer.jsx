@@ -58,7 +58,7 @@ const Footer = () => {
         {/*  */}
       </div>
 
-      <div className="line"></div>
+      <div className="footerLine"></div>
       <div className="footerLastPart">
         <p className="copyright">Copyright © 2022 For All Doctors Inc. All Rights Reserved.</p>
       </div>

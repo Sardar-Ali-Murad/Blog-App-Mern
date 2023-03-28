@@ -1,8 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&family=Roboto:wght@300&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&family=Roboto:wght@300&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&family=Roboto:wght@300&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200&family=Roboto:wght@300&display=swap');
 
 .trendingMain{
     background-color: #F2F4F8;
     padding: 40px;
+}
+
+.trendingText{
+    
+    width: 90%;
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 
 .trendingText h2{
@@ -60,6 +69,6 @@
 
 .trendingGrid{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(24rem,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(16rem,1fr));
     gap: 50px;
 }

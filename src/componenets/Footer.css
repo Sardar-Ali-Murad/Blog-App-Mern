@@ -183,6 +183,14 @@
   font-weight: 400;
 }
 
+.footerLine{
+    width: 70%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    background-color: #D1E7E5;
+    height: 2px
+}
+
 @media screen and (max-width: 700px) {
   .footerLastPart {
     flex-direction: column;
