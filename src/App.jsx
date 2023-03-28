@@ -4,6 +4,7 @@ import Hero from './componenets/Hero'
 import ImageGrid from './componenets/ImageGrid'
 import Trending from './componenets/Trending'
 import Blogs from './componenets/Blogs'
+import Footer from './componenets/Footer'
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <ImageGrid/>
       <Trending/>
       <Blogs/>
+      <Footer/>
     </div>
   )
 }
