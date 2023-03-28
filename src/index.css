@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkalami&family=Cedarville+Cursive&family=Cormorant+Garamond:wght@300&family=Handlee&family=Nunito+Sans:wght@300&family=Nunito:wght@200&family=Open+Sans:wght@300&family=Oswald&family=Poppins:wght@300&family=Roboto+Mono:wght@300&family=Roboto+Slab&family=Roboto:wght@300;400&family=Rubik+Bubbles&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+  font-family: 'Nunito', sans-serif;
+  scroll-behavior: smooth;
+}

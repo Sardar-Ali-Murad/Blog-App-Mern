@@ -1,0 +1,26 @@
+.heroTextMain{
+    width: 80%;
+    margin-top: 100px;
+    margin-left: 10%;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.heroTextMain h1{
+    font-weight: 500;
+    font-size: 52px;
+    line-height: 62px;
+    color: #FEFEFE;
+
+
+}
+
+.heroTextMain p{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color:  #EDEDED;;
+}
