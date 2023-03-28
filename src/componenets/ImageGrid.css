@@ -1,4 +1,6 @@
 .imageGridMain{
     margin-top: 60px;
-    margin-left: 50px;
+    width: 90%;
+    margin-left: 50%;
+    transform: translateX(-50%);
 }

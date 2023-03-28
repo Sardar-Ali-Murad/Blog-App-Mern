@@ -10,7 +10,7 @@ const Navbar = () => {
     <div className="nav">
       <div className="nav-main">
         <div className="nav-front">
-          <img src={Logo} className="logoImage" />
+          <img src={Logo} className="logoImage" style={{height:"40px",width:"150px"}} />
         </div>
 
         <nav className="big-screen-nav">

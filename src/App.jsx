@@ -8,7 +8,7 @@ import Footer from './componenets/Footer'
 
 const App = () => {
   return (
-    <div>
+    <div className='appMain'>
       <Hero/>
       <ImageGrid/>
       <Trending/>
