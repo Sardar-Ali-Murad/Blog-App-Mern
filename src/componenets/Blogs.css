@@ -1,0 +1,33 @@
+.singleBlog{
+    display: flex;
+    gap: 10px;
+    width: 600px;
+    margin-top: 20px;
+}
+.blogsMain{
+    width: 95%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.blogsContent{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.travelChip{
+    background: #F2F8F7;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+}
+
+.travelChip p{
+    color: #666666;
+    font-size: 12px;
+    font-weight: 400px;
+}
