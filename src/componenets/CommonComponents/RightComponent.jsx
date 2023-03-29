@@ -109,7 +109,7 @@ const RightComponent = () => {
       </div>
       <div className="writtersIcons">
         <div className=" rightSideBarBigIcons rightSideBarTwitter">
-          <CiTwitter />
+          <CiTwitter style={{color:"#FFFFFF"}} />
         </div>
         <div className="rightSideBarBigIcons">
           <FaFacebookF />

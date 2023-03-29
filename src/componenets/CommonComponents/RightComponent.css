@@ -30,6 +30,11 @@
   border-radius: 10px;
 }
 
+.travelChip p{
+  color: #666666;
+  font-family: "Noto Sans", sans-serif;
+}
+
 .writterWrapper {
   display: flex;
   gap: 10px;
@@ -80,12 +85,13 @@
 
 .rightComponentWritersIcons {
   color: black;
-  border: 1px solid black;
+  border: 1px solid #666666;
   height: 20px;
   width: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #666666;
 }
 
 .rightSidebarFlexBoxes {
@@ -105,8 +111,8 @@
 .rightSideBarBigIcons {
   height: 40px;
   width: 40px;
-  color: black;
-  border: 1px solid black;
+  color: #777777;
+  border: 1px solid #777777;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -140,7 +146,7 @@
 .rightSideBarSingleCategory {
   height: 40px;
   width: 100px;
-  border: 1px solid #1e1e1e;
+  border: 1px solid #666666;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -148,14 +154,19 @@
 }
 .rightSideBarSingleCategory p {
   font-size: 15px;
-  font-weight: 300;
+  font-weight: 400;
   font-family: "Noto Sans", sans-serif;
+  color: #666666;
 }
 
 .active {
   background-color: #0065fd;
-  color: white;
   border: 1px solid #0065fd;
+}
+
+.active p{
+  color: #FFFFFF;
+
 }
 
 .rightSideBarAdd {
@@ -189,4 +200,5 @@
   background-color: #ffffff;
   border: 2px solid #ffffff;
   border-radius: 10px;
+  color: #666666;
 }

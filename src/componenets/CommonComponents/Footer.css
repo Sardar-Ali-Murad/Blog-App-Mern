@@ -43,19 +43,19 @@
   gap: 10px;
 }
 
-.footerInfo a {
-  font-size: 16px;
-  font-weight: 500;
+.footerInfo p {
+  font-size: 14px;
+  font-weight: 400;
   color: #f2f2f2;
   font-family: "Noto Sans", sans-serif;
 }
 
-.footerInfo p {
+/* .footerInfo p {
   font-weight: 400;
   font-size: 14px;
   color: #ffffff;
   cursor: pointer;
-}
+} */
 
 .footerIcons {
   display: flex;
@@ -78,8 +78,14 @@
 .footerInfo p {
   font-family: "Noto Sans", sans-serif;
   color: #f2f2f2;
-  font-weight: 400;
-  font-size: 15px;
+  font-weight: 300;
+  font-size: 13px;
+}
+.footerInfo a{
+  font-family: "Noto Sans", sans-serif;
+  color: #f2f2f2;
+  font-weight: 500;
+  font-size: 17px;
 }
 
 .footerIconBoxes {

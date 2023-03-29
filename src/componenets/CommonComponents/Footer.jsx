@@ -5,6 +5,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { TbVectorBezierCircle } from "react-icons/tb";
 import { IoLogoInstagram } from "react-icons/io";
 import "./Footer.css";
+// import Logo from "../../assets/Logo.png";
 import Logo from "../../assets/Logo.png";
 
 const Footer = () => {
@@ -13,7 +14,7 @@ const Footer = () => {
       <div className="footerMain">
         {/*  */}
         <div className="footerPart1">
-          <img src={Logo} className="footerImg" />
+          <img src={Logo} className="logoImage navBarLogo" />
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
@@ -23,7 +24,7 @@ const Footer = () => {
         </div>
         {/*  */}
         {/*  */}
-        <div className="footerInfo footerLinksLast">
+        <div className="footerInfo">
           <a>Quick Links</a>
           <p>About Us</p>
           <p>Our Services</p>
