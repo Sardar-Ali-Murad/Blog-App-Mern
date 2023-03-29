@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;500&family=Roboto:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;500&family=Roboto:wght@300&display=swap");
 .footerBigMain {
   margin-top: 40px;
   background-color: #292929;
@@ -23,9 +23,8 @@
 .footerPart1 p {
   font-size: 15px;
   font-weight: 100;
-  font-family: 'Noto Sans', sans-serif;
-    color: #f8f8f8;
-
+  font-family: "Noto Sans", sans-serif;
+  color: #f8f8f8;
 }
 
 .footerFlex {
@@ -47,8 +46,8 @@
 .footerInfo a {
   font-size: 16px;
   font-weight: 500;
-  color: #F2F2F2;
-  font-family: 'Noto Sans', sans-serif;
+  color: #f2f2f2;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .footerInfo p {
@@ -69,18 +68,18 @@
   height: 24px;
   width: 24px;
   border-radius: 8px;
-  background-color: #0065FD;
+  background-color: #0065fd;
   color: #fdfdfd;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.footerInfo p{
-    font-family: 'Noto Sans', sans-serif;
-    color: #F2F2F2;
-    font-weight: 400;
-    font-size: 15px;
+.footerInfo p {
+  font-family: "Noto Sans", sans-serif;
+  color: #f2f2f2;
+  font-weight: 400;
+  font-size: 15px;
 }
 
 .footerIconBoxes {
@@ -104,7 +103,7 @@
 .copyright {
   font-size: 14px;
   font-weight: 400;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
   color: #ffffff;
 }
 
@@ -138,57 +137,61 @@
   font-weight: 600;
 }
 
-.footerTextField{
-    width: 160px;
-    height: 19px;
-    padding: 6px;
-    border-radius: 4px;
-    background-color: #DFF1F0;
-    border: 2px solid #DFF1F0;
+.footerTextField {
+  width: 160px;
+  height: 19px;
+  padding: 6px;
+  border-radius: 4px;
+  background-color: #dff1f0;
+  border: 2px solid #dff1f0;
 }
 
-.footerInputWrapperBtn{
-    position: relative;
+.footerInputWrapperBtn {
+  position: relative;
 }
 
-.sub{
-    position: absolute;
-    top: 0px;
-    left: 120px;
+.sub {
+  position: absolute;
+  top: 0px;
+  left: 120px;
 }
 
-.footerLast{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-
+.footerLast {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-.sub{
-    width: 80px;
-    height: 35px;
-    padding: 6px;  
-    border-radius: 4px;
-    background-color: #0065FD;
-    border: 1px solid #0065FD;
-    color: #FFFFFF;
-    font-size: 15px;
-    font-weight: 400;
-    font-family: 'Noto Sans', sans-serif;
+.sub {
+  width: 80px;
+  height: 35px;
+  padding: 6px;
+  border-radius: 4px;
+  background-color: #0065fd;
+  border: 1px solid #0065fd;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 400;
+  font-family: "Noto Sans", sans-serif;
 }
 
-.footerLinksLast p{
-  color: #F2F2F2;
+.footerLinksLast p {
+  color: #f2f2f2;
   font-size: 15px;
   font-weight: 400;
 }
 
-.footerLine{
-    width: 70%;
-    margin-left: 50%;
-    transform: translateX(-50%);
-    background-color: #D1E7E5;
-    height: 2px
+.footerLine {
+  width: 70%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  background-color: #d1e7e5;
+  height: 2px;
+}
+
+.footerImg {
+  height: 80px;
+  width: 200px;
 }
 
 @media screen and (max-width: 700px) {

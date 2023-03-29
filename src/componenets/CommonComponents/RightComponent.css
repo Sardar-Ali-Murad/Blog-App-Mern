@@ -1,0 +1,192 @@
+.rightSideBarMain {
+}
+
+.rightSideBarMainFlex {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.rightSideBarMainFlex h2 {
+  font-size: 24px;
+  font-weight: 500;
+  color: #292929;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.rightSideBarMainFlex a {
+  color: #0065fd;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.rightSideBarMainImage {
+  height: 130px;
+  width: 130px;
+  border-radius: 10px;
+}
+
+.writterWrapper {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.writtersIcons {
+  display: flex;
+  gap: 20px;
+}
+
+.writtersContent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.writterName {
+  font-weight: 500;
+  font-size: 17px;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.writterBio {
+  font-weight: 300;
+  font-size: 12px;
+  font-family: "Noto Sans", sans-serif;
+  color: #666666;
+}
+
+.numbers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 10px;
+}
+
+.numberSingle {
+  background-color: #f2f8f7;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.rightComponentWritersIcons {
+  color: black;
+  border: 1px solid black;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rightSidebarFlexBoxes {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rightSideBarTwitter {
+  background-color: #0065fd;
+  color: white;
+  border: 1px solid #0065fd;
+}
+
+.rightSideBarBigIcons {
+  height: 40px;
+  width: 40px;
+  color: black;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+}
+
+.amount {
+  font-size: 600;
+  font-size: 24px;
+  color: #0065fd;
+  font-family: "Noto Sans", sans-serif;
+}
+.amountContent {
+  font-size: 400;
+  font-size: 15px;
+  color: #222222;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.footerIconBoxesWritter {
+  height: 10px;
+  width: 10px;
+}
+
+.rightSideBarCategories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.rightSideBarSingleCategory {
+  height: 40px;
+  width: 100px;
+  border: 1px solid #1e1e1e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+.rightSideBarSingleCategory p {
+  font-size: 15px;
+  font-weight: 300;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.active {
+  background-color: #0065fd;
+  color: white;
+  border: 1px solid #0065fd;
+}
+
+.rightSideBarAdd {
+  background-color: #666666;
+  padding: 20px;
+  width: 50%;
+  margin-top: 30px;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rightSideBarAdd p {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Noto Sans", sans-serif;
+  color: #ffffff;
+}
+
+.rightSideBarAdd h2 {
+  font-size: 19px;
+  font-weight: 600;
+  font-family: "Noto Sans", sans-serif;
+  color: #ffffff;
+}
+
+.addBtn {
+  width: 100px;
+  height: 40px;
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+}

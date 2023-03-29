@@ -1,0 +1,81 @@
+.singleBlog {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+.blogsMain {
+  width: 90%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 80px;
+}
+
+.blogsPart1 {
+  flex: 1;
+}
+
+.blogsPart2 {
+  flex: 1;
+}
+.BlogsPart2 {
+  flex: 1;
+}
+
+.blogsContent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.travelChip {
+  background: #f2f8f7;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+}
+
+.travelChip p {
+  color: #666666;
+  font-size: 12px;
+  font-weight: 400px;
+}
+
+.addHere {
+  background-color: #f2f8f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  margin-top: 20px;
+}
+
+.addHere h1 {
+  color: #d1e4e1;
+  font-size: 64px;
+  font-weight: 600;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.blogsHead p {
+  font-size: 22px;
+  font-weight: 500;
+  color: #222222;
+  font-family: "Noto Sans", sans-serif;
+}
+
+@media screen and (max-width: 1150px) {
+  .blogsMain {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .singleBlog {
+    flex-direction: column;
+  }
+}

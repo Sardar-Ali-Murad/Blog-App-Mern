@@ -2,7 +2,7 @@ import React from "react";
 import "./Navbar.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
-import Logo from "../assets/Logo.png";
+import Logo from "../../assets/Logo.png";
 
 const Navbar = () => {
   let [ham, setHam] = React.useState(true);
@@ -10,7 +10,7 @@ const Navbar = () => {
     <div className="nav">
       <div className="nav-main">
         <div className="nav-front">
-          <img src={Logo} className="logoImage" style={{height:"40px",width:"150px"}} />
+          <img src={Logo} className="logoImage navBarLogo" />
         </div>
 
         <nav className="big-screen-nav">
@@ -44,11 +44,13 @@ const Navbar = () => {
         </nav>
 
         <div className="navBtnsBigScreen">
-         <button className="signUp" style={{background:'#0065FD'}}> Sign Up</button>
-         <button className="login">Login</button>
+          <button className="signUp" style={{ background: "#0065FD" }}>
+            Sign In
+          </button>
+          <button className="login">Get Started</button>
         </div>
 
-        <GiHamburgerMenu className="ham" onClick={() => setHam(false)} style={{color:"white"}} />
+        <GiHamburgerMenu className="ham" onClick={() => setHam(false)} />
       </div>
 
       <div
@@ -108,10 +110,12 @@ const Navbar = () => {
           </ul>
         </nav>
         <div className="navBtnsSmallScreen">
-         <button className="signUp" style={{background:"#0065FD"}}> Sign Up</button>
-         <button className="login">Login</button>
+          <button className="signUp" style={{ background: "#0065FD" }}>
+            {" "}
+            Sign Up
+          </button>
+          <button className="login">Login</button>
         </div>
-
       </div>
     </div>
   );

@@ -1,10 +1,10 @@
 import React from "react";
 import "./Blogs.css";
-import { blogsData } from "./data";
-import img from "../assets/trending.png";
-import calender from "../assets/calender.png";
-import time from "../assets/time.png";
-import RightComponent from "./RightComponent";
+import { blogsData } from "../data";
+import img from "../../assets/trending.png";
+import calender from "../../assets/calender.png";
+import time from "../../assets/time.png";
+import RightComponent from "../CommonComponents/RightComponent";
 
 const Blogs = () => {
   return (
@@ -25,28 +25,25 @@ const Blogs = () => {
                   </div>
                   <div className="trendingFlex">
                     <img src={img} />
-                    <p>Jenny kiaa</p>
+                    <p>{item?.name}</p>
                   </div>
                   <div className="trendingTime">
                     <img src={calender} />
-                    <p>02 december 2022</p>
+                    <p>{item?.date}</p>
                     <img src={time} />
-                    <p>3 min. to read</p>
+                    <p>{item?.time}</p>
                   </div>
-                  <p className="trendingEnd">
-                    Did you come here for something in particular or just
-                    general Riker-bashing? And blowing into maximum warp
-                  </p>
+                  <p className="trendingEnd">{item?.lastText}</p>
                 </div>
               </div>
             );
           })}
         </div>
         <div className="addHere">
-           <h1>Add Here</h1>
+          <h1>Add Here</h1>
         </div>
         <div className="blogsPart1">
-          {blogsData.slice(3,-1).map((item) => {
+          {blogsData.slice(3, -1).map((item) => {
             return (
               <div className="singleBlog">
                 <img src={item?.img} />
@@ -59,18 +56,15 @@ const Blogs = () => {
                   </div>
                   <div className="trendingFlex">
                     <img src={img} />
-                    <p>Jenny kiaa</p>
+                    <p>{item?.name}</p>
                   </div>
                   <div className="trendingTime">
                     <img src={calender} />
-                    <p>02 december 2022</p>
+                    <p>{item?.date}</p>
                     <img src={time} />
-                    <p>3 min. to read</p>
+                    <p>{item?.time}</p>
                   </div>
-                  <p className="trendingEnd">
-                    Did you come here for something in particular or just
-                    general Riker-bashing? And blowing into maximum warp
-                  </p>
+                  <p className="trendingEnd">{item?.lastText}</p>
                 </div>
               </div>
             );
@@ -78,13 +72,10 @@ const Blogs = () => {
         </div>
       </div>
       {/*  */}
-      
+
       <div className="BlogsPart2">
-        <RightComponent/>
+        <RightComponent />
       </div>
-
-
-
     </div>
   );
 };

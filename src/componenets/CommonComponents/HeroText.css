@@ -1,0 +1,31 @@
+.heroTextMain {
+  width: 90%;
+  margin-top: 100px;
+  margin-left: 10%;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.heroTextMain h1 {
+  font-weight: 500;
+  font-size: 52px;
+  line-height: 62px;
+  color: #fefefe;
+  font-family: 'Nunito', sans-serif;
+}
+
+.heroTextFlex {
+  display: flex;
+  gap: 20px;
+}
+
+.heroTextMain p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ededed;
+  font-family: 'Nunito', sans-serif;
+}

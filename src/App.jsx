@@ -1,19 +1,16 @@
 import React from 'react'
 import "./App.css"
-import Hero from './componenets/Hero'
-import ImageGrid from './componenets/ImageGrid'
-import Trending from './componenets/Trending'
-import Blogs from './componenets/Blogs'
-import Footer from './componenets/Footer'
+import {Home}  from "./pages/index"
+import {BrowserRouter,Routes,Route}  from "react-router-dom"
 
 const App = () => {
   return (
     <div className='appMain'>
-      <Hero/>
-      <ImageGrid/>
-      <Trending/>
-      <Blogs/>
-      <Footer/>
+      <BrowserRouter>
+         <Routes>
+            <Route path="/" element={<Home/>}/>
+         </Routes>
+      </BrowserRouter>
     </div>
   )
 }
