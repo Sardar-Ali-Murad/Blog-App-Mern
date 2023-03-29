@@ -9,7 +9,7 @@ const Trending = () => {
   return (
     <div className="trendingMain">
       <div className="trendingText">
-        <h2>tranding</h2>
+        <h2 className="fancyDectorationTrading">tranding</h2>
 
         <div className="trendingGrid">
           {trendingData.map((item) => {

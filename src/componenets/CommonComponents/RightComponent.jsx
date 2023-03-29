@@ -15,7 +15,7 @@ const RightComponent = () => {
     <div className="rightSideBarMain">
       {/*  */}
       <div className="rightSideBarMainFlex">
-        <h2>Top Stories</h2>
+        <h2 className="fancyDectoration">Top Stories</h2>
         <a>View All</a>
       </div>
       {/*  */}
@@ -48,7 +48,7 @@ const RightComponent = () => {
       </div>
       {/*  */}
       <div className="rightSideBarMainFlex">
-        <h2>Top Writers</h2>
+        <h2 className="fancyDectoration">Top Writers</h2>
         <a>View All</a>
       </div>
       {/*  */}
@@ -81,7 +81,7 @@ const RightComponent = () => {
       {/*  */}
       <div>
         <div className="rightSideBarMainFlex rightSidebarFlexBoxes">
-          <h2>Quick Start</h2>
+          <h2 className="fancyDectoration">Quick Start</h2>
         </div>
         <div className="numbers">
           <div className="numberSingle">
@@ -105,7 +105,7 @@ const RightComponent = () => {
 
       {/*  */}
       <div className="rightSideBarMainFlex rightSidebarFlexBoxes">
-        <h2>Follow Us</h2>
+        <h2 className="fancyDectoration">Follow Us</h2>
       </div>
       <div className="writtersIcons">
         <div className=" rightSideBarBigIcons rightSideBarTwitter">
@@ -123,7 +123,7 @@ const RightComponent = () => {
       </div>
       {/*  */}
       <div className="rightSideBarMainFlex rightSidebarFlexBoxes">
-        <h2>Categories </h2>
+        <h2 className="fancyDectoration">Categories </h2>
         <a>View All</a>
       </div>
 

@@ -1,3 +1,5 @@
+// WithOut Swipper
+
 import React from "react";
 import "./HeroText.css";
 
@@ -19,5 +21,5 @@ const HeroText = () => {
     </div>
   );
 };
-
 export default HeroText;
+
