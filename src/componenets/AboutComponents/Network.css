@@ -1,0 +1,38 @@
+.networkBigMain{
+    background: #F2F4F8;
+    padding: 100px 0px;
+}
+
+.networkMain{
+    width: 80%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 30px;
+}
+
+.networkMain h1{
+    font-family: 'Poppins', sans-serif;
+    font-size: 57px;
+    font-weight: 600;
+    color: #555555;
+}
+
+.networkMain  p{
+    font-size: 14px;
+    font-weight: 400;
+    color: #555555;
+    font-family: 'Nunito', sans-serif;
+}
+
+.networkContent{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+@media screen and (max-width:900px) {
+    .networkMain{
+        flex-direction: column;
+    }
+}

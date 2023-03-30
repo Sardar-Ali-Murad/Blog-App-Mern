@@ -1,0 +1,9 @@
+.learnBigMain{
+    padding: 70px 0px;
+}
+
+.learnMain{
+    width: 80%;
+    transform: translateX(-50%);
+    margin-left: 50%;
+}
