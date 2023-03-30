@@ -1,2 +1,3 @@
 import Home from "./Home";
-export {Home}
+import WriterProfile from "./WriterProfile";
+export {Home,WriterProfile}

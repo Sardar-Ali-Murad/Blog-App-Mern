@@ -19,6 +19,11 @@ import writer1 from "../assets/writer1.png"
 import writer2 from "../assets/writer2.png"
 import writer3 from "../assets/writer3.png"
 
+import article1 from "../assets/writerBlog1.png"
+import article2 from "../assets/writerBlog2.png"
+import article3 from "../assets/writerBlog3.png"
+import article4 from "../assets/writerBlog4.png"
+
 let trendingData=[
     {
         head1:"I Created a Developer Rap Video - ",
@@ -185,7 +190,42 @@ let blogsData=[
       name:"Jenny Kia",
       bio:"Fashion designer, Blogger, activist"
     },
-
 ]
 
-export {trendingData,blogsData,writers}
+
+let writerProfileContent=[
+    {
+        head:"Design is the Mix of emotions",
+        img:article1,
+        name:"Jenny kiaa",
+        date:"02 december 2022",
+        time:"3 min. to read",
+        lastText:"Did you come here for something in particular or just general Riker-bashing? And blowing into"
+    },
+    {
+        head:"Design is the Mix of emotions",
+        img:article2,
+        name:"Jenny kiaa",
+        date:"02 december 2022",
+        time:"3 min. to read",
+        lastText:"Did you come here for something in particular or just general Riker-bashing? And blowing into"
+    },
+    {
+        head:"Design is the Mix of emotions",
+        img:article3,
+        name:"Jenny kiaa",
+        date:"02 december 2022",
+        time:"3 min. to read",
+        lastText:"Did you come here for something in particular or just general Riker-bashing? And blowing into"
+    },
+    {
+        head:"Design is the Mix of emotions",
+        img:article4,
+        name:"Jenny kiaa",
+        date:"02 december 2022",
+        time:"3 min. to read",
+        lastText:"Did you come here for something in particular or just general Riker-bashing? And blowing into"
+    },
+]
+
+export {trendingData,blogsData,writers,writerProfileContent}
