@@ -3,6 +3,7 @@ import "./Navbar.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 import Logo from "../../assets/Logo.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   let [ham, setHam] = React.useState(true);
@@ -16,29 +17,29 @@ const Navbar = () => {
         <nav className="big-screen-nav">
           <ul>
             <li>
-              <a className="fancy-link" href="#home">
-                HOME
-              </a>
+              <Link to="/" className="fancy-link" >
+                home1
+              </Link>
             </li>
             <li>
-              <a className="fancy-link" href="#about">
-                ABOUT US
-              </a>
+              <Link to="/home2" className="fancy-link" >
+                home2
+              </Link>
             </li>
             <li>
-              <a className="fancy-link" href="#services">
-                Our Story
-              </a>
+              <Link className="fancy-link" to="/writer/123">
+               writer profile
+              </Link>
             </li>
             <li>
-              <a className="fancy-link" href="#faq">
-                Write
-              </a>
+              <Link className="fancy-link" to="/category/DataScience">
+                single category
+              </Link>
             </li>
             <li>
-              <a className="fancy-link" href="#contact">
-                CONTACT US
-              </a>
+              <Link className="fancy-link" to="/writersList">
+                writers
+              </Link>
             </li>
           </ul>
         </nav>
@@ -63,49 +64,49 @@ const Navbar = () => {
         <nav>
           <ul>
             <li>
-              <a
+              <Link
                 className="links fancy-link"
                 onClick={() => setHam(true)}
-                href="#home"
+                to="/"
               >
-                HOME
-              </a>
+                home1
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className="links fancy-link"
                 onClick={() => setHam(true)}
-                href="#about"
+                to="/home2"
               >
-                ABOUT US
-              </a>
+                home2
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className="links fancy-link"
                 onClick={() => setHam(true)}
-                href="#services"
+                to="/writer/123"
               >
-                Our Story
-              </a>
+                writer profile
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className="links fancy-link"
                 onClick={() => setHam(true)}
-                href="#faq"
+                to="/category/DataScience"
               >
-                Write
-              </a>
+                single category
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className="links fancy-link"
                 onClick={() => setHam(true)}
-                href="#contact"
+                to="/writersList"
               >
-                CONTACT Us
-              </a>
+                writers
+              </Link>
             </li>
           </ul>
         </nav>

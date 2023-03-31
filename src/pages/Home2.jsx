@@ -9,7 +9,7 @@ import {
   Feedback,
   LearnWritting,
   Accordion,
-} from "../componenets/AboutComponents/index";
+} from "../componenets/Home2Components/index"
 
 const About = () => {
   return (
