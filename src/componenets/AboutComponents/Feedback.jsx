@@ -1,8 +1,8 @@
 import React from "react";
 import "./Feedback.css";
 import Img from "../../assets/feedback.png";
-import {AiOutlineLeft}  from "react-icons/ai"
-import {AiOutlineRight}  from "react-icons/ai"
+import { AiOutlineLeft } from "react-icons/ai";
+import { AiOutlineRight } from "react-icons/ai";
 
 const Feedback = () => {
   return (
@@ -14,22 +14,31 @@ const Feedback = () => {
           <div>
             {/*  */}
             <div className="feedBackWriterBio">
-                <div className="feedBackFlex">
-              <h2 name="feedBackWriterName">Garrett Winters</h2>
-              <p className="smallText">Fashion designer, Blogger, activist</p>
-                </div>
+              <div className="feedBackFlex">
+                <h2 name="feedBackWriterName">Garrett Winters</h2>
+                <p className="smallText">Fashion designer, Blogger, activist</p>
+              </div>
               <div className="arrows">
                 <div className="arrowLeft">
-                    <AiOutlineLeft/>
+                  <AiOutlineLeft />
                 </div>
                 <div className="arrowRight">
-                    <AiOutlineRight/>
+                  <AiOutlineRight />
                 </div>
               </div>
             </div>
             {/*  */}
             <div>
-                <p className="bigText">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+              <p className="bigText">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. Lorem
+                Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book.
+              </p>
             </div>
           </div>
         </div>

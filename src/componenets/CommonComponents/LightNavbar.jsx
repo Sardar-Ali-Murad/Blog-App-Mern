@@ -1,9 +1,9 @@
 import React from "react";
-import "./Navbar.css";
+import "./LightNavbar.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 import Logo from "../../assets/writerNavLogo.png";
-import writerMan from "../../assets/writerMan.png"
+import writerMan from "../../assets/writerMan.png";
 
 const Navbar = () => {
   let [ham, setHam] = React.useState(true);
@@ -45,15 +45,16 @@ const Navbar = () => {
         </nav>
 
         <div className="navBtnsBigScreen">
-          <button className="getStartedWriter">
-            Get Started
-          </button>
+          <button className="getStartedWriter">Get Started</button>
           <div className="writerPerson">
-          <img src={writerMan}/>
+            <img src={writerMan} />
           </div>
         </div>
 
-        <GiHamburgerMenu className="ham hamWriter" onClick={() => setHam(false)} />
+        <GiHamburgerMenu
+          className="ham hamWriter"
+          onClick={() => setHam(false)}
+        />
       </div>
 
       <div
@@ -113,12 +114,9 @@ const Navbar = () => {
           </ul>
         </nav>
         <div className="navBtnsSmallScreen navBtnsSmallScreenWriter">
-          <button className="getStartedWriter">
-            {" "}
-            Get Started
-          </button>
+          <button className="getStartedWriter"> Get Started</button>
           <div className="writerPerson">
-          <img src={writerMan}/>
+            <img src={writerMan} />
           </div>
         </div>
       </div>

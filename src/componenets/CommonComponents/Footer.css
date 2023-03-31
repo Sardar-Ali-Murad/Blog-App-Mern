@@ -50,13 +50,6 @@
   font-family: "Noto Sans", sans-serif;
 }
 
-/* .footerInfo p {
-  font-weight: 400;
-  font-size: 14px;
-  color: #ffffff;
-  cursor: pointer;
-} */
-
 .footerIcons {
   display: flex;
   align-items: center;
@@ -81,7 +74,7 @@
   font-weight: 300;
   font-size: 13px;
 }
-.footerInfo a{
+.footerInfo a {
   font-family: "Noto Sans", sans-serif;
   color: #f2f2f2;
   font-weight: 500;

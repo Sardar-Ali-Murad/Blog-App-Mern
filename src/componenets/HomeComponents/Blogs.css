@@ -14,13 +14,10 @@
 }
 
 .blogsPart1 {
-  flex: 1;
+  flex: 2;
 }
 
 .blogsPart2 {
-  flex: 1;
-}
-.BlogsPart2 {
   flex: 1;
 }
 
@@ -58,7 +55,7 @@
   color: #d1e4e1;
   font-size: 64px;
   font-weight: 600;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .blogsHead p {

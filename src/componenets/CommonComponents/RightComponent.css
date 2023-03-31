@@ -1,6 +1,3 @@
-.rightSideBarMain {
-}
-
 .rightSideBarMainFlex {
   display: flex;
   justify-content: space-between;
@@ -30,7 +27,7 @@
   border-radius: 10px;
 }
 
-.travelChip p{
+.travelChip p {
   color: #666666;
   font-family: "Noto Sans", sans-serif;
 }
@@ -164,9 +161,8 @@
   border: 1px solid #0065fd;
 }
 
-.active p{
-  color: #FFFFFF;
-
+.active p {
+  color: #ffffff;
 }
 
 .rightSideBarAdd {

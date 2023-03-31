@@ -1,72 +1,71 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200&family=Roboto:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200&family=Roboto:wght@300&display=swap");
 
-.trendingMain{
-    background-color: #F2F4F8;
-    padding: 40px;
+.trendingMain {
+  background-color: #f2f4f8;
+  padding: 40px;
 }
 
-.trendingText{
-    
-    width: 90%;
-    margin-left: 50%;
-    transform: translateX(-50%);
+.trendingText {
+  width: 90%;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 
-.trendingText h2{
-    color: #292929;
-    font-weight: 500;
-    font-size: 24px;
-    margin-bottom: 20px;
+.trendingText h2 {
+  color: #292929;
+  font-weight: 500;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
-.trendingContainer{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.trendingContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.trendingHead{
-    color: #222222;
-    font-weight: 500;
-    font-size:17px ;
-    font-family: 'Noto Sans', sans-serif;
+.trendingHead {
+  color: #222222;
+  font-weight: 500;
+  font-size: 17px;
+  font-family: "Noto Sans", sans-serif;
 }
 
-.trendingFlex{
-    display: flex;
-    gap: 8px;
-    align-items: center;
+.trendingFlex {
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
 
 .trendingFlex p {
-    font-family: 'Noto Sans', sans-serif;
-    color: #777777;
-    font-size: 12px;
-    font-weight: 400;
+  font-family: "Noto Sans", sans-serif;
+  color: #777777;
+  font-size: 12px;
+  font-weight: 400;
 }
 
-.trendingTime{
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.trendingTime {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.trendingTime p{
-    font-family: 'Noto Sans', sans-serif;
-    color: #777777;
-    font-weight: 400;
-    font-size: 11px;
+.trendingTime p {
+  font-family: "Noto Sans", sans-serif;
+  color: #777777;
+  font-weight: 400;
+  font-size: 11px;
 }
 
-.trendingEnd{
-    font-family: 'Noto Sans', sans-serif;
-    color: #555555;
-    font-size: 14px;
-    font-weight: 400;
+.trendingEnd {
+  font-family: "Noto Sans", sans-serif;
+  color: #555555;
+  font-size: 14px;
+  font-weight: 400;
 }
 
-.trendingGrid{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(16rem,1fr));
-    gap: 50px;
+.trendingGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 50px;
 }

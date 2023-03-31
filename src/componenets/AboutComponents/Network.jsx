@@ -17,7 +17,7 @@ const Network = () => {
           </p>
         </div>
         <div>
-         <Writers/>
+          <Writers />
         </div>
       </div>
     </div>

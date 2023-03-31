@@ -9,6 +9,10 @@
   align-items: center;
 }
 
+/* .nav{
+    background: #FFFFFF;
+   box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.15);
+  } */
 /* The Big Screen Navbar */
 .nav {
   position: sticky;
@@ -27,7 +31,7 @@
 
 .nav-main nav ul li a {
   font-size: 16px;
-  color: #ffffff;
+  /* color: #555555; */
   cursor: pointer;
   font-family: "Nunito", sans-serif;
   font-weight: 500;
@@ -88,7 +92,7 @@
   flex-direction: column;
 }
 .big-screen-nav ul li a {
-  color: #ffffff;
+  /* color: #555555; */
   font-family: "Nunito", sans-serif;
 }
 
@@ -166,6 +170,11 @@
   color: white;
 }
 
+.bigScreenNavWriter {
+  background: #ffffff;
+  box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.15);
+}
+
 .fancy-link {
   text-decoration: none;
   position: relative;
@@ -234,8 +243,8 @@
 }
 
 /* .fancy-link:hover {
-  scale: 1.1;
-} */
+    scale: 1.1;
+  } */
 
 .fancyDectoration::after {
   content: "";
@@ -289,4 +298,45 @@
   -webkit-transform-origin: left;
   transform-origin: left;
   width: 4%;
+}
+
+/* The New CSS FOR THE WRITER */
+.bigScreenNavWriter nav ul li a {
+  color: #555555;
+}
+
+.bigScreenNavWriter {
+  background: #ffffff;
+  box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.15);
+}
+
+.hamWriter {
+  color: black;
+}
+
+.getStartedWriter {
+  background-color: #ffffff;
+  height: 40px;
+  width: 110px;
+  border-radius: 14px;
+  color: #555555;
+  border: 1px solid #555555;
+}
+
+.writerPerson {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  border: 2px solid #555555;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navBtnsSmallScreenWriter {
+  display: flex;
+}
+
+.smal-screen-nav nav ul li a {
+  color: #fcfcfc;
 }

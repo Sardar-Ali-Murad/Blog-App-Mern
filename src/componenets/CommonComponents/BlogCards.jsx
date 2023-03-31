@@ -1,17 +1,14 @@
 import React from "react";
-import "./Blogs.css";
 import { blogsData } from "../data";
 import img from "../../assets/trending.png";
 import calender from "../../assets/calender.png";
 import time from "../../assets/time.png";
-import RightComponent from "../CommonComponents/RightComponent";
-import Add from "../CommonComponents/Add";
+import Add from "./Add"
 
-const Blogs = () => {
+const BlogCards = () => {
   return (
-    <div className="blogsMain">
-      {/*  */}
-      <div className="blogsPart1">
+    <div>
+        <div className="blogsPart1">
         <div>
           {blogsData.slice(0, 3).map((item) => {
             return (
@@ -40,8 +37,8 @@ const Blogs = () => {
             );
           })}
         </div>
-        <Add />
-        <div>
+        <Add/>
+        <div className="blogsPart1">
           {blogsData.slice(3, -1).map((item) => {
             return (
               <div className="singleBlog">
@@ -70,13 +67,8 @@ const Blogs = () => {
           })}
         </div>
       </div>
-      {/*  */}
-
-      <div className="blogsPart2">
-        <RightComponent />
-      </div>
     </div>
-  );
-};
+  )
+}
 
-export default Blogs;
+export default BlogCards

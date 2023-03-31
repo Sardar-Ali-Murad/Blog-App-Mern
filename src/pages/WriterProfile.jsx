@@ -1,13 +1,14 @@
-import React from 'react'
-import {Navbar,WriterProfileContent}  from "../componenets/WritterProfileComponents/index"
+import React from "react";
+import { WriterProfileContent } from "../componenets/WritterProfileComponents/index";
+import LightNavbar from "../componenets/CommonComponents/LightNavbar";
 
 const WriterProfile = () => {
   return (
     <div>
-      <Navbar/>
-      <WriterProfileContent/>
+      <LightNavbar />
+      <WriterProfileContent />
     </div>
-  )
-}
+  );
+};
 
-export default WriterProfile
+export default WriterProfile;

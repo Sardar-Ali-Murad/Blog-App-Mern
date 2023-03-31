@@ -1,6 +1,6 @@
 import React from "react";
 import "./Space.css";
-import SpaceImg from "../../assets/space.png"
+import SpaceImg from "../../assets/space.png";
 
 const Space = () => {
   return (
@@ -10,17 +10,18 @@ const Space = () => {
           <h1>Create your space.</h1>
           <div className="spaceContent">
             <p>
-              Tell your story your way — with different ways <br/> to write, style,
-              and brand your work.
+              Tell your story your way — with different ways <br /> to write,
+              style, and brand your work.
             </p>
             <h3>Start a blog.</h3>
             <p>
-              Create a blog for free to have a personalized home for your <br/>
+              Create a blog for free to have a personalized home for your <br />
               writing. Brand
             </p>
             <h3>Start a publication.</h3>
             <p>
-              Collaborate with others or publish under a brand name. Use our <br/>
+              Collaborate with others or publish under a brand name. Use our{" "}
+              <br />
               story submission system and expressive customization options.
             </p>
             <button className="spaceBtn">Start writing</button>
@@ -28,7 +29,7 @@ const Space = () => {
         </div>
 
         <div>
-            <img src={SpaceImg} className="spaceImg"/>
+          <img src={SpaceImg} className="spaceImg" />
         </div>
       </div>
     </div>

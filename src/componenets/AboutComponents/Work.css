@@ -1,71 +1,69 @@
-.workMain{
-    padding: 70px 0px;
+.workMain {
+  padding: 70px 0px;
 }
 
-
-
-.worksHeaderText h1{
-    font-family: 'Nunito', sans-serif;
-    color: #292929;
-    font-size: 24px;
-    font-weight: 600;
-    text-align: center;
+.worksHeaderText h1 {
+  font-family: "Nunito", sans-serif;
+  color: #292929;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
 }
-.worksHeaderText p{
-    font-family: 'Nunito', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    text-align: center;
-    color: #777777;
-    margin-top: 10px;
-    margin-bottom: 20px;
+.worksHeaderText p {
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  color: #777777;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
-.workContent{
-    width: 80%;
-    margin-left: 50%;
-    transform: translateX(-50%);
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(17rem,1fr));
-    gap:20px;
-    margin-top: 20px;
+.workContent {
+  width: 80%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: 20px;
+  margin-top: 20px;
 }
 
-.singleWorkWrapper h1{
-    /* font-family: 'Poppins', sans-serif; */
-    font-size: 18px;
-    font-size: 400;
-    color: #222222;
-    font-family: 'Nunito', sans-serif;
+.singleWorkWrapper h1 {
+  /* font-family: 'Poppins', sans-serif; */
+  font-size: 18px;
+  font-size: 400;
+  color: #222222;
+  font-family: "Nunito", sans-serif;
 }
 
-.singleWorkWrapper p{
-    /* font-family: 'Poppins', sans-serif; */
-    font-family: 'Nunito', sans-serif;
-    font-size: 15px;
-    font-size: 400;
-    color: #888888;
-    word-break: break-all;
+.singleWorkWrapper p {
+  /* font-family: 'Poppins', sans-serif; */
+  font-family: "Nunito", sans-serif;
+  font-size: 15px;
+  font-size: 400;
+  color: #888888;
+  word-break: break-all;
 }
 
-.workBox{
-    height: 70px;
-    width: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #0065FD;
-    border-radius: 50%;
-    margin-left: 50%;
-    transform: translateX(-50%);
+.workBox {
+  height: 70px;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0065fd;
+  border-radius: 50%;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
-.singleWorkWrapper{
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+.singleWorkWrapper {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-.worksHeaderText{
-    margin-bottom: 20px;
+.worksHeaderText {
+  margin-bottom: 20px;
 }

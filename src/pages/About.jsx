@@ -1,21 +1,30 @@
-import React from 'react'
-import Footer from "../componenets/CommonComponents/Footer"
-import Hero from '../componenets/CommonComponents/Hero'
-import {Numbers,Work,Network,Space,Feedback,LearnWritting} from '../componenets/AboutComponents/index'
+import React from "react";
+import Footer from "../componenets/CommonComponents/Footer";
+import Hero from "../componenets/CommonComponents/Hero";
+import {
+  Numbers,
+  Work,
+  Network,
+  Space,
+  Feedback,
+  LearnWritting,
+  Accordion,
+} from "../componenets/AboutComponents/index";
 
 const About = () => {
   return (
     <div>
-      <Hero/>
-      <Numbers/>
-      <Work/>
-      <Network/>
-      <Space/>
-      <Feedback/>
-      <LearnWritting/>
-      <Footer/>
+      <Hero />
+      <Numbers />
+      <Work />
+      <Network />
+      <Space />
+      <Feedback />
+      <LearnWritting />
+      <Accordion />
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default About
+export default About;

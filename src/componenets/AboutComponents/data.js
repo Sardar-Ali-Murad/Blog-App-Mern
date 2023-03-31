@@ -22,4 +22,27 @@ let WorkData=[
 
 ]
 
-export  {WorkData}
+let accordionData=[
+    {
+        head:"is there have any option for write blog?",
+        para:"Did you come here for something in particular or just general Riker-bashing? And blowing into maximum warp speed, you appeared for an instant to be in two places at once. We have a saboteur aboard. We know you’re dealing in stolen ore. But I wanna talk about"
+    },
+    {
+        head:"can i change my plan later?",
+        para:"Did you come here for something in particular or just general Riker-bashing? And blowing into maximum warp speed, you appeared for an instant to be in two places at once. We have a saboteur aboard. We know you’re dealing in stolen ore. But I wanna talk about"
+    },
+    {
+        head:"Did you come here for something in particular?",
+        para:"Did you come here for something in particular or just general Riker-bashing? And blowing into maximum warp speed, you appeared for an instant to be in two places at once. We have a saboteur aboard. We know you’re dealing in stolen ore. But I wanna talk about"
+    },
+    {
+        head:"is there have any option for write blog?",
+        para:"Did you come here for something in particular or just general Riker-bashing? And blowing into maximum warp speed, you appeared for an instant to be in two places at once. We have a saboteur aboard. We know you’re dealing in stolen ore. But I wanna talk about"
+    },
+    {
+        head:"something in particular or just general Riker-bashing?",
+        para:"Did you come here for something in particular or just general Riker-bashing? And blowing into maximum warp speed, you appeared for an instant to be in two places at once. We have a saboteur aboard. We know you’re dealing in stolen ore. But I wanna talk about"
+    },
+]
+
+export  {WorkData,accordionData}
