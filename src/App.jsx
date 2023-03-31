@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { Home, WriterProfile, About, Category } from "./pages/index";
+import { Home, WriterProfile, About, Category,WritersList } from "./pages/index";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const App = () => {
@@ -10,6 +10,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/writersList" element={<WritersList />} />
           <Route path="/writer/:writerId" element={<WriterProfile />} />
           <Route path="category/:categoryName" element={<Category />} />
         </Routes>

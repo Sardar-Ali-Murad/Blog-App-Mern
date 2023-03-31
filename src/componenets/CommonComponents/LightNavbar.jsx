@@ -5,7 +5,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import Logo from "../../assets/writerNavLogo.png";
 import writerMan from "../../assets/writerMan.png";
 
-const Navbar = () => {
+const Navbar = ({signIn,getStarted,person}) => {
   let [ham, setHam] = React.useState(true);
   return (
     <div className="nav bigScreenNavWriter">
@@ -45,10 +45,24 @@ const Navbar = () => {
         </nav>
 
         <div className="navBtnsBigScreen">
-          <button className="getStartedWriter">Get Started</button>
-          <div className="writerPerson">
+          {/*  */}
+          {signIn && 
+          <button className="signUp" style={{ background: "#0065FD" }}>
+            Sign In
+          </button>
+        }
+          {/* <button className="login">Get Started</button> */}
+        
+          {/*  */}
+            {getStarted &&
+            <button className="getStartedWriter">Get Started</button>
+           }
+           {person &&
+             <div className="writerPerson">
             <img src={writerMan} />
           </div>
+          }
+          {/*  */}
         </div>
 
         <GiHamburgerMenu
