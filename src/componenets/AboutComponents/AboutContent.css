@@ -1,0 +1,46 @@
+.aboutBigMian{
+    padding: 70px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+
+.aboutMain{
+    width: 80%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 60px;
+    display: flex;
+    gap: 40px;
+}
+
+.aboutContent h1{
+  margin-bottom: 40px;
+  font-size: 24px;
+  font-weight: 400;
+  font-family: 'Noto Sans', sans-serif;
+   color: #222222;
+}
+.aboutContent p{
+  font-size: 15px;
+  font-weight: 400;
+  font-family: 'Noto Sans', sans-serif;
+  color: #555555;
+
+}
+
+.flexParas{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.aboutMain2{
+    margin-top: 70px;
+}
+
+@media screen and (max-width:1000px) {
+    .aboutMain{
+        flex-direction: column;
+    }
+}

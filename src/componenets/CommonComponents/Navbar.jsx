@@ -41,6 +41,12 @@ const Navbar = () => {
                 writers
               </Link>
             </li>
+            <li>
+
+              <Link className="fancy-link" to="/about">
+                about
+              </Link>
+            </li>
           </ul>
         </nav>
 
@@ -107,7 +113,17 @@ const Navbar = () => {
               >
                 writers
               </Link>
-            </li>
+              </li>
+              <li>
+
+              <Link
+                className="links fancy-link"
+                onClick={() => setHam(true)}
+                to="/about"
+                >
+                about
+              </Link>
+                </li>
           </ul>
         </nav>
         <div className="navBtnsSmallScreen">
