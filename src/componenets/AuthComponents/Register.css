@@ -1,0 +1,141 @@
+.registerBigMian{
+    padding: 120px 0px;
+    background-color: #F2F7F9
+}
+
+.registerMain{
+    width: 50%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  background-color: #FFFFFF;
+  padding: 30px 50px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.authHead{
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Nunito', sans-serif;
+    color: #777777;
+}
+.authPara{
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Nunito', sans-serif;
+    color: #777777;
+}
+
+.TextFields p{
+   font-size: 14px;
+   font: 400;
+   font-family: 'Nunito', sans-serif;
+   color: #777777;
+}
+
+.textarea{
+    background-color: #FFFFFF1A;
+    border: 1px solid #777777;
+    border-radius: 20px;
+    height: 34px;
+    width: 90%;
+    padding: 3px 10px;
+    outline: 0px;
+}
+
+.registerTextFields{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.TextFields{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.categoryField{
+    width: 93%;
+    height: 40px;
+}
+
+.authBlueBtn{
+    width: 94%;
+    border-radius: 20px;
+    height: 35px;
+    background-color: #0065FD;
+    border: 1px solid #0065FD;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.authRedBtn{
+    width: 94%;
+    border-radius: 20px;
+    height: 35px;
+    background-color: #F63434;
+    border: 1px solid #F63434;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.alreadyAuth{
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+    color: #777777;
+}
+
+.alreadyAuth span{
+    color: #0065FD;
+}
+
+.alreadyAuth{
+    text-align: center;
+}
+
+.checkFlex{
+    display: flex;
+    gap: 30px;
+}
+
+.checkFlex p{
+    font-weight: 400;
+    font-size: 14px;
+    font-family: 'Nunito', sans-serif;
+    color: #777777;
+}
+
+.forgerPassword{
+    font-weight: 400;
+    font-size: 14px;
+    font-family: 'Nunito', sans-serif;
+    color:#777777
+}
+
+.authFlex{
+    display: flex;
+    justify-content: space-between;
+}
+.loginBtnsWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.or{
+    text-align: center;
+    color:#777777;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Nunito', sans-serif;
+}
+
+@media screen and (max-width:900px) {
+    .registerMain{
+        width: 70%;
+    }
+}

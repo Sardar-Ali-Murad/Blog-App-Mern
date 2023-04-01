@@ -55,15 +55,19 @@ const Navbar = ({signIn,getStarted,person}) => {
         <div className="navBtnsBigScreen">
           {/*  */}
           {signIn && 
+          <Link to="/register">
           <button className="signUp" style={{ background: "#0065FD" }}>
             Sign In
           </button>
+          </Link>
         }
           {/* <button className="login">Get Started</button> */}
         
           {/*  */}
             {getStarted &&
-            <button className="getStartedWriter">Get Started</button>
+            <Link to="/getStarted">
+              <button className="getStartedWriter">Get Started</button>
+            </Link>
            }
            {person &&
              <div className="writerPerson">
@@ -145,7 +149,9 @@ const Navbar = ({signIn,getStarted,person}) => {
           </ul>
         </nav>
         <div className="navBtnsSmallScreen navBtnsSmallScreenWriter">
+          <Link to="/getStarted">
           <button className="getStartedWriter"> Get Started</button>
+          </Link>
           <div className="writerPerson">
             <img src={writerMan} />
           </div>

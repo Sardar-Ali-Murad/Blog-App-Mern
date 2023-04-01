@@ -51,10 +51,14 @@ const Navbar = () => {
         </nav>
 
         <div className="navBtnsBigScreen">
+          <Link to="/register">
           <button className="signUp" style={{ background: "#0065FD" }}>
             Sign In
           </button>
+          </Link>
+          <Link to="/getStarted">
           <button className="login">Get Started</button>
+          </Link>
         </div>
 
         <GiHamburgerMenu className="ham" onClick={() => setHam(false)} />
@@ -127,11 +131,15 @@ const Navbar = () => {
           </ul>
         </nav>
         <div className="navBtnsSmallScreen">
+          <Link to="/register">
           <button className="signUp" style={{ background: "#0065FD" }}>
             {" "}
             Sign Up
           </button>
-          <button className="login">Login</button>
+          </Link>
+          <Link to="/login">
+            <button className="login">Login</button>
+          </Link>
         </div>
       </div>
     </div>
