@@ -2,7 +2,7 @@ import React from "react";
 import { GoogleLogin } from "@react-oauth/google";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { useDispatch } from "react-redux";
-import { GoogleAuthApi } from "../../features/userSlice";
+import { GoogleAuthApi ,removeAlert} from "../../features/userSlice";
 
 export default function Landing() {
   const dispatch = useDispatch();
