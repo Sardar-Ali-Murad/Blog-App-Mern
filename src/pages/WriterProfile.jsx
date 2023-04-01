@@ -5,7 +5,7 @@ import LightNavbar from "../componenets/CommonComponents/LightNavbar";
 const WriterProfile = () => {
   return (
     <div>
-      <LightNavbar  signIn={false} getStarted={true} person={true} />
+      <LightNavbar signIn={false} getStarted={true} person={true} />
       <WriterProfileContent />
     </div>
   );

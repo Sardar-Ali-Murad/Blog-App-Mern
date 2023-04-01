@@ -9,7 +9,7 @@ import SingleWriter from "../componenets/CommonComponents/SingleWriter";
 const WritersList = () => {
   return (
     <div>
-      <LightNavbar  signIn={true} getStarted={true} person={false} />
+      <LightNavbar signIn={true} getStarted={true} person={false} />
       {/*  */}
       <div className="writersIntroBigMain">
         <div className="writersIntroMain">
@@ -26,17 +26,17 @@ const WritersList = () => {
 
       <div className="writersListMain">
         <div className="writersListPart1">
-            {
-               writers?.map((writer)=>{
-                return <SingleWriter writer={writer}/>
-               }) 
-            }
+          {writers?.map((writer) => {
+            return <SingleWriter writer={writer} />;
+          })}
         </div>
 
-        <div className="writersListPart2"><RightComponent/></div>
+        <div className="writersListPart2">
+          <RightComponent />
+        </div>
       </div>
 
-      <Footer/>
+      <Footer />
     </div>
   );
 };

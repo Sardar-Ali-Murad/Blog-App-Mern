@@ -9,7 +9,7 @@ import Footer from "../componenets/CommonComponents/Footer";
 const Category = () => {
   return (
     <div>
-      <LightNavbar  signIn={true} getStarted={true} person={false} />
+      <LightNavbar signIn={true} getStarted={true} person={false} />
       <div className="categoryBlogMain">
         <div className="categoryBlogs">
           <div className="categoryTextFlex">

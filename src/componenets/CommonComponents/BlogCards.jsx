@@ -3,12 +3,12 @@ import { blogsData } from "../data";
 import img from "../../assets/trending.png";
 import calender from "../../assets/calender.png";
 import time from "../../assets/time.png";
-import Add from "./Add"
+import Add from "./Add";
 
 const BlogCards = () => {
   return (
     <div>
-        <div className="blogsPart1">
+      <div className="blogsPart1">
         <div>
           {blogsData.slice(0, 3).map((item) => {
             return (
@@ -37,7 +37,7 @@ const BlogCards = () => {
             );
           })}
         </div>
-        <Add/>
+        <Add />
         <div className="blogsPart1">
           {blogsData.slice(3, -1).map((item) => {
             return (
@@ -68,7 +68,7 @@ const BlogCards = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default BlogCards
+export default BlogCards;

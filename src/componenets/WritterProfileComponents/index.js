@@ -1,2 +1,2 @@
 import WriterProfileContent from "./WriterProfileContent";
-export {WriterProfileContent}
+export { WriterProfileContent };

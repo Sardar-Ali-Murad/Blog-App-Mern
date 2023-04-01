@@ -17,18 +17,18 @@ const Navbar = () => {
         <nav className="big-screen-nav">
           <ul>
             <li>
-              <Link to="/" className="fancy-link" >
+              <Link to="/" className="fancy-link">
                 home1
               </Link>
             </li>
             <li>
-              <Link to="/home2" className="fancy-link" >
+              <Link to="/home2" className="fancy-link">
                 home2
               </Link>
             </li>
             <li>
               <Link className="fancy-link" to="/writer/123">
-               writer profile
+                writer profile
               </Link>
             </li>
             <li>
@@ -42,7 +42,6 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-
               <Link className="fancy-link" to="/about">
                 about
               </Link>
@@ -52,12 +51,12 @@ const Navbar = () => {
 
         <div className="navBtnsBigScreen">
           <Link to="/register">
-          <button className="signUp" style={{ background: "#0065FD" }}>
-            Sign In
-          </button>
+            <button className="signUp" style={{ background: "#0065FD" }}>
+              Sign In
+            </button>
           </Link>
           <Link to="/getStarted">
-          <button className="login">Get Started</button>
+            <button className="login">Get Started</button>
           </Link>
         </div>
 
@@ -117,25 +116,24 @@ const Navbar = () => {
               >
                 writers
               </Link>
-              </li>
-              <li>
-
+            </li>
+            <li>
               <Link
                 className="links fancy-link"
                 onClick={() => setHam(true)}
                 to="/about"
-                >
+              >
                 about
               </Link>
-                </li>
+            </li>
           </ul>
         </nav>
         <div className="navBtnsSmallScreen">
           <Link to="/register">
-          <button className="signUp" style={{ background: "#0065FD" }}>
-            {" "}
-            Sign Up
-          </button>
+            <button className="signUp" style={{ background: "#0065FD" }}>
+              {" "}
+              Sign Up
+            </button>
           </Link>
           <Link to="/login">
             <button className="login">Login</button>

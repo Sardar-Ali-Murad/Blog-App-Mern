@@ -6,7 +6,7 @@ import Logo from "../../assets/writerNavLogo.png";
 import writerMan from "../../assets/writerMan.png";
 import { Link } from "react-router-dom";
 
-const Navbar = ({signIn,getStarted,person}) => {
+const Navbar = ({ signIn, getStarted, person }) => {
   let [ham, setHam] = React.useState(true);
   return (
     <div className="nav bigScreenNavWriter">
@@ -28,14 +28,12 @@ const Navbar = ({signIn,getStarted,person}) => {
               </Link>
             </li>
             <li>
-              <Link className="fancy-link"    
-                to="/writer/123">
+              <Link className="fancy-link" to="/writer/123">
                 writer profile
               </Link>
             </li>
             <li>
-              <Link className="fancy-link"       
-                to="/category/DataScience">
+              <Link className="fancy-link" to="/category/DataScience">
                 single category
               </Link>
             </li>
@@ -54,26 +52,26 @@ const Navbar = ({signIn,getStarted,person}) => {
 
         <div className="navBtnsBigScreen">
           {/*  */}
-          {signIn && 
-          <Link to="/register">
-          <button className="signUp" style={{ background: "#0065FD" }}>
-            Sign In
-          </button>
-          </Link>
-        }
+          {signIn && (
+            <Link to="/register">
+              <button className="signUp" style={{ background: "#0065FD" }}>
+                Sign In
+              </button>
+            </Link>
+          )}
           {/* <button className="login">Get Started</button> */}
-        
+
           {/*  */}
-            {getStarted &&
+          {getStarted && (
             <Link to="/getStarted">
               <button className="getStartedWriter">Get Started</button>
             </Link>
-           }
-           {person &&
-             <div className="writerPerson">
-            <img src={writerMan} />
-          </div>
-          }
+          )}
+          {person && (
+            <div className="writerPerson">
+              <img src={writerMan} />
+            </div>
+          )}
           {/*  */}
         </div>
 
@@ -95,7 +93,7 @@ const Navbar = ({signIn,getStarted,person}) => {
             <li>
               <Link
                 className="links fancy-link"
-                onClick={() => setHam(true)}   
+                onClick={() => setHam(true)}
                 to="/"
               >
                 home1
@@ -136,21 +134,21 @@ const Navbar = ({signIn,getStarted,person}) => {
               >
                 writers
               </Link>
-              </li>
-              <li>
+            </li>
+            <li>
               <Link
                 className="links fancy-link"
                 onClick={() => setHam(true)}
                 to="/about"
-                >
+              >
                 about
               </Link>
-                </li>
+            </li>
           </ul>
         </nav>
         <div className="navBtnsSmallScreen navBtnsSmallScreenWriter">
           <Link to="/getStarted">
-          <button className="getStartedWriter"> Get Started</button>
+            <button className="getStartedWriter"> Get Started</button>
           </Link>
           <div className="writerPerson">
             <img src={writerMan} />
