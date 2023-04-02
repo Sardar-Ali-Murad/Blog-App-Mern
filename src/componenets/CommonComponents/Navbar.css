@@ -56,6 +56,7 @@
   margin-left: 20px;
   margin-top: 20px;
   gap: 20px;
+  /* overflow-x: scroll; */
 }
 
 .navBtnsSmallScreen .signUp {
@@ -290,3 +291,10 @@
   transform-origin: left;
   width: 4%;
 }
+
+
+
+
+/* .small-screen-nav{
+  overflow: scroll;
+} */
