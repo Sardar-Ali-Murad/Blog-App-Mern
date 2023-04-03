@@ -7,7 +7,7 @@ import Alert from "../Alert/UserAlert";
 import CircularProgress from "@mui/material/CircularProgress";
 
 const Register = () => {
-  let { showAlert ,isLoading} = useSelector((state) => state.store);
+  let { showAlert, isLoading } = useSelector((state) => state.store);
   let dispatch = useDispatch();
   let alert = React.useRef(null);
   let [data, setData] = React.useState({
@@ -39,9 +39,7 @@ const Register = () => {
   return (
     <div className="registerBigMian">
       <div className="registerMain" ref={alert}>
-        {
-          isLoading && <CircularProgress/>
-        }
+        {isLoading && <CircularProgress />}
         <div className="divCenter">{showAlert && <Alert />}</div>
         <div>
           <h1 className="authHead">Sign Up</h1>

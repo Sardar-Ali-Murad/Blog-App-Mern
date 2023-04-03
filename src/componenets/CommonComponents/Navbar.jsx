@@ -78,6 +78,11 @@ const Navbar = () => {
                 writer deatail form
               </Link>
             </li>
+            <li>
+              <Link className="fancy-link" to="/blog/123">
+                blog
+              </Link>
+            </li>
           </ul>
         </nav>
 
@@ -213,6 +218,15 @@ const Navbar = () => {
                 onClick={() => setHam(true)}
               >
                 writer detail form
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="fancy-link links"
+                to="/blog/123"
+                onClick={() => setHam(true)}
+              >
+                blog
               </Link>
             </li>
           </ul>

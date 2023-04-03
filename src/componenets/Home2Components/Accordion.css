@@ -55,9 +55,8 @@
   }
 }
 
-
 /* The FAQ */
-.FAQContent{
+.FAQContent {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -65,9 +64,9 @@
   margin-top: 80px;
 }
 
-.FAQContent h1{
+.FAQContent h1 {
   color: #333333;
   font-size: 21px;
   font-weight: 600;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }

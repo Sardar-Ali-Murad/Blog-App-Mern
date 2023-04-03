@@ -43,10 +43,11 @@ export const setupResetPassword = async (data, route, thunkAPI) => {
   }
 };
 
-
 export const GoogleAuth = async (data, route, thunkAPI) => {
   try {
-    let props = await axios.post(`${BACK_END_URL}/${route}`, {idToken: data.credential});
+    let props = await axios.post(`${BACK_END_URL}/${route}`, {
+      idToken: data.credential,
+    });
     return props.data;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.response.data.msg);

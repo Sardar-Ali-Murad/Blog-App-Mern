@@ -1,5 +1,5 @@
 import React from "react";
-import Editor from "./Editor"
+import Editor from "./Editor";
 
 const WriterDetailForm = () => {
   return (
@@ -203,12 +203,12 @@ const WriterDetailForm = () => {
         </div>
       </div>
       {/*  */}
-      <div className="TextFields" style={{marginTop:'20px'}}>
+      <div className="TextFields" style={{ marginTop: "20px" }}>
         <p>Message</p>
         <textarea
           className="textarea"
           type="password"
-          style={{ height: "70px",width:"94%" }}
+          style={{ height: "70px", width: "94%" }}
           name="password"
           // value={data.password}
           // onChange={handleChange}
@@ -225,7 +225,7 @@ const WriterDetailForm = () => {
       </div>
       {/*  */}
       <div className="writerInfoSave">
-         <button>Save</button>
+        <button>Save</button>
       </div>
     </div>
   );

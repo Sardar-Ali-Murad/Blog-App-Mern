@@ -31,9 +31,7 @@ const Register = () => {
     });
   }
 
-  function Send() {
-
-  }
+  function Send() {}
 
   return (
     <div>

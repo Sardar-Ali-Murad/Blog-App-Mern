@@ -1,6 +1,6 @@
 import React from "react";
 import "./CoursesBody.css";
-import { courses1, courses2 ,courses3} from "./data";
+import { courses1, courses2, courses3 } from "./data";
 import img9 from "../../assets/courseBig.png";
 
 const CoursesBody = () => {
@@ -52,7 +52,7 @@ const CoursesBody = () => {
       {/*  */}
 
       <div className="coursesBig">
-        <div className="coursesSingleBox" >
+        <div className="coursesSingleBox">
           <img src={img9} />
           <div className="coursesSingleBoxText coursesSingleBoxTextBigImg">
             <h1>Language courses abroad</h1>
@@ -62,27 +62,27 @@ const CoursesBody = () => {
 
       {/*  */}
 
-        <div>
-          <div className="coursesGrid1">
-            {courses3.map((item) => {
-              return (
-                <div className="coursesSingleBox">
-                  <img src={item?.img} />
-                  <div className="coursesSingleBoxText">
-                    <p>{item?.bigText}</p>
-                    <h1>{item?.smallText}</h1>
-                  </div>
+      <div>
+        <div className="coursesGrid1">
+          {courses3.map((item) => {
+            return (
+              <div className="coursesSingleBox">
+                <img src={item?.img} />
+                <div className="coursesSingleBoxText">
+                  <p>{item?.bigText}</p>
+                  <h1>{item?.smallText}</h1>
                 </div>
-              );
-            })}
-            <div className="coursesMore">
-              <h1>All programs</h1>
-              <button>Learn More</button>
-            </div>
+              </div>
+            );
+          })}
+          <div className="coursesMore">
+            <h1>All programs</h1>
+            <button>Learn More</button>
           </div>
         </div>
- 
- {/*  */}
+      </div>
+
+      {/*  */}
     </div>
   );
 };

@@ -4,13 +4,12 @@ import { Link } from "react-router-dom";
 import { setupUserLoginApi, removeAlert } from "../../features/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Alert from "../Alert/UserAlert";
-import GoogleLogin from "../GoogleAuth/GoogleLogin"
+import GoogleLogin from "../GoogleAuth/GoogleLogin";
 import CircularProgress from "@mui/material/CircularProgress";
-
 
 const Login = () => {
   let dispatch = useDispatch();
-  let { showAlert,isLoading } = useSelector((state) => state.store);
+  let { showAlert, isLoading } = useSelector((state) => state.store);
   let alert = React.useRef(null);
   let [data, setData] = React.useState({
     email: "",
@@ -37,9 +36,7 @@ const Login = () => {
   return (
     <div className="registerBigMian">
       <div className="registerMain" ref={alert}>
-        {
-          isLoading && <CircularProgress/>
-        }
+        {isLoading && <CircularProgress />}
         {showAlert && <Alert />}
         <div>
           <h1 className="authHead">Sign In</h1>
@@ -87,7 +84,7 @@ const Login = () => {
             <div>
               <p className="or">Or</p>
               {/* <button className="authRedBtn">Login With Google</button> */}
-              <GoogleLogin/>
+              <GoogleLogin />
             </div>
             <p className="alreadyAuth">
               Don't have an account?

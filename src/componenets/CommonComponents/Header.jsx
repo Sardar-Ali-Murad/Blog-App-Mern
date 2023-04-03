@@ -1,16 +1,12 @@
 import React from "react";
-import "./AboutHeader.css";
+import "./Header.css";
 
-const AboutHeader = () => {
+const AboutHeader = ({ head, para }) => {
   return (
-    <div className="aboutHeaderBigMain">
-      <div className="aboutHeaderMain">
-        <h1>About us</h1>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the <br /> industry's standard dummy
-          text ever since the 1500s.
-        </p>
+    <div className="HeaderBigMain">
+      <div className="HeaderMain">
+        <h1>{head}</h1>
+        <p>{para}</p>
       </div>
     </div>
   );

@@ -14,10 +14,12 @@ import {
   ResetPassword,
   Courses,
   FAQ,
-  Request
-  ,WriterForm,
+  Request,
+  WriterForm,
   WriteBlogForm,
-  WriterDetailForm
+  WriterDetailForm,
+  WriterPublicProfile,
+  SingleBlog,
 } from "./pages/index";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -28,13 +30,18 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          
+
           <Route path="/courses" element={<Courses />} />
           <Route path="/FAQ" element={<FAQ />} />
           <Route path="/Write" element={<WriteBlogForm />} />
           <Route path="/Request" element={<Request />} />
           <Route path="/WriterForm" element={<WriterForm />} />
           <Route path="/WriterDetailForm" element={<WriterDetailForm />} />
+          <Route path="/blog/:blogId" element={<SingleBlog />} />
+          <Route
+            path="/WriterPublicProfile/:writerId"
+            element={<WriterPublicProfile />}
+          />
 
           <Route path="/home2" element={<Home2 />} />
           <Route path="/login" element={<Login />} />
@@ -48,7 +55,7 @@ const App = () => {
         </Routes>
       </BrowserRouter>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

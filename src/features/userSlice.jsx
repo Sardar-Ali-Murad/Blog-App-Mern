@@ -15,7 +15,7 @@ import {
   userImage,
   setupForgetPassword,
   setupResetPassword,
-  GoogleAuth
+  GoogleAuth,
 } from "./userThunk";
 
 export const setupUserLoginApi = createAsyncThunk(
@@ -24,7 +24,7 @@ export const setupUserLoginApi = createAsyncThunk(
     return setupUserLogin(data, "login", thunkAPI);
   }
 );
-// 
+//
 export const GoogleAuthApi = createAsyncThunk(
   "user/setupUserLogin",
   async (data, thunkAPI) => {
@@ -83,8 +83,7 @@ const userSlice = createSlice({
     },
   },
   extraReducers: {
-
-    // 
+    //
     [setupUserLoginApi.pending]: (state) => {
       state.isLoading = true;
     },
@@ -103,10 +102,8 @@ const userSlice = createSlice({
       state.alertType = "danger";
       state.alertText = payload;
     },
-    
-    
-    
-    // 
+
+    //
     [GoogleAuthApi.pending]: (state) => {
       state.isLoading = true;
     },
@@ -126,8 +123,7 @@ const userSlice = createSlice({
       state.alertText = payload;
     },
 
-
-    // 
+    //
     [setupUserRegisternApi.pending]: (state) => {
       state.isLoading = true;
     },

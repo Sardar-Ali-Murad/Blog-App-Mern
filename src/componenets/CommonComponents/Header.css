@@ -1,9 +1,9 @@
-.coursesBigMain {
+.HeaderBigMain {
   padding: 70px 0px;
   background-color: #0065fd;
 }
 
-.coursesMain {
+.HeaderMain {
   width: 80%;
   margin-left: 50%;
   transform: translateX(-50%);
@@ -12,14 +12,14 @@
   gap: 10px;
 }
 
-.coursesMain h1 {
+.HeaderMain h1 {
   font-size: 24px;
   font-weight: 600;
   font-family: "Noto Sans", sans-serif;
   color: #ffffff;
 }
 
-.coursesMain p {
+.HeaderMain p {
   font-size: 14px;
   font-weight: 400;
   font-family: "Noto Sans", sans-serif;

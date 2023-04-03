@@ -31,9 +31,7 @@ const Register = () => {
     });
   }
 
-  function Send() {
-
-  }
+  function Send() {}
 
   return (
     <div>
@@ -44,9 +42,7 @@ const Register = () => {
           <div className="divCenter">{showAlert && <Alert />}</div>
           <div>
             <h1 className="authHead">Writer Sign Up</h1>
-            <p className="authPara">
-            Enter your Details to Create Account.
-            </p>
+            <p className="authPara">Enter your Details to Create Account.</p>
           </div>
 
           <div className="registerTextFields">
