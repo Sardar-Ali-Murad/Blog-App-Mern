@@ -75,6 +75,11 @@ const Navbar = ({ signIn, getStarted, person }) => {
                 request
               </Link>
             </li>
+            <li>
+              <Link className="fancy-link" to="/WriterDetailForm">
+                writer detail form
+              </Link>
+            </li>
 
 
           </ul>
@@ -220,6 +225,15 @@ const Navbar = ({ signIn, getStarted, person }) => {
                 onClick={() => setHam(true)}
               >
                 request
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="fancy-link links"
+                to="/WriterDetailForm"
+                onClick={() => setHam(true)}
+              >
+                writer detail form
               </Link>
             </li>
           </ul>

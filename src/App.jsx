@@ -15,7 +15,9 @@ import {
   Courses,
   FAQ,
   Request
-  ,WriterForm,WriteBlogForm
+  ,WriterForm,
+  WriteBlogForm,
+  WriterDetailForm
 } from "./pages/index";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -32,6 +34,7 @@ const App = () => {
           <Route path="/Write" element={<WriteBlogForm />} />
           <Route path="/Request" element={<Request />} />
           <Route path="/WriterForm" element={<WriterForm />} />
+          <Route path="/WriterDetailForm" element={<WriterDetailForm />} />
 
           <Route path="/home2" element={<Home2 />} />
           <Route path="/login" element={<Login />} />

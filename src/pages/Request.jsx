@@ -93,13 +93,6 @@ const Register = () => {
             </div>
             <div className="TextFields">
               <p>Message</p>
-              {/* <textarae
-              className="textarea"
-              type="password"
-              name="password"
-              value={data.password}
-              onChange={handleChange}
-            /> */}
               <textarea
                 className="textarea"
                 type="password"

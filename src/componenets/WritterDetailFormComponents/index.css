@@ -1,0 +1,116 @@
+.uploadBigMain{
+    padding: 70px 0px 30px 0px;
+}
+
+
+.uploadMain{
+    width: 80%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.uploadBox{
+    width:  149px;
+    height: 149px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #D9D9D9;
+}
+
+.uploadWriterImageMain{
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.uploadWriterImageContent{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.uploadWriterImageContent h1{
+   font-size: 12px;
+   font-weight: 400;
+   font-family: 'Noto Sans', sans-serif;
+   color: #555555;
+}
+.uploadWriterImageContent p{
+   font-size: 12px;
+   font-weight: 300;
+   font-family: 'Noto Sans', sans-serif;
+   color: #666666;
+}
+
+.uploadBtns{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.uploadBtns .red{
+  height: 40px;
+  width: 100px;
+  background-color: #F63434;
+  border-radius: 3px;
+  border: 1px solid #F63434;
+  color: #FFFFFF;
+   cursor: pointer;
+}
+
+.uploadBtns .blue{
+    height: 40px;
+    width: 100px;
+    background-color: #0065FD;
+    border-radius: 3px;
+    border: 1px solid #0065FD;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.writerDeatilFormGrid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(12rem,1fr));
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.writerDetailFormWrapper{
+    padding: 20px 0px;
+    width: 80%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.writerDetailFormTextField{
+    box-shadow: 4px 2px 11px rgba(0, 0, 0, 0.15);
+    border: 1px solid #777777;
+}
+
+.DarkTextField{
+   background-color: #F2F2F2;
+}
+
+.writerInfoSave{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
+.writerInfoSave button{
+    width: 100px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: #0065FD;
+    color: #FFFFFF;
+    border: 2px solid #0065FD;
+}
+
+
+@media screen and (max-width:800px) {
+    .uploadWriterImageMain{
+        flex-direction: column;
+    }
+}

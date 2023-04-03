@@ -14,6 +14,8 @@ import FAQ from "./FAQ";
 import Request from "./Request"
 import WriterForm from "./WriterForm"
 import WriteBlogForm from "./WriteBlogForm";
+import Footer from "../componenets/CommonComponents/Footer";
+import WriterDetailForm from "./WriterDetailForm";
 
-export {Home,WriterProfile,Home2,Category,WritersList,About,GetStarted,Login,Register,ForgetPassword,ResetPassword,Courses,FAQ,Request,WriterForm,WriteBlogForm}
+export {Home,WriterProfile,Home2,Category,WritersList,About,GetStarted,Login,Register,ForgetPassword,ResetPassword,Courses,FAQ,Request,WriterForm,WriteBlogForm,Footer,WriterDetailForm}
 

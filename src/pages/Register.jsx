@@ -1,7 +1,7 @@
 import React from "react";
 import LightNavbar from "../componenets/CommonComponents/LightNavbar";
-import RegisterComponent from "../componenets/AuthComponents/Register";
 import Footer from "../componenets/CommonComponents/Footer";
+import RegisterComponent from "../componenets/AuthComponents/Register";
 
 const Register = () => {
   return (
