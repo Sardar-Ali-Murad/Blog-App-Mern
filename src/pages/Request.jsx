@@ -1,29 +1,29 @@
 // Using the Register.js CSS
 
 import React from "react";
-import { Link } from "react-router-dom";
-// import { setupUserRegisternApi, removeAlert } from "../../features/userSlice";
 import { useDispatch, useSelector } from "react-redux";
-// import Alert from "../Alert/UserAlert";
 import CircularProgress from "@mui/material/CircularProgress";
 import LightNavbar from "../componenets/CommonComponents/LightNavbar";
 import Footer from "../componenets/CommonComponents/Footer";
+import {removeAlert,dispalyAlert}  from "../features/contact/contactSlice"
+import Alert from "../componenets/Alert/ContactAlert"
+import axios from "axios";
 
+import {BACK_END_URL}  from "../utils"
 const Register = () => {
-  let { showAlert, isLoading } = useSelector((state) => state.store);
+  let { showAlert } = useSelector((state) => state.contact);
   let dispatch = useDispatch();
   let alert = React.useRef(null);
-  let [data, setData] = React.useState({
-    firstName: "",
-    lastName: "",
+  let [info, setinfo] = React.useState({
+    name: "",
     email: "",
-    phoneNo: "",
-    categories: "",
-    password: "",
+    contact: "",
+    message: "",
+    reason:""
   });
 
   function handleChange(e) {
-    setData((pre) => {
+    setinfo((pre) => {
       return {
         ...pre,
         [e.target.name]: e.target.value,
@@ -31,14 +31,29 @@ const Register = () => {
     });
   }
 
-  function Send() {}
+
+  const Send=async ()=>{
+    alert.current.scrollIntoView({ behavior: "smooth" });
+     try {
+      await axios.post(`${BACK_END_URL}/contact`,{name:info.name,email:info.email,contact:info.contact,reason:info.reason,message:info.message})
+      dispatch(dispalyAlert({showAlert:true,alertType:"success",alertText:"Your Messsage is recieved successfully"}))
+     } catch (error) {
+      dispatch(dispalyAlert({showAlert:true,alertType:"danger",alertText:error.response.data.msg}))
+     }
+
+     setTimeout(()=>{
+       dispatch(removeAlert())
+     },3000)
+
+  }
 
   return (
     <div>
       <LightNavbar signIn={true} getStarted={true} />
       <div className="registerBigMian">
         <div className="registerMain" ref={alert}>
-          {isLoading && <CircularProgress />}
+          {/* {isLoading && <CircularProgress />} */}
+          {/* <Alert/> */}
           <div className="divCenter">{showAlert && <Alert />}</div>
           <div>
             <h1 className="authHead">Submit a request</h1>
@@ -53,8 +68,8 @@ const Register = () => {
               <p>Name</p>
               <input
                 className="textarea"
-                name="firstName"
-                value={data.firstName}
+                name="name"
+                value={info.name}
                 onChange={handleChange}
               />
             </div>
@@ -62,8 +77,8 @@ const Register = () => {
               <p>Email</p>
               <input
                 className="textarea"
-                name="lastName"
-                value={data.lastName}
+                name="email"
+                value={info.email}
                 onChange={handleChange}
               />
             </div>
@@ -71,8 +86,8 @@ const Register = () => {
               <p>Contact</p>
               <input
                 className="textarea"
-                name="email"
-                value={data.email}
+                name="contact"
+                value={info.contact}
                 onChange={handleChange}
               />
             </div>
@@ -80,23 +95,23 @@ const Register = () => {
               <p>What can we help you with?</p>
               <select
                 className="textarea categoryField"
-                name="categories"
-                value={data.categories}
+                name="reason"
+                value={info.reason}
                 onChange={handleChange}
               >
                 <option value="Choose Reason"></option>
-                <option value="SelfImprovement">Self Improvement</option>
-                <option value="Technology">Technology</option>
+                <option value="Reason No1">Reason No1</option>
+                <option value="Reason No2">Reason No2</option>
+                <option value="Reason No3">Reason No3</option>
               </select>
             </div>
             <div className="TextFields">
               <p>Message</p>
               <textarea
                 className="textarea"
-                type="password"
                 style={{ height: "150px" }}
-                name="password"
-                value={data.password}
+                name="message"
+                value={info.message}
                 onChange={handleChange}
               ></textarea>
             </div>

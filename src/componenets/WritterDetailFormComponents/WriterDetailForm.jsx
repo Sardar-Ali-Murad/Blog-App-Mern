@@ -1,20 +1,72 @@
 import React from "react";
 import Editor from "./Editor";
+import {
+  setupUpdateWriter,
+  removeAlert,
+} from "../../features/writerRequest/writerRequestSlice";
+import { useSelector, useDispatch } from "react-redux";
+import Alert from "../Alert/WriterRequestAlert";
 
 const WriterDetailForm = () => {
+  let {
+    currentWriterInfo: writer,
+    image,
+    showAlert,
+  } = useSelector((state) => state.writerRequest);
+  let dispatch = useDispatch();
+  let [data, setData] = React.useState({
+    name: writer.name,
+    age: writer.age,
+    city: writer.city,
+    province: writer.province,
+    country: writer.country,
+    qualifications: writer.qualifications,
+    email: writer.email,
+    contactNumber: writer.contactNumber,
+    designation: writer.designation,
+    facebookId: writer.facebookId,
+    instagramId: writer.instagramId,
+    linkedinId: writer.linkedinId,
+    pinterestId: writer.pinterestId,
+    youtube: writer.youtube,
+    shortBio: writer.shortBio,
+  });
+
+  let [content, setContent] = React.useState("");
+
+  function handleChange(e) {
+    setData((pre) => {
+      return {
+        ...pre,
+        [e.target.name]: e.target.value,
+      };
+    });
+  }
+
+  let alert = React.useRef(null);
+
+  function update() {
+    let info = { ...data, photo: image, description: content };
+    dispatch(setupUpdateWriter(info));
+    alert.current.scrollIntoView({ behavior: "smooth" });
+    setTimeout(() => {
+      dispatch(removeAlert());
+    }, 2000);
+  }
+
   return (
-    <div className="writerDetailFormWrapper">
+    <div className="writerDetailFormWrapper" ref={alert}>
+      {showAlert && <Alert />}
       {/*  */}
       <div className="writerDeatilFormGrid">
         <div className="TextFields">
           <p>Name</p>
           <input
             className="textarea writerDetailFormTextField DarkTextField"
-            type="password"
-            name="password"
+            name="name"
             placeholder="Lev Maximov"
-            // value={data.password}
-            // onChange={handleChange}
+            value={data.name}
+            onChange={handleChange}
           />
         </div>
         {/*  */}
@@ -22,11 +74,10 @@ const WriterDetailForm = () => {
           <p>Age</p>
           <input
             className="textarea writerDetailFormTextField"
-            type="password"
-            name="password"
+            name="age"
             placeholder="36"
-            // value={data.password}
-            // onChange={handleChange}
+            value={data.age}
+            onChange={handleChange}
           />
         </div>
       </div>
@@ -37,9 +88,9 @@ const WriterDetailForm = () => {
           <p>City</p>
           <select
             className="textarea categoryField writerDetailFormTextField"
-            name="categories"
-            // value={data.categories}
-            // onChange={handleChange}
+            name="city"
+            value={data.city}
+            onChange={handleChange}
           >
             <option value="Lahore">Lahore</option>
             <option value="SelfImprovement">Self Improvement</option>
@@ -51,9 +102,9 @@ const WriterDetailForm = () => {
           <p>Province</p>
           <select
             className="textarea categoryField writerDetailFormTextField"
-            name="categories"
-            // value={data.categories}
-            // onChange={handleChange}
+            value={data.province}
+            name="province"
+            onChange={handleChange}
           >
             <option value="Punjab">Punjab</option>
             <option value="SelfImprovement">Self Improvement</option>
@@ -69,9 +120,9 @@ const WriterDetailForm = () => {
           <p>Country</p>
           <select
             className="textarea categoryField writerDetailFormTextField"
-            name="categories"
-            // value={data.categories}
-            // onChange={handleChange}
+            value={data.country}
+            name="country"
+            onChange={handleChange}
           >
             <option value="Pakistan">Pakistan</option>
             <option value="SelfImprovement">Self Improvement</option>
@@ -82,11 +133,10 @@ const WriterDetailForm = () => {
           <p>Qualifications</p>
           <input
             className="textarea writerDetailFormTextField"
-            type="password"
-            name="password"
+            name="qualifications"
             placeholder="Qualifications"
-            // value={data.password}
-            // onChange={handleChange}
+            value={data.qualifications}
+            onChange={handleChange}
           />
         </div>
       </div>
@@ -98,11 +148,10 @@ const WriterDetailForm = () => {
           <p>Email</p>
           <input
             className="textarea writerDetailFormTextField DarkTextField"
-            type="password"
-            name="password"
-            placeholder="abubakar.0081@yourdimain.com "
-            // value={data.password}
-            // onChange={handleChange}
+            placeholder="abubakar.0081@yourdimain.com"
+            value={data.email}
+            name="email"
+            onChange={handleChange}
           />
         </div>
 
@@ -110,11 +159,10 @@ const WriterDetailForm = () => {
           <p>Contact Number</p>
           <input
             className="textarea writerDetailFormTextField DarkTextField"
-            type="password"
-            name="password"
+            name="contactNumber"
             placeholder="+38 55 555 555"
-            // value={data.password}
-            // onChange={handleChange}
+            value={data.contactNumber}
+            onChange={handleChange}
           />
         </div>
       </div>
@@ -127,10 +175,9 @@ const WriterDetailForm = () => {
           <input
             className="textarea writerDetailFormTextField"
             placeholder="Managing Director"
-            type="password"
-            name="password"
-            // value={data.password}
-            // onChange={handleChange}
+            value={data.designation}
+            name="designation"
+            onChange={handleChange}
           />
         </div>
 
@@ -138,11 +185,10 @@ const WriterDetailForm = () => {
           <p>Facebook ID</p>
           <input
             className="textarea writerDetailFormTextField"
-            type="password"
-            name="password"
             placeholder="facebook.com/username"
-            // value={data.password}
-            // onChange={handleChange}
+            value={data.facebookId}
+            name="facebookId"
+            onChange={handleChange}
           />
         </div>
       </div>
@@ -154,11 +200,10 @@ const WriterDetailForm = () => {
           <p>Instagram ID</p>
           <input
             className="textarea writerDetailFormTextField"
-            type="password"
-            name="password"
             placeholder="ID link goes here"
-            // value={data.password}
-            // onChange={handleChange}
+            value={data.instagramId}
+            name="instagramId"
+            onChange={handleChange}
           />
         </div>
 
@@ -166,11 +211,10 @@ const WriterDetailForm = () => {
           <p>LinkedIn ID</p>
           <input
             className="textarea writerDetailFormTextField"
-            type="password"
-            name="password"
             placeholder="linkedIn.com/username"
-            // value={data.password}
-            // onChange={handleChange}
+            value={data.linkedinId}
+            name="linkedinId"
+            onChange={handleChange}
           />
         </div>
       </div>
@@ -182,11 +226,10 @@ const WriterDetailForm = () => {
           <p>Pinterest ID</p>
           <input
             className="textarea writerDetailFormTextField"
-            type="password"
-            name="password"
             placeholder="ID link goes here"
-            // value={data.password}
-            // onChange={handleChange}
+            value={data.pinterestId}
+            name="pinterestId"
+            onChange={handleChange}
           />
         </div>
 
@@ -194,11 +237,10 @@ const WriterDetailForm = () => {
           <p>YouTube</p>
           <input
             className="textarea writerDetailFormTextField"
-            type="password"
-            name="password"
             placeholder="YouTube.com/username"
-            // value={data.password}
-            // onChange={handleChange}
+            value={data.youtube}
+            name="youtube"
+            onChange={handleChange}
           />
         </div>
       </div>
@@ -207,11 +249,10 @@ const WriterDetailForm = () => {
         <p>Message</p>
         <textarea
           className="textarea"
-          type="password"
           style={{ height: "70px", width: "94%" }}
-          name="password"
-          // value={data.password}
-          // onChange={handleChange}
+          name="shortBio"
+          value={data.shortBio}
+          onChange={handleChange}
         ></textarea>
       </div>
       {/*  */}
@@ -220,12 +261,15 @@ const WriterDetailForm = () => {
       <div style={{ marginTop: "40px" }}>
         <div className="TextFields">
           <p>Description</p>
-          <Editor />
+          <Editor content={content} setContent={setContent} />
         </div>
       </div>
       {/*  */}
-      <div className="writerInfoSave">
-        <button>Save</button>
+      <div
+        className="writerInfoSave"
+        style={{ marginTop: "30px", cursor: "pointer" }}
+      >
+        <button onClick={update}>Save</button>
       </div>
     </div>
   );

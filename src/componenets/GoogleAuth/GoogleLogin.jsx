@@ -2,7 +2,7 @@ import React from "react";
 import { GoogleLogin } from "@react-oauth/google";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { useDispatch } from "react-redux";
-import { GoogleAuthApi, removeAlert } from "../../features/userSlice";
+import { GoogleAuthApi, removeAlert } from "../../features/user/userSlice";
 
 export default function Landing() {
   const dispatch = useDispatch();
@@ -47,7 +47,8 @@ export default function Landing() {
     <div className="App">
       <GoogleOAuthProvider clientId="705164632277-vhv4q8ki9tntsbiv8n0do8l9rdbd1knk.apps.googleusercontent.com">
         <GoogleLogin
-          buttonText="Login with google"
+          // buttonText="Login with google"
+          // buttonText="Login"
           onSuccess={responseGoogleSuccess}
           onFailure={responseGoogleError}
           cookiePolicy={"single_host_origin"}

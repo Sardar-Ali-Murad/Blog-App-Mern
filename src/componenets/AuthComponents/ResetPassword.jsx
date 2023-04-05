@@ -2,7 +2,7 @@ import React from "react";
 import "./Register.css";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import { removeAlert, ResetPasswordApi } from "../../features/userSlice";
+import { removeAlert, ResetPasswordApi } from "../../features/user/userSlice";
 import Alert from "../Alert/UserAlert";
 import { useDispatch, useSelector } from "react-redux";
 import CircularProgress from "@mui/material/CircularProgress";

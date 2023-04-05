@@ -1,5 +1,5 @@
 import axios from "axios";
-import { BACK_END_URL } from "../utils";
+import { BACK_END_URL } from "../../utils";
 
 export const setupUserLogin = async (data, route, thunkAPI) => {
   try {

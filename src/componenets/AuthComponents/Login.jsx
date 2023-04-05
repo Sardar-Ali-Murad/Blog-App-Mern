@@ -1,7 +1,7 @@
 import React from "react";
 import "./Register.css";
 import { Link } from "react-router-dom";
-import { setupUserLoginApi, removeAlert } from "../../features/userSlice";
+import { setupUserLoginApi, removeAlert } from "../../features/user/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Alert from "../Alert/UserAlert";
 import GoogleLogin from "../GoogleAuth/GoogleLogin";
@@ -27,10 +27,10 @@ const Login = () => {
 
   function LoginFun() {
     dispatch(setupUserLoginApi(data));
+    alert.current.scrollIntoView({ behavior: "smooth" });
     setTimeout(() => {
       dispatch(removeAlert());
     }, 3000);
-    alert.current.scrollIntoView({ behavior: "smooth" });
   }
 
   return (
@@ -83,7 +83,7 @@ const Login = () => {
 
             <div>
               <p className="or">Or</p>
-              {/* <button className="authRedBtn">Login With Google</button> */}
+              {/* <button className="authRedBtn"> <GoogleLogin /></button> */}
               <GoogleLogin />
             </div>
             <p className="alreadyAuth">

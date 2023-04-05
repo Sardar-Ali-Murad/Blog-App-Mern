@@ -2,24 +2,33 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-// import { setupUserRegisternApi, removeAlert } from "../../features/userSlice";
 import { useDispatch, useSelector } from "react-redux";
-// import Alert from "../Alert/UserAlert";
 import CircularProgress from "@mui/material/CircularProgress";
 import LightNavbar from "../componenets/CommonComponents/LightNavbar";
 import Footer from "../componenets/CommonComponents/Footer";
+import {removeAlert,dispalyAlert}  from "../features/writerRequest/writerRequestSlice"
+import axios from "axios";
+import {BACK_END_URL}  from "../utils"
+import Alert from "../componenets/Alert/WriterRequestAlert"
+import PopUp from "../componenets/CommonComponents/PopUp"
 
-const Register = () => {
-  let { showAlert, isLoading } = useSelector((state) => state.store);
+const writerRequest = () => {
+
+  let { showAlert, isLoading } = useSelector((state) => state.writerRequest);
   let dispatch = useDispatch();
   let alert = React.useRef(null);
+  let [open,setOpen]=React.useState(false)
   let [data, setData] = React.useState({
-    firstName: "",
-    lastName: "",
+    name: "",
+    age: "",
+    city: "",
+    province: "",
+    country: "",
+    qualifications: "",
     email: "",
-    phoneNo: "",
-    categories: "",
-    password: "",
+    contactNumber: "",
+    designation: "",
+    purpose: "",
   });
 
   function handleChange(e) {
@@ -31,14 +40,36 @@ const Register = () => {
     });
   }
 
-  function Send() {}
+  let token=(JSON.parse(localStorage.getItem("token")))
+  
+
+  const Send=async ()=>{
+    alert.current.scrollIntoView({ behavior: "smooth" });
+    try {
+     await axios.post(`${BACK_END_URL}/writer`,{name:data.name,age:data.age,city:data.city,province:data.province,country:data.country,qualifications:data.qualifications,email:data.email,contactNumber:data.contactNumber,designation:data.designation,purpose:data.purpose},{
+      headers: {
+        authorization: `Bearer ${token}`,
+      },
+    })
+
+    setOpen(true)
+
+    } catch (error) {
+     dispatch(dispalyAlert({showAlert:true,alertType:"danger",alertText:error.response.data.msg}))
+    }
+    setTimeout(()=>{
+      dispatch(removeAlert())
+    },3000)
+
+  }
 
   return (
     <div>
+      <PopUp open={open} setOpen={setOpen}/>
       <LightNavbar signIn={true} getStarted={true} />
       <div className="registerBigMian">
         <div className="registerMain" ref={alert}>
-          {isLoading && <CircularProgress />}
+          {/* {isLoading && <CircularProgress />} */}
           <div className="divCenter">{showAlert && <Alert />}</div>
           <div>
             <h1 className="authHead">Writer Sign Up</h1>
@@ -50,8 +81,8 @@ const Register = () => {
               <p>Name</p>
               <input
                 className="textarea"
-                name="firstName"
-                value={data.firstName}
+                name="name"
+                value={data.name}
                 onChange={handleChange}
               />
             </div>
@@ -59,8 +90,8 @@ const Register = () => {
               <p>Age</p>
               <input
                 className="textarea"
-                name="lastName"
-                value={data.lastName}
+                name="age"
+                value={data.age}
                 onChange={handleChange}
               />
             </div>
@@ -69,13 +100,14 @@ const Register = () => {
               <p>City</p>
               <select
                 className="textarea categoryField"
-                name="categories"
-                value={data.categories}
+                name="city"
+                value={data.city}
                 onChange={handleChange}
               >
-                <option value="Choose Reason"></option>
-                <option value="SelfImprovement">Self Improvement</option>
-                <option value="Technology">Technology</option>
+                <option value="Choose City"></option>
+                <option value="Bahawalpur">Bahawalpur</option>
+                <option value="Lahore">Lahore</option>
+                <option value="Other">Other</option>
               </select>
             </div>
             {/*  */}
@@ -83,13 +115,14 @@ const Register = () => {
               <p>Province</p>
               <select
                 className="textarea categoryField"
-                name="categories"
-                value={data.categories}
+                name="province"
+                value={data.province}
                 onChange={handleChange}
               >
-                <option value="Choose Reason"></option>
-                <option value="SelfImprovement">Self Improvement</option>
-                <option value="Technology">Technology</option>
+                <option value="Choose Province"></option>
+                <option value="Punjab">Punjab</option>
+                <option value="Sindh">Sindh</option>
+                <option value="Other">Other</option>
               </select>
             </div>
             {/*  */}
@@ -97,13 +130,13 @@ const Register = () => {
               <p>Country</p>
               <select
                 className="textarea categoryField"
-                name="categories"
-                value={data.categories}
+                name="country"
+                value={data.country}
                 onChange={handleChange}
               >
-                <option value="Choose Reason"></option>
-                <option value="SelfImprovement">Self Improvement</option>
-                <option value="Technology">Technology</option>
+                <option value="Choose Country"></option>
+                <option value="Pakistan">Pakistan</option>
+                <option value="Other">Other</option>
               </select>
             </div>
             {/*  */}
@@ -112,8 +145,8 @@ const Register = () => {
               <p>Qualifications</p>
               <input
                 className="textarea"
-                name="email"
-                value={data.email}
+                name="qualifications"
+                value={data.qualifications}
                 onChange={handleChange}
               />
             </div>
@@ -130,8 +163,8 @@ const Register = () => {
               <p>Contact Number</p>
               <input
                 className="textarea"
-                name="email"
-                value={data.email}
+                name="contactNumber"
+                value={data.contactNumber}
                 onChange={handleChange}
               />
             </div>
@@ -139,8 +172,8 @@ const Register = () => {
               <p>Designation (if any)</p>
               <input
                 className="textarea"
-                name="email"
-                value={data.email}
+                name="designation"
+                value={data.designation}
                 onChange={handleChange}
               />
             </div>
@@ -148,8 +181,8 @@ const Register = () => {
               <p>Why do I want to become an author on Howsquare?</p>
               <input
                 className="textarea"
-                name="email"
-                value={data.email}
+                name="purpose"
+                value={data.purpose}
                 onChange={handleChange}
               />
             </div>
@@ -171,4 +204,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default writerRequest;

@@ -3,7 +3,7 @@ import "./Register.css";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Alert from "../Alert/UserAlert";
-import { ForgetPasswordApi, removeAlert } from "../../features/userSlice";
+import { ForgetPasswordApi, removeAlert } from "../../features/user/userSlice";
 import CircularProgress from "@mui/material/CircularProgress";
 
 const Login = () => {
@@ -17,6 +17,7 @@ const Login = () => {
       dispatch(removeAlert());
     }, 3000);
   }
+  
   return (
     <div className="registerBigMian">
       <div className="registerMain">
