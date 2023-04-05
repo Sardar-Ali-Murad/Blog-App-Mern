@@ -1,5 +1,5 @@
 import React from "react";
-import Editor from "./Editor";
+// import Editor from "./Editor";
 import {
   setupUpdateWriter,
   removeAlert,
@@ -15,21 +15,21 @@ const WriterDetailForm = () => {
   } = useSelector((state) => state.writerRequest);
   let dispatch = useDispatch();
   let [data, setData] = React.useState({
-    name: writer.name,
-    age: writer.age,
-    city: writer.city,
-    province: writer.province,
-    country: writer.country,
-    qualifications: writer.qualifications,
-    email: writer.email,
-    contactNumber: writer.contactNumber,
-    designation: writer.designation,
-    facebookId: writer.facebookId,
-    instagramId: writer.instagramId,
-    linkedinId: writer.linkedinId,
-    pinterestId: writer.pinterestId,
-    youtube: writer.youtube,
-    shortBio: writer.shortBio,
+    name: writer?.name,
+    age: writer?.age,
+    city: writer?.city,
+    province: writer?.province,
+    country: writer?.country,
+    qualifications: writer?.qualifications,
+    email: writer?.email,
+    contactNumber: writer?.contactNumber,
+    designation: writer?.designation,
+    facebookId: writer?.facebookId,
+    instagramId: writer?.instagramId,
+    linkedinId: writer?.linkedinId,
+    pinterestId: writer?.pinterestId,
+    youtube: writer?.youtube,
+    shortBio: writer?.shortBio,
   });
 
   let [content, setContent] = React.useState("");
@@ -261,7 +261,7 @@ const WriterDetailForm = () => {
       <div style={{ marginTop: "40px" }}>
         <div className="TextFields">
           <p>Description</p>
-          <Editor content={content} setContent={setContent} />
+          {/* <Editor content={content} setContent={setContent} /> */}
         </div>
       </div>
       {/*  */}

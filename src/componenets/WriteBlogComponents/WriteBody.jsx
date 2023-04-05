@@ -1,6 +1,6 @@
 import React from "react";
 import "./index.css";
-import Editor from "./Editor";
+// import Editor from "./Editor";
 import {setupCreateBlog,removeAlert}   from "../../features/blog/blogSlice"
 import { useDispatch ,useSelector} from "react-redux";
 import Alert from "../Alert/blogAlert"
@@ -57,7 +57,7 @@ const WriteBody = () => {
       <div style={{ marginTop: "40px" }}>
         <div className="TextFields">
           <p>Description</p>
-          <Editor  content={content} setContent={setContent}/>
+          {/* <Editor  content={content} setContent={setContent}/> */}
         </div>
       </div>
 
