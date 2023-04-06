@@ -1,6 +1,6 @@
 import React from "react";
 import "./index.css";
-// import Editor from "./Editor";
+import Editor from "./Editor";
 import {setupCreateBlog,removeAlert}   from "../../features/blog/blogSlice"
 import { useDispatch ,useSelector} from "react-redux";
 import Alert from "../Alert/blogAlert"

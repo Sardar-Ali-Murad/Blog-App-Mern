@@ -261,7 +261,8 @@ const WriterDetailForm = () => {
       <div style={{ marginTop: "40px" }}>
         <div className="TextFields">
           <p>Description</p>
-          <Editor content={content} setContent={setContent} />
+          {/* <Editor content={content} setContent={setContent} /> */}
+          <Editor/>
         </div>
       </div>
       {/*  */}
