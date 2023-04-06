@@ -1,5 +1,5 @@
 import React from "react";
-// import Editor from "./Editor";
+import Editor from "./Editor";
 import {
   setupUpdateWriter,
   removeAlert,
@@ -261,7 +261,7 @@ const WriterDetailForm = () => {
       <div style={{ marginTop: "40px" }}>
         <div className="TextFields">
           <p>Description</p>
-          {/* <Editor content={content} setContent={setContent} /> */}
+          <Editor content={content} setContent={setContent} />
         </div>
       </div>
       {/*  */}

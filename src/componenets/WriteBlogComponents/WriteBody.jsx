@@ -57,7 +57,7 @@ const WriteBody = () => {
       <div style={{ marginTop: "40px" }}>
         <div className="TextFields">
           <p>Description</p>
-          {/* <Editor  content={content} setContent={setContent}/> */}
+          <Editor  content={content} setContent={setContent}/>
         </div>
       </div>
 
