@@ -9,8 +9,30 @@ import { FaFacebookF } from "react-icons/fa";
 import { TbVectorBezierCircle } from "react-icons/tb";
 import { IoLogoInstagram } from "react-icons/io";
 import { CiTwitter } from "react-icons/ci";
+import { useSelector } from "react-redux";
+import {changeCategory,withFiltersBlogs}  from "../../features/blog/blogSlice"
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 const RightComponent = () => {
+  let dispatch=useDispatch()
+
+   let {category}=useSelector((state)=>state.blog)
+  let {withOutFilterBlogs}=useSelector((state)=>state.blog)
+  let [active,setActive]=React.useState(category)
+  React.useEffect(()=>{
+    dispatch(changeCategory(active))
+  },[active])
+
+
+  React.useEffect(()=>{
+    dispatch(withFiltersBlogs())
+  },[category])
+
+  // console.log(withFilterBlogs)
+
+
+
   return (
     <div className="rightSideBarMain">
       {/*  */}
@@ -20,29 +42,33 @@ const RightComponent = () => {
       </div>
       {/*  */}
       <div>
-        {blogsData.slice(0, 3).map((item) => {
+        {withOutFilterBlogs.slice(0, 3).map((item) => {
           return (
+            <Link to={`/blog/${item?._id}`}>
             <div className="singleBlog">
-              <img src={item?.img} className="rightSideBarMainImage" />
+              <img src={item?.posterImage} className="rightSideBarMainImage" />
               <div className="blogsContent">
                 <div className="travelChip">
-                  <p>Travel</p>
+                  <p>{item?.category}</p>
                 </div>
                 <p className="trendingEnd">
-                  set video playback speed with javascript version
+                  {item?.title}
                 </p>
                 <div className="trendingFlex">
-                  <img src={img} />
-                  <p>{item?.name}</p>
+                  <Link to={`/WriterPublicProfile/${item?.writer?._id}`}>
+                  <img src={item?.writer?.photo} style={{width:"30px",height:"30px",borderRadius:'50%'}} />
+                  </Link>
+                  <p>{item?.writer?.name}</p>
                 </div>
                 <div className="trendingTime">
-                  <img src={calender} />
-                  <p>{item?.date}</p>
+                  <img src={calender}  />
+                  <p>{item?.createdAt}</p>
                   <img src={time} />
-                  <p>{item?.time}</p>
+                  <p>3 min</p>
                 </div>
               </div>
             </div>
+            </Link>
           );
         })}
       </div>
@@ -128,31 +154,34 @@ const RightComponent = () => {
       </div>
 
       <div className="rightSideBarCategories">
-        <div className="rightSideBarSingleCategory">
+        <div className={`rightSideBarSingleCategory ${active==="All"?"active":""}`}  onClick={()=>setActive("All")}>
+          <p>All</p>
+        </div>
+        <div className={`rightSideBarSingleCategory ${active==="Travel"?"active":""}`}   onClick={()=>setActive("Travel")}>
           <p>Travel</p>
         </div>
-        <div className="rightSideBarSingleCategory">
+        <div className={`rightSideBarSingleCategory ${active==="lifestyle"?"active":""}`}   onClick={()=>setActive("lifestyle")}>
           <p>lifestyle</p>
         </div>
-        <div className="rightSideBarSingleCategory">
+        <div className={`rightSideBarSingleCategory ${active==="fashion"?"active":""}`}   onClick={()=>setActive("fashion")}>
           <p>fashion</p>
         </div>
-        <div className="rightSideBarSingleCategory active">
+        <div className={`rightSideBarSingleCategory ${active==="dataScience"?"active":""}`}   onClick={()=>setActive("dataScience")}>
           <p>Data Science</p>
         </div>
-        <div className="rightSideBarSingleCategory">
+        <div className={`rightSideBarSingleCategory ${active==="business"?"active":""}`}   onClick={()=>setActive("business")}>
           <p>business</p>
         </div>
-        <div className="rightSideBarSingleCategory">
+        <div className={`rightSideBarSingleCategory ${active==="design"?"active":""}`}   onClick={()=>setActive("design")}>
           <p>design</p>
         </div>
-        <div className="rightSideBarSingleCategory">
+        <div className={`rightSideBarSingleCategory ${active==="health"?"active":""}`}   onClick={()=>setActive("health")}>
           <p>health</p>
         </div>
-        <div className="rightSideBarSingleCategory">
+        <div className={`rightSideBarSingleCategory ${active==="food"?"active":""}`}  onClick={()=>setActive("food")}>
           <p>food</p>
         </div>
-        <div className="rightSideBarSingleCategory">
+        <div className={`rightSideBarSingleCategory ${active==="art"?"active":""}`}  onClick={()=>setActive("art")}>
           <p>art</p>
         </div>
       </div>

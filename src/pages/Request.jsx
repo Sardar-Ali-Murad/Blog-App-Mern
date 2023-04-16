@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import CircularProgress from "@mui/material/CircularProgress";
 import LightNavbar from "../componenets/CommonComponents/LightNavbar";
 import Footer from "../componenets/CommonComponents/Footer";
-import {removeAlert,dispalyAlert}  from "../features/contact/contactSlice"
+import {removeAlert,dispalyAlert,handleEvents,removeEvents}  from "../features/contact/contactSlice"
 import Alert from "../componenets/Alert/ContactAlert"
 import axios from "axios";
 
@@ -29,6 +29,7 @@ const Register = () => {
         [e.target.name]: e.target.value,
       };
     });
+    // dispatch(handleEvents({name:e.target.name,value:e.target.value}))
   }
 
 
@@ -37,6 +38,14 @@ const Register = () => {
      try {
       await axios.post(`${BACK_END_URL}/contact`,{name:info.name,email:info.email,contact:info.contact,reason:info.reason,message:info.message})
       dispatch(dispalyAlert({showAlert:true,alertType:"success",alertText:"Your Messsage is recieved successfully"}))
+      // dispatch(removeEvents())
+      setinfo({
+        name: "",
+        email: "",
+        contact: "",
+        message: "",
+        reason:""
+      })
      } catch (error) {
       dispatch(dispalyAlert({showAlert:true,alertType:"danger",alertText:error.response.data.msg}))
      }

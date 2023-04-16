@@ -7,17 +7,50 @@ import "./index.css";
 import { writers } from "./data";
 import BlogCard from "../componenets/CommonComponents/BlogCard";
 import { blogsData } from "../componenets/data";
+import { useParams } from "react-router-dom";
+import {BACK_END_URL} from "../utils"
+import axios from "axios";
+import {withoutFiltersBlogs} from "../features/blog/blogSlice"
+import { useDispatch, useSelector } from "react-redux";
+import {getCurrentWriterInfo,getCurrentWriterBlogs} from "../features/blog/blogSlice"
+import CircularProgress from '@mui/joy/CircularProgress';
+import WriterBlogs from "../componenets/WriterPublicProfileComponents/WriterBlogs"
 
 const WriterPublicProfile = () => {
+  let dispatch=useDispatch()
+  let {writerId}=useParams()
+  let [loading,setLoading]=React.useState(true)
+
+
+  React.useEffect(()=>{
+    let start=async ()=>{
+      setLoading(true)
+      let writerBlogsInfo=await axios.get(`${BACK_END_URL}/blog/singleWriterBlogs/${writerId}`)
+      let currentWriterInfo=await axios.get(`${BACK_END_URL}/writer/${writerId}`)
+      dispatch(getCurrentWriterBlogs(writerBlogsInfo.data.WritterBlogs))
+      dispatch(getCurrentWriterInfo(currentWriterInfo.data.Writter))
+      setLoading(false)
+    }
+    start()
+  },[])
+
+  React.useEffect(()=>{
+    dispatch(withoutFiltersBlogs())
+  },[])
+
+ 
+  if(loading){
+   return    <CircularProgress variant="outlined" />
+  }
+
+
   return (
     <div>
       <LightNavbar signIn={true} getStarted={true} />
       <div className="writerPublicProfileMain">
         <div className="writerIntro">
-          <WriterIntro writer={writers[0]} />
-          {blogsData.slice(0, 4).map((item) => {
-            return <BlogCard item={item} />;
-          })}
+          <WriterIntro/>
+           <WriterBlogs/>
         </div>
         <div className="writerPublicProfileMainSidebar">
           <RightComponent />

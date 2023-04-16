@@ -21,19 +21,29 @@ import {
   WriterPublicProfile,
   SingleBlog,
 } from "./pages/index";
+import {setupGetCurrentWriter}  from "./features/writerRequest/writerRequestSlice"
+import { useSelector,useDispatch } from "react-redux";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Testing from "./Testing"
+
 const App = () => {
+   let dispatch=useDispatch()
+  React.useEffect(()=>{
+    dispatch(setupGetCurrentWriter())
+  },[])
 
   return (
     <div className="appMain">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/test" element={<Testing />} />
+          <Route path="/about" element={<Home2 />} />
 
           <Route path="/courses" element={<Courses />} />
           <Route path="/FAQ" element={<FAQ />} />
-          <Route path="/Write" element={<WriteBlogForm />} />
+          <Route path="/writeBlog" element={<WriteBlogForm />} />
           <Route path="/Request" element={<Request />} />
           <Route path="/WriterForm" element={<WriterForm />} />
           <Route path="/WriterDetailForm" element={<WriterDetailForm />} />

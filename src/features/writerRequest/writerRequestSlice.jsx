@@ -11,7 +11,7 @@ let initialState = {
 
 import {
   getCurrentWriter,
-  writerImage,
+  // writerImage,
   updateCurrentWriter,
 } from "./writerRequestThunk";
 
@@ -22,12 +22,12 @@ export const setupUpdateWriter = createAsyncThunk(
   }
 );
 
-export const getWriterImage = createAsyncThunk(
-  "writer/getWriterImage",
-  async (event, thunkAPI) => {
-    return writerImage(event, thunkAPI);
-  }
-);
+// export const getWriterImage = createAsyncThunk(
+//   "writer/getWriterImage",
+//   async (event, thunkAPI) => {
+//     return writerImage(event, thunkAPI);
+//   }
+// );
 
 export const setupGetCurrentWriter = createAsyncThunk(
   "writer/setupGetCurrentWriter",
@@ -48,9 +48,12 @@ const writerRequestSlice = createSlice({
         (state.alertType = action.payload.alertType),
         (state.showAlert = true);
     },
-    removeWriterImage: (state) => {
-      state.image = "";
-    },
+    setWriterImage:(state,action)=>{
+      state.image=action.payload
+    }
+    // removeWriterImage: (state) => {
+    //   state.image = "";
+    // },
   },
   extraReducers: {
     [setupGetCurrentWriter.pending]: (state) => {
@@ -64,12 +67,16 @@ const writerRequestSlice = createSlice({
     [setupGetCurrentWriter.rejected]: (state, payload) => {
       state.isLoading = false;
     },
-    [getWriterImage.fulfilled]: (state, { payload }) => {
-      state.image = payload.data.secure_url;
-    },
-    [getWriterImage.rejected]: (state, payload) => {
-      console.log(payload);
-    },
+    // [getWriterImage.pending]:(state)=>{
+    //   state.isLoading=true
+    // },
+    // [getWriterImage.fulfilled]: (state, { payload }) => {
+    //   state.isLoading=false
+    //   state.image = payload.data.secure_url;
+    // },
+    // [getWriterImage.rejected]: (state, payload) => {
+    //   state.isLoading=false
+    // },
     [setupUpdateWriter.fulfilled]: (state, { payload }) => {
       state.showAlert = true;
       state.alertType = "success";
@@ -83,7 +90,10 @@ const writerRequestSlice = createSlice({
   },
 });
 
-export const { removeAlert, dispalyAlert, removeWriterImage } =
+export const { removeAlert, dispalyAlert,
+  //  removeWriterImage,
+  setWriterImage
+   } =
   writerRequestSlice.actions;
 
 export default writerRequestSlice.reducer;

@@ -25,7 +25,7 @@ const writerRequest = () => {
     province: "",
     country: "",
     qualifications: "",
-    email: "",
+    // email: "",
     contactNumber: "",
     designation: "",
     purpose: "",
@@ -46,7 +46,7 @@ const writerRequest = () => {
   const Send=async ()=>{
     alert.current.scrollIntoView({ behavior: "smooth" });
     try {
-     await axios.post(`${BACK_END_URL}/writer`,{name:data.name,age:data.age,city:data.city,province:data.province,country:data.country,qualifications:data.qualifications,email:data.email,contactNumber:data.contactNumber,designation:data.designation,purpose:data.purpose},{
+     await axios.post(`${BACK_END_URL}/writer`,{name:data.name,age:data.age,city:data.city,province:data.province,country:data.country,qualifications:data.qualifications,contactNumber:data.contactNumber,designation:data.designation,purpose:data.purpose},{
       headers: {
         authorization: `Bearer ${token}`,
       },
@@ -150,7 +150,7 @@ const writerRequest = () => {
                 onChange={handleChange}
               />
             </div>
-            <div className="TextFields">
+            {/* <div className="TextFields">
               <p>Email</p>
               <input
                 className="textarea"
@@ -158,7 +158,7 @@ const writerRequest = () => {
                 value={data.email}
                 onChange={handleChange}
               />
-            </div>
+            </div> */}
             <div className="TextFields">
               <p>Contact Number</p>
               <input

@@ -3,14 +3,27 @@ import "./index.css";
 import Img1 from "../../assets/singleBlog1.png";
 import Img2 from "../../assets/singleBlog2.png";
 import Add from "../CommonComponents/Add";
+import { useSelector } from "react-redux";
 
 const BlogContent = () => {
-  return (
+  let {singleBlog}=useSelector((state)=>state.blog)
+  function htmlDecode(content) {
+    let e = document.createElement('div');
+    e.innerHTML = content;
+    return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+  }
+
+    return (
     <div className="blogContentMain">
       <h1 className="blogContentHeading">
-        2022: The year that changed the way we work
+        {singleBlog?.title}
       </h1>
-      <p>
+      <section
+              dangerouslySetInnerHTML={{ __html: htmlDecode(singleBlog?.description) }}
+              className="SearchResult-body BlogContentMain"
+            />
+
+      {/* <p>
         Remember 2020? So many of us thought that was going to be the big one
         for the way we work. I thought it would be the year that changes
         productivity forever. And in many ways it was; it forced us to spring
@@ -68,7 +81,7 @@ const BlogContent = () => {
         incredible jetpack of personal productivity. Which is exactly the same
         story that traditional software engineers tell about all the ways they
         made their own lives better by applying a bit of code here and there.
-      </p>
+      </p> */}
       <div className="blogAdd">
         <Add />
       </div>

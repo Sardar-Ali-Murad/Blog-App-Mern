@@ -46,3 +46,10 @@
   display: flex;
   justify-content: flex-end;
 }
+
+
+.uploadImageFlex{
+  display: flex;
+  gap: 30px;
+  width: 100%;
+}

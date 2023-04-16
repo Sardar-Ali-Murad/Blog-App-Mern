@@ -37,19 +37,19 @@ export const updateCurrentWriter = async (data, thunkAPI) => {
   }
 };
 
-export const writerImage = async (event, thunkAPI) => {
-  try {
-    const imageFile = event.target.files[0];
-    const formData = new FormData();
-    formData.append("file", imageFile);
-    formData.append("upload_preset", "zkkzikta");
-    let data = await axios.post(
-      "https://api.cloudinary.com/v1_1/dvaodl5k8/image/upload",
-      formData
-    );
-    console.log(data);
-    return data;
-  } catch (error) {
-    thunkAPI.rejectWithValue(error);
-  }
-};
+// export const writerImage = async (event, thunkAPI) => {
+//   try {
+//     const imageFile = event.target.files[0];
+//     const formData = new FormData();
+//     formData.append("file", imageFile);
+//     formData.append("upload_preset", "zkkzikta");
+//     let data = await axios.post(
+//       "https://api.cloudinary.com/v1_1/dvaodl5k8/image/upload",
+//       formData
+//     );
+//     console.log(data);
+//     return data;
+//   } catch (error) {
+//     thunkAPI.rejectWithValue(error);
+//   }
+// };

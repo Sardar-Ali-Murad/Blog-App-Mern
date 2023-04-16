@@ -8,11 +8,39 @@ import BlogContent from "../componenets/SingleBlogComponents/BlogContent";
 import BlogChips from "../componenets/SingleBlogComponents/WriterBlogChips";
 import BlogComments from "../componenets/SingleBlogComponents/BlogComments";
 import RightComponent from "../componenets/CommonComponents/RightComponent";
-import Image from "../assets/blogWriter.png";
 import SingleWriter from "../componenets/CommonComponents/SingleWriter";
 import { writers } from "./data";
+import { useSelector,useDispatch } from "react-redux";
+import {getSingleBlog,withoutFiltersBlogs}  from "./../features/blog/blogSlice"
+import CircularProgress from '@mui/joy/CircularProgress';
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import { BACK_END_URL } from "../utils";
+import WriterEnd from "../componenets/SingleBlogComponents/WriterEnd"
+
 
 const SingleBlog = () => {
+  let [loading,setLoading]=React.useState(true)
+  let dispatch=useDispatch()
+  let {blogId}=useParams()
+  React.useEffect(()=>{
+    let start=async ()=>{
+      setLoading(true)
+      let {data}=await axios.get(`${BACK_END_URL}/blog/singleBlog/${blogId}`)
+      dispatch(getSingleBlog(data.Blog))
+      setLoading(false)
+    }
+    start()
+  },[blogId])
+
+  React.useEffect(()=>{
+    dispatch(withoutFiltersBlogs())
+  },[])
+
+  if(loading){
+    return  <CircularProgress size="lg" />
+  }
+
   let arr = [
     "Productivity",
     "2022 In Review",
@@ -26,15 +54,10 @@ const SingleBlog = () => {
       <div className="singleBlogMain">
         {/*  */}
         <div className="singleBlogContent">
-          <IntroLeft
-            image={Image}
-            name="Cassie Kozyrkov"
-            date="02 december 2022"
-            time="3 min. to read"
-          />
+          <IntroLeft/>
           <BlogContent />
           <BlogChips chips={arr} />
-          <SingleWriter writer={writers[0]} />
+          <WriterEnd/>
           <BlogComments />
         </div>
         {/*  */}

@@ -116,7 +116,7 @@
   transition: 1s ease-in-out;
   display: none;
   /* Just Temp */
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }
 
 .small-screen-nav-active {
@@ -342,4 +342,10 @@
 
 .smal-screen-nav nav ul li a {
   color: #fcfcfc;
+}
+
+
+.nav-main nav ul {
+  display: flex;
+  gap: 2rem;
 }

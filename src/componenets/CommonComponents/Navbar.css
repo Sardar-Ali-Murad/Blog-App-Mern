@@ -114,7 +114,7 @@
   transition: 1s ease-in-out;
   display: none;
   /* Just Temp */
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }
 
 .small-screen-nav-active {
@@ -296,6 +296,36 @@
   width: 4%;
 }
 
+.nav-main nav ul {
+  display: flex;
+  gap: 4rem;
+}
+
+
+.big-screen-nav ul li a {
+  color: #ffffff;
+  font-family: "Nunito", sans-serif;
+  font-size: 30px;
+}
+
+.bigScreenNavWriter nav ul li a{
+  color: #555555;
+  font-size: 20px;
+}
+.nav-main nav ul li a {
+  font-size: 20px;
+  /* color: #555555; */
+  cursor: pointer;
+  font-family: "Nunito", sans-serif;
+  font-weight: 500;
+  line-height: 32px;
+}
+
 /* .small-screen-nav{
   overflow: scroll;
 } */
+
+
+.rightSideBarSingleCategory{
+  cursor: pointer;
+}

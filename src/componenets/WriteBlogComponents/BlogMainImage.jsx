@@ -3,15 +3,19 @@ import "./index.css";
 import {
   // getWriterImage,
   // removeWriterImage,
-  setWriterImage
-} from "../../features/writerRequest/writerRequestSlice";
+  setBlogImage
+} from "../../features/blog/blogSlice";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 
 import { Box, Avatar, IconButton } from "@mui/material";
 
 const WritterDetailsHeader = () => {
-  let { image:storeImage } = useSelector((state) => state.writerRequest);
+  let { image:storeImage } = useSelector((state) => state.blog);
+
+  React.useEffect(()=>{
+   setImage(storeImage)
+  },[storeImage])
 
   let [image, setImage] = React.useState(storeImage);
 
@@ -27,13 +31,13 @@ const WritterDetailsHeader = () => {
       formData
     );
     setImage(data.data.secure_url);
-    dispatch(setWriterImage(data.data.secure_url))
+    dispatch(setBlogImage(data.data.secure_url))
   };
 
   return (
-    <div className="uploadBigMain">
-      <div className="uploadMain">
-        <div className="uploadWriterImageMain">
+    <div  style={{display:"flex",justifyContent:"flex-start",position:"relative",left:"-26%",width:"100%"}}>
+      <div className="uploadMain" style={{display:"flex",width:"100%"}}>
+        <div  style={{display:"flex"}} className="uploadImageFlex">
           {/*  */}
           {/* <div>
             <div className="uploadBox">
@@ -76,7 +80,7 @@ const WritterDetailsHeader = () => {
           </Box>
           {/*  */}
           <div className="uploadWriterImageContent">
-            <h1>Profile Photo</h1>
+            <h1>Poster Image</h1>
             <p>
               Recommended: Square JPG, PNG, or GIF, at least 1,000 pixels per
               side.

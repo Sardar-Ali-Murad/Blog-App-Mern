@@ -64,8 +64,29 @@
   font-weight: 400;
 }
 
+
+
 .trendingGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  /* grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); */
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 50px;
+}
+
+
+.trendingContainer .mainImage{
+ height: 200px;
+ width: 100%;
+ border-radius: 10px;
+}
+
+@media screen and (max-width:1000px) {
+  .trendingGrid{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width:700px) {
+  .trendingGrid{
+    grid-template-columns: 1fr;
+  }
 }

@@ -13,6 +13,8 @@ const WriterDetailForm = () => {
     image,
     showAlert,
   } = useSelector((state) => state.writerRequest);
+
+
   let dispatch = useDispatch();
   let [data, setData] = React.useState({
     name: writer?.name,
@@ -261,14 +263,14 @@ const WriterDetailForm = () => {
       <div style={{ marginTop: "40px" }}>
         <div className="TextFields">
           <p>Description</p>
-          {/* <Editor content={content} setContent={setContent} /> */}
-          <Editor/>
+          <Editor value={content} onChange={setContent} />
+          {/* <Editor/> */}
         </div>
       </div>
       {/*  */}
       <div
         className="writerInfoSave"
-        style={{ marginTop: "30px", cursor: "pointer" }}
+        style={{ marginTop: "30px", cursor: "pointer",marginTop:"50px" }}
       >
         <button onClick={update}>Save</button>
       </div>

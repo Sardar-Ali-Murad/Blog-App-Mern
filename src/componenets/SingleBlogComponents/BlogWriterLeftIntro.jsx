@@ -7,23 +7,28 @@ import { CiTwitter } from "react-icons/ci";
 import { CiFacebook } from "react-icons/ci";
 import { AiOutlineLinkedin } from "react-icons/ai";
 import { BiLinkAlt } from "react-icons/bi";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
-const BlogWriterLeftIntro = ({ name, image, date, time: timeData }) => {
+const BlogWriterLeftIntro = () => {
+  let {singleBlog}=useSelector((state)=>state.blog)
   return (
     <div className="blogsWriterLeftIntroMain">
       {/*  */}
       <div>
         {/*  */}
         <div className="blogWriterLeftIntroFlex">
-          <img src={image} style={{ height: "40px", width: "40px" }} />
+        <Link to={`/WriterPublicProfile/${singleBlog?.writer?._id}`}>
+          <img src={singleBlog?.writer?.photo} style={{ height: "70px", width: "70px",borderRadius:'50%' }} />
+        </Link>
           <div>
-            <h1 className="writerName">{name}</h1>
+            <h1 className="writerName">{singleBlog?.writer?.name}</h1>
             <div className="singleBlogFlex">
               <img src={calender} />
-              <p>{date}</p>
+              <p>{singleBlog?.createdAt}</p>
               <div className="blogLine"></div>
               <img src={time} />
-              <p>{timeData}</p>
+              <p>3 Min To read</p>
             </div>
           </div>
         </div>

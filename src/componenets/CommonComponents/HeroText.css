@@ -29,3 +29,73 @@
   color: #ededed;
   font-family: "Nunito", sans-serif;
 }
+
+
+.arrow1 {
+  font-size: 51px;
+  position: absolute;
+  right: 52px;
+  top: 48%;
+  cursor: pointer;
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+.arrow2 {
+  font-size: 51px;
+  position: absolute;
+  left: 52px;
+  top: 48%;
+  cursor: pointer;
+}
+
+ .activeNext{
+  animation-name: example1;
+  animation-duration: 4s;
+} 
+
+.activePre{
+  animation-name: example2;
+  animation-duration: 4s;
+}
+
+@keyframes example1 {
+  0%   {transform: translateX(0%);}
+  90% {transform: translateX(700%)}
+  100% {transform: translateX(0%)}
+}
+@keyframes example2 {
+  0%   {transform: translateX(0%);}
+  90% {transform: translateX(-700%)}
+  100% {transform: translateX(0%)}
+}
+
+
+@media screen and (max-width:900px) {
+  .arrow1,.arrow2{
+    font-size: 30px;
+  }
+
+  .arrow1{
+    right: 20px;
+  }
+
+  .arrow2{
+    left: 20px;
+  }
+}
+
+
+@media screen and (max-width:500px) {
+  .arrow1,.arrow2{
+    font-size: 20px;
+  }
+
+  .arrow1{
+    right: 10px;
+  }
+
+  .arrow2{
+    left: 10px;
+  }
+}

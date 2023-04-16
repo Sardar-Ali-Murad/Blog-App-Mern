@@ -5,6 +5,11 @@ let initialState = {
   alertText: "",
   alertType: "",
   showAlert: false,
+    name: "",
+    email: "",
+    contact: "",
+    message: "",
+    reason:""
 };
 
 const contactSlice = createSlice({
@@ -21,9 +26,19 @@ const contactSlice = createSlice({
         (state.alertType = action.payload.alertType),
         (state.showAlert = true);
     },
+    handleEvents:(state,payload)=>{
+      state[action.payload.name]=action.payload.value
+    },
+    removeEvents:(state)=>{
+      state.name= "",
+      state.email= "",
+      state.contact= "",
+      state.message="",
+      state.reason=""
+    }
   },
 });
 
-export const { removeAlert, dispalyAlert } = contactSlice.actions;
+export const { removeAlert, dispalyAlert,handleEvents ,removeEvents} = contactSlice.actions;
 
 export default contactSlice.reducer;

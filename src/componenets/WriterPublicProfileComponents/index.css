@@ -43,3 +43,14 @@
   font-weight: 500;
   font-family: "Noto Sans", sans-serif;
 }
+
+
+.writerDescription{
+  font-family: 'Roboto', sans-serif; 
+}
+
+.writerBlogsMainImage{
+  width: 300px;
+  border-radius: 20px;
+  height: 230px;
+}

@@ -1,9 +1,11 @@
 import axios from "axios";
 import { BACK_END_URL } from "../../utils";
+import {setupGetCurrentWriter}  from "../writerRequest/writerRequestSlice"
 
 export const setupUserLogin = async (data, route, thunkAPI) => {
   try {
     let props = await axios.post(`${BACK_END_URL}/auth/${route}`, data);
+    thunkAPI.dispatch(setupGetCurrentWriter());
     return props.data;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.response.data.msg);

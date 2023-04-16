@@ -4,85 +4,57 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 import Logo from "../../assets/Logo.png";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import Avatar from '@mui/material/Avatar';
+import No from "../../assets/no.webp"
 
 const Navbar = () => {
+  let user=JSON.parse(localStorage.getItem("user"))
   let [ham, setHam] = React.useState(true);
+  let {image,isLoading}=useSelector((state)=>state.writerRequest)
+
   return (
     <div className="nav">
       <div className="nav-main">
-        {/* <div className="nav-front">
+        <div className="nav-front">
           <img src={Logo} className="logoImage navBarLogo" />
-        </div> */}
+        </div>
 
         <nav className="big-screen-nav">
           <ul>
-            <li>
-              <Link to="/" className="fancy-link">
-                home1
-              </Link>
-            </li>
-            <li>
-              <Link to="/home2" className="fancy-link">
-                home2
-              </Link>
-            </li>
-            <li>
-              <Link className="fancy-link" to="/writer/123">
-                writer profile
-              </Link>
-            </li>
-            <li>
-              <Link className="fancy-link" to="/category/DataScience">
-                single category
-              </Link>
-            </li>
-            <li>
-              <Link className="fancy-link" to="/writersList">
-                writers
+          <li>
+              <Link className="fancy-link" to="/">
+                Home
               </Link>
             </li>
             <li>
               <Link className="fancy-link" to="/about">
-                about
+                About Us
               </Link>
             </li>
-
-            {/*  */}
             <li>
               <Link className="fancy-link" to="/courses">
-                courses
-              </Link>
-            </li>
-            <li>
-              <Link className="fancy-link" to="/FAQ">
-                faq
+                Courses
               </Link>
             </li>
             <li>
               <Link className="fancy-link" to="/WriterForm">
-                writer form
-              </Link>
-            </li>
-            <li>
-              <Link className="fancy-link" to="/Write">
-                write
+                Write
               </Link>
             </li>
             <li>
               <Link className="fancy-link" to="/Request">
-                request
+                Contact Us
               </Link>
             </li>
-            <li>
-              <Link className="fancy-link" to="/WriterDetailForm">
-                writer deatail form
+            {
+              (user?.writer && !isLoading) &&
+              <li>
+              <Link className="fancy-link" to="/writeBlog">
+                Write Blog
               </Link>
             </li>
-            <li>
-              <Link className="fancy-link" to="/blog/123">
-                blog
-              </Link>
-            </li>
+            }
           </ul>
         </nav>
 
@@ -95,6 +67,12 @@ const Navbar = () => {
           <Link to="/getStarted">
             <button className="login">Get Started</button>
           </Link>
+          {
+            user?.writer && 
+            <Link to="WriterDetailForm">
+             <Avatar alt="Remy Sharp" src={image?image:No} style={{cursor:"pointer"}} />
+            </Link>
+          }
         </div>
 
         <GiHamburgerMenu className="ham" onClick={() => setHam(false)} />
@@ -109,126 +87,39 @@ const Navbar = () => {
         />
         <nav>
           <ul>
-            <li>
-              <Link
-                className="links fancy-link"
-                onClick={() => setHam(true)}
-                to="/"
-              >
-                home1
+          <li>
+              <Link className="links fancy-link" to="/" onClick={()=>setHam(true)}>
+                Home
               </Link>
             </li>
             <li>
-              <Link
-                className="links fancy-link"
-                onClick={() => setHam(true)}
-                to="/home2"
-              >
-                home2
+              <Link className="links fancy-link" to="/about" onClick={()=>setHam(true)}>
+                About Us
               </Link>
             </li>
             <li>
-              <Link
-                className="links fancy-link"
-                onClick={() => setHam(true)}
-                to="/writer/123"
-              >
-                writer profile
+              <Link className="links fancy-link" to="/courses" onClick={()=>setHam(true)}>
+              Courses
               </Link>
             </li>
             <li>
-              <Link
-                className="links fancy-link"
-                onClick={() => setHam(true)}
-                to="/category/DataScience"
-              >
-                single category
+              <Link className="links fancy-link" to="/WriterForm" onClick={()=>setHam(true)}>
+                Write
               </Link>
             </li>
             <li>
-              <Link
-                className="links fancy-link"
-                onClick={() => setHam(true)}
-                to="/writersList"
-              >
-                writers
+              <Link className="links fancy-link" to="/Request" onClick={()=>setHam(true)}>
+                Contact Us
               </Link>
             </li>
-            <li>
-              <Link
-                className="links fancy-link"
-                onClick={() => setHam(true)}
-                to="/about"
-              >
-                about
+            {
+              user?.writer &&
+              <li>
+              <Link className="fancy-link links" to="/writeBlog" onClick={()=>setHam(true)}>
+                Write Blog
               </Link>
             </li>
-
-            {/*  */}
-
-            <li>
-              <Link
-                className="fancy-link links"
-                to="/courses"
-                onClick={() => setHam(true)}
-              >
-                courses
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="fancy-link links"
-                to="/FAQ"
-                onClick={() => setHam(true)}
-              >
-                faq
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="fancy-link links"
-                to="/WriterForm"
-                onClick={() => setHam(true)}
-              >
-                writer form
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="fancy-link links"
-                onClick={() => setHam(true)}
-                to="/Write"
-              >
-                write
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="fancy-link links"
-                to="/Request"
-                onClick={() => setHam(true)}
-              >
-                request
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="fancy-link links"
-                to="/WriterDetailForm"
-                onClick={() => setHam(true)}
-              >
-                writer detail form
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="fancy-link links"
-                to="/blog/123"
-                onClick={() => setHam(true)}
-              >
-                blog
-              </Link>
-            </li>
+            }
           </ul>
         </nav>
         <div className="navBtnsSmallScreen">
@@ -241,6 +132,12 @@ const Navbar = () => {
           <Link to="/login">
             <button className="login">Login</button>
           </Link>
+          {
+          (user?.writer && !isLoading) &&
+            <Link to="WriterDetailForm">
+             <Avatar alt="Remy Sharp" src={image?image:No} style={{cursor:"pointer"}} />
+            </Link>
+          }
         </div>
       </div>
     </div>
