@@ -6,11 +6,11 @@ import {FaRegArrowAltCircleRight}  from "react-icons/fa"
 import {FaRegArrowAltCircleLeft}  from "react-icons/fa"
 
 let data=[
-  {head:"Stay curio 1",para:"Lorem Ipsum is simply dummy text of the printing and types industry. Lorem Ipsum has been the industry's standard dummy text eve since the 1500s."},
-  {head:"Stay curio 2",para:"Lorem Ipsum is simply dummy text of the printing and types industry. Lorem Ipsum has been the industry's standard dummy text eve since the 1500s."},
-  {head:"Stay curio 3",para:"Lorem Ipsum is simply dummy text of the printing and types industry. Lorem Ipsum has been the industry's standard dummy text eve since the 1500s."},
-  {head:"Stay curio 4",para:"Lorem Ipsum is simply dummy text of the printing and types industry. Lorem Ipsum has been the industry's standard dummy text eve since the 1500s."},
-  {head:"Stay curio 5",para:"Lorem Ipsum is simply dummy text of the printing and types industry. Lorem Ipsum has been the industry's standard dummy text eve since the 1500s."}
+  {head:"Stay curios",para:"Lorem Ipsum is simply dummy text of the printing and types industry. Lorem Ipsum has been the industry's standard dummy text eve since the 1500s."},
+  {head:"Stay curios",para:"Lorem Ipsum is simply dummy text of the printing and types industry. Lorem Ipsum has been the industry's standard dummy text eve since the 1500s."},
+  {head:"Stay curios",para:"Lorem Ipsum is simply dummy text of the printing and types industry. Lorem Ipsum has been the industry's standard dummy text eve since the 1500s."},
+  {head:"Stay curios",para:"Lorem Ipsum is simply dummy text of the printing and types industry. Lorem Ipsum has been the industry's standard dummy text eve since the 1500s."},
+  {head:"Stay curios",para:"Lorem Ipsum is simply dummy text of the printing and types industry. Lorem Ipsum has been the industry's standard dummy text eve since the 1500s."}
 ]
 
 const HeroText = () => {
@@ -55,8 +55,8 @@ const HeroText = () => {
 
   return (
     <div className="heroBigMain">
-      <FaRegArrowAltCircleRight style={{color:"white"}} className={`arrow1`} onClick={next}/>
-      <FaRegArrowAltCircleLeft style={{color:'white'}} className={`arrow2 `} onClick={pre}/>
+      {/* <FaRegArrowAltCircleRight style={{color:"white"}} className={`arrow1`} onClick={next}/> */}
+      {/* <FaRegArrowAltCircleLeft style={{color:'white'}} className={`arrow2 `} onClick={pre}/> */}
     <div className={`heroTextMain   ${nextActive?"activeNext":""}  ${preActive?"activePre":""}`}>
       <h1>{data[activeIndex].head}</h1>
       <p>

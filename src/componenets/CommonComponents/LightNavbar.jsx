@@ -74,7 +74,7 @@ const Navbar = ({ signIn, getStarted, person }) => {
           {/* <button className="login">Get Started</button> */}
 
           {/*  */}
-          {user.writer ? 
+          {user?.writer ? 
             <Link to={`/writer/${currentWriterInfo._id}`}>
               <button className="getStartedWriter">Profile</button>
             </Link>
@@ -152,7 +152,7 @@ const Navbar = ({ signIn, getStarted, person }) => {
           </ul>
         </nav>
         <div className="navBtnsSmallScreen navBtnsSmallScreenWriter">
-        {user.writer ? 
+        {user?.writer ? 
             <Link to={`/writer/${currentWriterInfo._id}`}>
               <button className="getStartedWriter">Profile</button>
             </Link>

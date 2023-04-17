@@ -12,17 +12,16 @@ const BlogCard = ({ item }) => {
           <div className="singleBlog">
             <img src={item?.posterImage} className="writerPrvateBlogsImage" />
             <div className="blogsContent">
-              <div className="travelChip">
+              <div className="Chips">
                 <p>{item?.category}</p>
               </div>
               <div className="blogsHead">
-                <p>{item?.title}</p>
+                <p style={{color:"black"}}>{item?.title}</p>
               </div>
-            
+
               <div className="trendingTime">
                 <img src={calender} />
-                <p>                       {moment(item?.createdAt).format("DD/MM/YYYY")}
-</p>
+                <p> {moment(item?.createdAt).format("DD/MM/YYYY")}</p>
                 <img src={time} />
                 <p>3 Min To Read</p>
               </div>

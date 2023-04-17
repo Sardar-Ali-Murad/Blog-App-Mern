@@ -21,7 +21,7 @@ const Home = () => {
     <div className="homeMain">
       <Hero />
       {/* <ThreeJsCarpet/> */}
-      <ImageGrid />
+      {/* <ImageGrid /> */}
       <Trending />
       <Blogs />
       <Footer />

@@ -82,7 +82,7 @@ const WriterProfileContent = () => {
                 return (
                   <div className="writerArticlesFlex">
                   <Blog item={item}/>
-                  <div className={`${item?.status==="selected"?"articleChip":""} ${item?.status==="pending"?"pendingChip":""} ${item?.status==="rejected"?"rejectedChip":""}`}>
+                  <div className={`Chips ${item?.status==="selected"?"articleChip":""} ${item?.status==="pending"?"pendingChip":""} ${item?.status==="rejected"?"rejectedChip":""}`}>
                     <p>{item?.status}</p>
                   </div>
                 </div>
