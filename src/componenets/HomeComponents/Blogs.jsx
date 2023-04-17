@@ -1,97 +1,117 @@
 import React from "react";
 import "./Blogs.css";
-import { blogsData } from "../data";
-import img from "../../assets/trending.png";
-import calender from "../../assets/calender.png";
-import time from "../../assets/time.png";
 import RightComponent from "../CommonComponents/RightComponent";
 import Add from "../CommonComponents/Add";
-import {changeCategory,withFiltersBlogs}  from "../../features/blog/blogSlice"
-import { useDispatch,useSelector } from "react-redux";
-import CircularProgress from '@mui/joy/CircularProgress';
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-
+import moment from "moment";
+import { SlCalender } from "react-icons/sl";
+import { BiCircle } from "react-icons/bi";
 
 const Blogs = () => {
-  let dispatch=useDispatch()
-  let {withFilterBlogs,filterLoading}=useSelector((state)=>state.blog)
-
-  // if(filterLoading){
-  //   return "Loading..."
-  // }
-
-  // console.log(withFilterBlogs)
+  let { withFilterBlogs } = useSelector((state) => state.blog);
 
   return (
     <div className="blogsMain">
       {/*  */}
+      <div>
       <div className="blogsPart1">
-        <div>
-          {withFilterBlogs.slice(0,3).map((item) => {
+          {withFilterBlogs.slice(0, 1).map((item) => {
             return (
               <Link to={`/blog/${item?._id}`}>
-              <div className="singleBlog">
-                <img src={item?.posterImage}  className="HomeBlogsMainImage"/>
-                <div className="blogsContent">
-                  <div className="travelChip">
-                    <p>{item?.category}</p>
+                <div className="singleBlog">
+                  <div className="singeBlogImages">
+                  <img src={item?.posterImage} className="HomeBlogsMainImage" />
                   </div>
-                  <div className="blogsHead">
-                    <p>{item?.title}</p>
+                  <div className="blogsContent">
+                    <div className="Chips">
+                      <p>{item?.category}</p>
+                    </div>
+                    <div className="blogsHead">
+                      <p>{item?.title}</p>
+                    </div>
+                    <div className="trendingFlex">
+                      <Link to={`/WriterPublicProfile/${item?.writer?._id}`}>
+                        <img
+                          src={item?.writer?.photo}
+                          style={{
+                            height: "30px",
+                            width: "30px",
+                            borderRadius: "50%",
+                          }}
+                        />
+                      </Link>
+                        <p className="paraColor" style={{ color: "#FAF9F6" }}>
+                          {item?.writer?.name}
+                        </p>
+                    </div>
+                    <div className="trendingTime">
+                      <SlCalender style={{ color: "#FAF9F6" }} />
+                      <p className="paraColor" style={{ color: "#FAF9F6" }}>
+                        {" "}
+                        {moment(item?.createdAt).format("DD/MM/YYYY")}
+                      </p>
+                      <BiCircle style={{ color: "#FAF9F6" }} />
+                      <p className="paraColor" style={{ color: "#FAF9F6" }}>
+                        3 min to Read
+                      </p>
+                    </div>
+                    <p className="trendingEnd paraColor">{item?.subTitle}</p>
                   </div>
-                  <div className="trendingFlex">
-                  <Link to={`/WriterPublicProfile/${item?.writer?._id}`}>
-                    <img src={item?.writer?.photo} style={{height:"30px",width:"30px",borderRadius:'50%'}} />
-                    <p>{item?.writer?.name}</p>
-                    </Link>
-                  </div>
-                  <div className="trendingTime">
-                    <img src={calender} />
-                    <p>{item?.createdAt}</p>
-                    <img src={time} />
-                    <p>3 min to Read</p>
-                  </div>
-                  <p className="trendingEnd">{item?.subTitle}</p>
                 </div>
-              </div>
-          </Link>
-            );
-          })}
-        </div>
-        <Add />
-        <div>
-          {withFilterBlogs.slice(3, -1).map((item) => {
-            return (
-              <Link to={`/blog/${item?._id}`}>
-              <div className="singleBlog">
-                <img src={item?.posterImage}  className="HomeBlogsMainImage"/>
-                <div className="blogsContent">
-                  <div className="travelChip">
-                    <p>{item?.category}</p>
-                  </div>
-                  <div className="blogsHead">
-                    <p>{item?.title}</p>
-                  </div>
-                  <div className="trendingFlex">
-                  <Link to={`/WriterPublicProfile/${item?.writer?._id}`}>
-                    <img src={item?.writer?.photo} style={{height:"30px",width:"30px",borderRadius:'50%'}} />
-                    </Link>
-                    <p>{item?.writer?.name}</p>
-                  </div>
-                  <div className="trendingTime">
-                    <img src={calender} />
-                    <p>{item?.createdAt}</p>
-                    <img src={time} />
-                    <p>3 min to Read</p>
-                  </div>
-                  <p className="trendingEnd">{item?.subTitle}</p>
-                </div>
-              </div>
               </Link>
             );
           })}
         </div>
-    
+        <div>
+        <Add />
+          {withFilterBlogs.slice(1, -1).map((item) => {
+            return (
+              <Link to={`/blog/${item?._id}`}>
+                <div className="singleBlog">
+                <div className="singeBlogImages">
+                  <img src={item?.posterImage} className="HomeBlogsMainImage" />
+                  </div>
+                  <div className="blogsContent">
+                    <div className="Chips">
+                      <p>{item?.category}</p>
+                    </div>
+                    <div className="blogsHead">
+                      <p>{item?.title}</p>
+                    </div>
+                    <div className="trendingFlex">
+                      <Link to={`/WriterPublicProfile/${item?.writer?._id}`}>
+                        <img
+                          src={item?.writer?.photo}
+                          style={{
+                            height: "30px",
+                            width: "30px",
+                            borderRadius: "50%",
+                          }}
+                        />
+                      </Link>
+                      <p className="paraColor" style={{ color: "#FAF9F6" }}>
+                        {item?.writer?.name}
+                      </p>
+                    </div>
+                    <div className="trendingTime">
+                      <SlCalender style={{ color: "#FAF9F6" }} />
+                      <p style={{ color: "#FAF9F6" }}>
+                        {" "}
+                        {moment(item?.createdAt).format("DD/MM/YYYY")}
+                      </p>
+                      <BiCircle style={{ color: "#FAF9F6" }} />
+                      <p style={{ color: "#FAF9F6" }}>3 min to Read</p>
+                    </div>
+                    <p className="trendingEnd" style={{ color: "#FAF9F6" }}>
+                      {item?.subTitle}
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
       </div>
       {/*  */}
 

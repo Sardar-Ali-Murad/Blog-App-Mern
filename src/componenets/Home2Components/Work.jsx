@@ -1,14 +1,13 @@
 import React from "react";
 import "./Work.css";
 import { WorkData } from "./data";
-import Writers from "../CommonComponents/Writers";
 
 const Work = () => {
   return (
     <div className="workMain">
       <div className="worksHeaderText">
-        <h1>How does it works</h1>
-        <p style={{ marginBottom: "40px" }}>
+        <h1 style={{ color: "#FAF9F6" }}>How does it works</h1>
+        <p style={{ marginBottom: "40px",color: "#f1f1f1"  }}>
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's <br /> standard dummy
           text ever since the 1500s.
@@ -22,8 +21,8 @@ const Work = () => {
               <div className="workBox">
                 <img src={item.img} />
               </div>
-              <h1>{item?.heading}</h1>
-              <p>{item?.para}</p>
+              <h1 style={{ color: "#FAF9F6" }}>{item?.heading}</h1>
+              <p style={{ color: "#f1f1f1" }}>{item?.para}</p>
             </div>
           );
         })}

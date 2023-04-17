@@ -8,7 +8,7 @@ const Courses = () => {
   return (
     <div>
       <LightNavbar signIn={true} getStarted={true} />
-      <CoursesHeader />
+      {/* <CoursesHeader /> */}
       <CoursesBody />
       <Footer />
     </div>

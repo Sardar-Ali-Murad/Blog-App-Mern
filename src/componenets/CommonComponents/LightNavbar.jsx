@@ -14,45 +14,47 @@ const Navbar = ({ signIn, getStarted, person }) => {
   let user=JSON.parse(localStorage.getItem("user"))
   let {image,isLoading}=useSelector((state)=>state.writerRequest)
 
+  let {currentWriterInfo}=useSelector((state)=>state.writerRequest)
+
 
   return (
-    <div className="nav bigScreenNavWriter">
+    <div className="nav bigScreenNavWriter darkNav">
       <div className="nav-main" id="nav-main-writer">
         <div className="nav-front">
           <img src={Logo} className="logoImage navBarLogo" />
         </div>
 
-        <nav className="big-screen-nav">
+        <nav className="big-screen-nav darkNavNavbar">
           <ul>
             <li>
-              <Link className="fancy-link" to="/">
+              <Link className="fancy-link" to="/" style={{ color: "#FAF9F6",fontSize:'20px' }}>
                 Home
               </Link>
             </li>
             <li>
-              <Link className="fancy-link" to="/about">
+              <Link className="fancy-link" to="/about" style={{ color: "#FAF9F6",fontSize:'20px' }}>
                 About Us
               </Link>
             </li>
             <li>
-              <Link className="fancy-link" to="/courses">
+              <Link className="fancy-link" to="/courses" style={{ color: "#FAF9F6",fontSize:'20px' }}>
               Courses
               </Link>
             </li>
             <li>
-              <Link className="fancy-link" to="/WriterForm">
+              <Link className="fancy-link" to="/WriterForm" style={{ color: "#FAF9F6",fontSize:'20px' }}>
                 Write
               </Link>
             </li>
             <li>
-              <Link className="fancy-link" to="/Request">
+              <Link className="fancy-link" to="/Request" style={{ color: "#FAF9F6",fontSize:'20px' }}>
                 Contact Us
               </Link>
             </li>
             {
               user?.writer &&
               <li>
-              <Link className="fancy-link" to="/writeBlog">
+              <Link className="fancy-link" to="/writeBlog" style={{ color: "#FAF9F6",fontSize:'20px' }}>
                 Write Blog
               </Link>
             </li>
@@ -72,11 +74,16 @@ const Navbar = ({ signIn, getStarted, person }) => {
           {/* <button className="login">Get Started</button> */}
 
           {/*  */}
-          {getStarted && (
-            <Link to="/getStarted">
-              <button className="getStartedWriter">Get Started</button>
+          {user.writer ? 
+            <Link to={`/writer/${currentWriterInfo._id}`}>
+              <button className="getStartedWriter">Profile</button>
             </Link>
-          )}
+          :
+            <Link to={`/writer/${currentWriterInfo._id}`}>
+              <button className="getStartedWriter">Profile</button>
+            </Link>
+        }
+
           {person && (
             <div className="writerPerson">
               <img src={writerMan} />
@@ -93,6 +100,7 @@ const Navbar = ({ signIn, getStarted, person }) => {
 
         <GiHamburgerMenu
           className="ham hamWriter"
+          style={{color:"#f1f1f1"}}
           onClick={() => setHam(false)}
         />
       </div>
@@ -144,9 +152,15 @@ const Navbar = ({ signIn, getStarted, person }) => {
           </ul>
         </nav>
         <div className="navBtnsSmallScreen navBtnsSmallScreenWriter">
-          <Link to="/getStarted">
-            <button className="getStartedWriter"> Get Started</button>
-          </Link>
+        {user.writer ? 
+            <Link to={`/writer/${currentWriterInfo._id}`}>
+              <button className="getStartedWriter">Profile</button>
+            </Link>
+          :
+            <Link to={`/writer/${currentWriterInfo._id}`}>
+              <button className="getStartedWriter">Profile</button>
+            </Link>
+        }
           <div className="writerPerson">
             <img src={writerMan} />
           </div>

@@ -73,11 +73,11 @@ const writerRequest = () => {
           <div className="divCenter">{showAlert && <Alert />}</div>
           <div>
             <h1 className="authHead">Writer Sign Up</h1>
-            <p className="authPara">Enter your Details to Create Account.</p>
+            <p className="authPara">Please Login First Then Submit the request for the writer</p>
           </div>
 
           <div className="registerTextFields">
-            <div className="TextFields">
+            {/* <div className="TextFields">
               <p>Name</p>
               <input
                 className="textarea"
@@ -85,7 +85,7 @@ const writerRequest = () => {
                 value={data.name}
                 onChange={handleChange}
               />
-            </div>
+            </div> */}
             <div className="TextFields">
               <p>Age</p>
               <input

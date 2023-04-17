@@ -2,13 +2,36 @@ import React from "react";
 import "./WriterProfileContent.css";
 import Writer from "../../assets/writerImage.png";
 import { FaFacebookF } from "react-icons/fa";
-import { TbVectorBezierCircle } from "react-icons/tb";
+import { TbScaleOutlineOff, TbVectorBezierCircle } from "react-icons/tb";
 import BlogCard from "../CommonComponents/BlogCard";
 import { CiTwitter } from "react-icons/ci";
 import { writerProfileContent } from "../data";
 import Footer from "../CommonComponents/Footer";
+import { useSelector } from "react-redux";
+import axios from "axios";
+import {BACK_END_URL}  from "../../utils"
+import { useParams } from "react-router-dom";
+import Blog from "./Blogs"
+import CircularProgress from '@mui/joy/CircularProgress'
+
 
 const WriterProfileContent = () => {
+  let {writerId}=useParams()
+  let {currentWriterInfo}=useSelector((state)=>state.writerRequest)
+  let [active,setActive]=React.useState("All")
+  let [blogs,setBlogs]=React.useState([])
+  let [loading,setLoading]=React.useState(true)
+
+  React.useEffect(()=>{
+    let start=async ()=>{
+      setLoading(true)
+       let {data}=await axios.get(`${BACK_END_URL}/blog/getSingleWriterAllBLogs/${writerId}?status=${active}`)
+       setBlogs(data?.writerAllBlogs)
+       setLoading(false)
+    }
+    start()
+  },[active])
+
   return (
     <div className="WriterProfileContentBigMain">
       {/* First Part Starts */}
@@ -17,9 +40,9 @@ const WriterProfileContent = () => {
         <div className="writerProfileBiography">
           {/*  */}
           <div className="writerImageBio">
-            <img src={Writer} />
-            <p className="writerName">Ann C. Thompson</p>
-            <p className="writerBio">Fashion designer, Blogger, activist</p>
+            <img src={currentWriterInfo?.photo} />
+            <p className="writerName">{currentWriterInfo?.name}</p>
+            <p className="writerBio">{currentWriterInfo?.purpose}</p>
             <div className="writtersIcons">
               <div
                 className="rightSideBarBigIcons rightSideBarTwitter"
@@ -46,37 +69,30 @@ const WriterProfileContent = () => {
 
         <div className="writerArticlesInfo">
           <div className="writerArticleLinks">
-            <p className="activeLink">All Articles</p>
-            <p>Pending Articles </p>
-            <p>Rejected Articles</p>
+            <p className={`${active==="All"?"activeLink":"WriterBlogsOptions"}`} onClick={()=>setActive("All")}>All Articles</p>
+            <p onClick={()=>setActive("pending")} className={`${active==="pending"?"activeLink":"WriterBlogsOptions"}`} >Pending Articles </p>
+            <p onClick={()=>setActive("rejected")} className={`${active==="rejected"?"activeLink":"WriterBlogsOptions"}`} >Rejected Articles</p>
           </div>
           <div className="writerLine"></div>
-          <div className="writerBlogs">
-            <div className="writerArticlesFlex">
-              <BlogCard item={writerProfileContent[0]} />
-              <div className="articleChip">
-                <p>article</p>
-              </div>
-            </div>
-            <div className="writerArticlesFlex">
-              <BlogCard item={writerProfileContent[1]} />
-              <div className="pendingChip">
-                <p>pending</p>
-              </div>
-            </div>
-            <div className="writerArticlesFlex">
-              <BlogCard item={writerProfileContent[2]} />
-              <div className="rejectedChip">
-                <p>rejected</p>
-              </div>
-            </div>
-            <div className="writerArticlesFlex">
-              <BlogCard item={writerProfileContent[3]} />
-              <div className="rejectedChip">
-                <p>rejected</p>
-              </div>
-            </div>
+          {
+            loading? <CircularProgress size="lg" />:
+            <div className="writerBlogs">
+            {
+              blogs.map((item)=>{
+                return (
+                  <div className="writerArticlesFlex">
+                  <Blog item={item}/>
+                  <div className={`${item?.status==="selected"?"articleChip":""} ${item?.status==="pending"?"pendingChip":""} ${item?.status==="rejected"?"rejectedChip":""}`}>
+                    <p>{item?.status}</p>
+                  </div>
+                </div>
+                  )
+              })
+            }
+        
           </div>
+          }
+
         </div>
       </div>
 

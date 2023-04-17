@@ -24,6 +24,9 @@ import {
 import {setupGetCurrentWriter}  from "./features/writerRequest/writerRequestSlice"
 import { useSelector,useDispatch } from "react-redux";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {setupGetApprovedWriters}  from "./features/writerRequest/writerRequestSlice"
+import {withoutFiltersBlogs}  from "./features/blog/blogSlice"
+import {getCurrentUser} from "./features/user/userSlice"
 
 import Testing from "./Testing"
 
@@ -31,6 +34,9 @@ const App = () => {
    let dispatch=useDispatch()
   React.useEffect(()=>{
     dispatch(setupGetCurrentWriter())
+    dispatch(setupGetApprovedWriters())
+    dispatch(withoutFiltersBlogs())
+    dispatch(getCurrentUser())
   },[])
 
   return (

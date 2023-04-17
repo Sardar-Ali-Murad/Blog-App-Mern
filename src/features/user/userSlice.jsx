@@ -16,6 +16,7 @@ import {
   setupForgetPassword,
   setupResetPassword,
   GoogleAuth,
+  setupGetCurrentUser
 } from "./userThunk";
 
 export const setupUserLoginApi = createAsyncThunk(
@@ -52,6 +53,9 @@ export const ResetPasswordApi = createAsyncThunk(
     return setupResetPassword(data, "resetPassword", thunkAPI);
   }
 );
+
+
+export const getCurrentUser = createAsyncThunk("user/getCurrentUser",setupGetCurrentUser);
 
 // This is needed if we are doing this in the backend
 export const uploadUserImage = createAsyncThunk(
@@ -191,6 +195,22 @@ const userSlice = createSlice({
       console.log(props);
       state.isLoading = false;
     },
+
+    // 
+
+    [getCurrentUser.pending]:(state)=>{
+      state.isLoading=true
+    },
+    [getCurrentUser.fulfilled]:(state,{payload})=>{
+      state.isLoading=false
+      state.user = payload.user;
+      state.token = payload.token;
+      addUserToLocalStorage(payload.user, payload.token);
+    },
+    [getCurrentUser.rejected]:(state,payload)=>{
+     state.isLoading=false
+     console.log(payload)
+    }
   },
 });
 

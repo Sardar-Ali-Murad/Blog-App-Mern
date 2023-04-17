@@ -19,7 +19,7 @@ const WriterIntro = () => {
     <div>
       <div>
         <div className="singleWritterWrapper">
-          <img src={writer?.photo} />
+          <img src={writer?.photo} style={{height:"200px",width:"200px"}} />
           <div className="writtersContent">
             <div>
               <p className="writterName">{writer.name}</p>
@@ -34,13 +34,13 @@ const WriterIntro = () => {
                   className="rightComponentWritersIcons active"
                   style={{ color: "white" }}
                 >
-                  <FaFacebookF />
+                  <FaFacebookF style={{ color: "#FAF9F6" }}/>
                 </div>
                 <div className="rightComponentWritersIcons">
-                  <TbVectorBezierCircle />
+                  <TbVectorBezierCircle style={{ color: "#FAF9F6" }} />
                 </div>
                 <div className="rightComponentWritersIcons">
-                  <IoLogoInstagram />
+                  <IoLogoInstagram style={{ color: "#FAF9F6" }}/>
                 </div>
               </div>
               {/*  */}
@@ -53,13 +53,14 @@ const WriterIntro = () => {
       <section
         dangerouslySetInnerHTML={{ __html: htmlDecode(writer.description) }}
         className="writerDescription"
+        style={{marginTop:"40px"}}
       />
 
       <div >
-        <h1 className="PostBy">posts By {writer?.name}</h1>
+        <h1 className="PostBy" style={{ color: "#FAF9F6" }}>posts By {writer?.name}</h1>
         <div className="categoryLinks">
-          <p className="categoryActiveLink">Latest</p>
-          <p className="categoryLink">Top Stories</p>
+          <p className="categoryActiveLink" style={{ color: "#FAF9F6" }}>Latest</p>
+          <p className="categoryLink" style={{ color: "#FAF9F6" }}>Top Stories</p>
         </div>
         <div className="categoryLine"></div>
       </div>

@@ -11,14 +11,17 @@
   margin-bottom: 20px;
   display: flex;
   gap: 80px;
+  color: #f1f1f1;
+
 }
 
 .blogsPart1 {
-  flex: 2;
+  /* flex: 1; */
+  width: 100%;
 }
 
 .blogsPart2 {
-  flex: 1;
+  /* flex: 1; */
 }
 
 .blogsContent {
@@ -40,6 +43,8 @@
   color: #666666;
   font-size: 12px;
   font-weight: 400px;
+  color: #f1f1f1;
+
 }
 
 .addHere {
@@ -56,6 +61,8 @@
   font-size: 64px;
   font-weight: 600;
   font-family: "Noto Sans", sans-serif;
+  color: #f1f1f1;
+
 }
 
 .blogsHead p {
@@ -63,11 +70,81 @@
   font-weight: 500;
   color: #222222;
   font-family: "Noto Sans", sans-serif;
+  color: #f1f1f1;
+  
 }
+
+  .HomeBlogsMainImage{
+    width: 250px ; 
+    height: 260px ;
+    border-radius: 10px;
+  }
+  
+  
+  
+  .singleBlog{
+    cursor: pointer;
+  }
+  
+  
+  .paraColor{
+    color: #FAF9F6;
+  }
+  
+  .Chips{
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    padding: 2px 4px;
+    background-color: lightgrey;
+    width: 90px;
+  }
+  
+  .singleBlog{
+    margin-bottom: 40px;
+  }
+  
+  .blogsContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .writtersIconsWhite{
+    border: 2px solid white;
+    color: white;
+  }
+ 
+
+
+  .singleBlog .blogsContent{
+    flex: 1;
+  }
+
+  .singleBlog .singeBlogImages{
+    width: 35%;
+  }
+
+  .anim {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+  }
 
 @media screen and (max-width: 1150px) {
   .blogsMain {
     flex-direction: column;
+  }
+  .singleBlog .HomeBlogsMainImage{
+    width: 100%;
+  }
+  .singleBlog{
+    width: 100%;
+  }
+  .HomeBlogsMainImage{
+    width: 100%;
   }
 }
 
@@ -75,16 +152,8 @@
   .singleBlog {
     flex-direction: column;
   }
+  .singleBlog .singeBlogImages{
+    width: 100%;
+  }
 }
 
-
-.HomeBlogsMainImage{
-  width: 250px !important;
-  height: 250px;
-  border-radius: 20px;
-}
-
-
-.singleBlog{
-  cursor: pointer;
-}

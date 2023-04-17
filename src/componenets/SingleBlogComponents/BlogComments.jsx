@@ -13,8 +13,8 @@ import feed from "../../assets/feedback.png";
 const BlogComments = () => {
   return (
     <div className="commentsMain">
-      <div className="commentsChipMain">
-        <div className="commentBigFlex">
+      {/* <div className="commentsChipMain"> */}
+        {/* <div className="commentBigFlex">
           <div className="commentSmallFlex">
             <img src={like} />
             <p>2.4K</p>
@@ -23,12 +23,8 @@ const BlogComments = () => {
             <img src={comment} />
             <p>23</p>
           </div>
-        </div>
-        <div className="commentBigFlex">
-          <img src={Up} />
-          <img src={Down} />
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
       {/*  */}
       <div className="commnetPreNextContent">
         <p>

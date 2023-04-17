@@ -12,7 +12,7 @@ const Navbar = () => {
   let user=JSON.parse(localStorage.getItem("user"))
   let [ham, setHam] = React.useState(true);
   let {image,isLoading}=useSelector((state)=>state.writerRequest)
-
+  let {currentWriterInfo}=useSelector((state)=>state.writerRequest)
   return (
     <div className="nav">
       <div className="nav-main">
@@ -23,34 +23,34 @@ const Navbar = () => {
         <nav className="big-screen-nav">
           <ul>
           <li>
-              <Link className="fancy-link" to="/">
+              <Link className="fancy-link" to="/" style={{ color: "#FAF9F6",fontSize:'20px' }}>
                 Home
               </Link>
             </li>
             <li>
-              <Link className="fancy-link" to="/about">
+              <Link className="fancy-link" to="/about" style={{ color: "#FAF9F6",fontSize:'20px' }}>
                 About Us
               </Link>
             </li>
             <li>
-              <Link className="fancy-link" to="/courses">
+              <Link className="fancy-link" to="/courses" style={{ color: "#FAF9F6",fontSize:'20px' }}>
                 Courses
               </Link>
             </li>
             <li>
-              <Link className="fancy-link" to="/WriterForm">
+              <Link className="fancy-link" to="/WriterForm" style={{ color: "#FAF9F6",fontSize:'20px' }}>
                 Write
               </Link>
             </li>
             <li>
-              <Link className="fancy-link" to="/Request">
+              <Link className="fancy-link" to="/Request" style={{ color: "#FAF9F6",fontSize:'20px' }}>
                 Contact Us
               </Link>
             </li>
             {
               (user?.writer && !isLoading) &&
               <li>
-              <Link className="fancy-link" to="/writeBlog">
+              <Link className="fancy-link" to="/writeBlog" style={{ color: "#FAF9F6",fontSize:'20px' }}>
                 Write Blog
               </Link>
             </li>
@@ -64,9 +64,15 @@ const Navbar = () => {
               Sign In
             </button>
           </Link>
-          <Link to="/getStarted">
-            <button className="login">Get Started</button>
-          </Link>
+          {user.writer ? 
+            <Link to={`/writer/${currentWriterInfo._id}`}>
+              <button className="getStartedWriter">Profile</button>
+            </Link>
+          :
+            <Link to={`/writer/${currentWriterInfo._id}`}>
+              <button className="getStartedWriter">Profile</button>
+            </Link>
+        }
           {
             user?.writer && 
             <Link to="WriterDetailForm">
@@ -132,6 +138,15 @@ const Navbar = () => {
           <Link to="/login">
             <button className="login">Login</button>
           </Link>
+          {user.writer ? 
+            <Link to={`/writer/${currentWriterInfo._id}`}>
+              <button className="getStartedWriter">Profile</button>
+            </Link>
+          :
+            <Link to={`/writer/${currentWriterInfo._id}`}>
+              <button className="getStartedWriter">Profile</button>
+            </Link>
+        }
           {
           (user?.writer && !isLoading) &&
             <Link to="WriterDetailForm">

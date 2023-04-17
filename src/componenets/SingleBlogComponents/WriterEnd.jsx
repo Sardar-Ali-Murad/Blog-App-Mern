@@ -25,13 +25,13 @@ const SingleEnd = () => {
               className="rightComponentWritersIcons active"
               style={{ color: "white" }}
             >
-              <FaFacebookF />
+              <FaFacebookF style={{ color: "#FAF9F6" }}/>
             </div>
             <div className="rightComponentWritersIcons">
-              <TbVectorBezierCircle />
+              <TbVectorBezierCircle style={{ color: "#FAF9F6" }} />
             </div>
             <div className="rightComponentWritersIcons">
-              <IoLogoInstagram />
+              <IoLogoInstagram style={{ color: "#FAF9F6" }}/>
             </div>
           </div>
         </div>

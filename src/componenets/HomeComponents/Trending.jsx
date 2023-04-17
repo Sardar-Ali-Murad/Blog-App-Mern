@@ -6,6 +6,7 @@ import time from "../../assets/time.png";
 import { trendingData } from "../data";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import moment from "moment";
 
 const Trending = () => {
   let { withOutFilterBlogs } = useSelector((state) => state.blog);
@@ -42,7 +43,8 @@ const Trending = () => {
                 </div>
                 <div className="trendingTime">
                   <img src={calender} />
-                  <p>{item?.createdAt}</p>
+                  <p>                       {moment(item?.createdAt).format("DD/MM/YYYY")}
+</p>
                   <img src={time} />
                   <p>3 min to read</p>
                 </div>

@@ -5,7 +5,6 @@ import { FaFacebookF } from "react-icons/fa";
 import { TbVectorBezierCircle } from "react-icons/tb";
 import { IoLogoInstagram } from "react-icons/io";
 import "./Footer.css";
-// import Logo from "../../assets/Logo.png";
 import Logo from "../../assets/Logo.png";
 
 const Footer = () => {

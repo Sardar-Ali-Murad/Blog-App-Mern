@@ -5,6 +5,7 @@ import { AiOutlineLeft } from "react-icons/ai";
 import { AiOutlineRight } from "react-icons/ai";
 
 const Feedback = () => {
+
   return (
     <div className="feedBackBigMain">
       <div className="feedBackMain">
@@ -14,6 +15,7 @@ const Feedback = () => {
           <div>
             {/*  */}
             <div className="feedBackWriterBio">
+
               <div className="feedBackFlex">
                 <h2 name="feedBackWriterName">Garrett Winters</h2>
                 <p className="smallText">Fashion designer, Blogger, activist</p>
@@ -26,8 +28,7 @@ const Feedback = () => {
                   <AiOutlineRight />
                 </div>
               </div>
-            </div>
-            {/*  */}
+            </div> 
             <div>
               <p className="bigText">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -40,7 +41,9 @@ const Feedback = () => {
                 of type and scrambled it to make a type specimen book.
               </p>
             </div>
-          </div>
+          </div> 
+
+
         </div>
       </div>
     </div>

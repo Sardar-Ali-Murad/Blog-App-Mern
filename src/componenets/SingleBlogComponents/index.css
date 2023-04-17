@@ -4,6 +4,11 @@
   color: #3e3d41;
   font-family: "Noto Sans", sans-serif;
   margin-bottom: 10px;
+  color: #FAF9F6 
+}
+
+.writterBio,.writterInfo{
+  color: #FAF9F6;
 }
 
 .singleBlogFlex {
@@ -228,5 +233,34 @@
 
 
 .BlogContentMain{
+  font-family: 'Roboto', sans-serif;
+}
+
+.BlogContentMainDangerousHTML h1{
+color: "#FAF9F6" 
+}
+
+.BlogContentMainDangerousHTML p,a,h2,h3,h4,h5{
+  color: #f1f1f1;
+}
+
+.singleWritterWrapper{
+  display: flex;
+  flex-direction: column;
+}
+
+.singleArrows p{
+  color: #f1f1f1;
+}
+
+.commnetsResponse{
+  color: #e6e6f2;
+}
+
+.commentWriterFlexName{
+  color: black;
+}
+
+.commentCard p{
   font-family: 'Roboto', sans-serif;
 }

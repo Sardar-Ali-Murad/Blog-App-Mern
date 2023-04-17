@@ -77,10 +77,10 @@
   font-family: "Noto Sans", sans-serif;
   cursor: pointer;
 }
-
+/* 
 .writerArticleLinks .activeLink {
   color: #292929;
-}
+} */
 
 .writerLine {
   background-color: #e6e6e6;
@@ -164,4 +164,22 @@
   .WriterProfileContentMain {
     flex-direction: column;
   }
+}
+
+
+.writerArticleLinks .WriterBlogsOptions{
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+}
+
+.writerArticleLinks .activeLink{
+  color: blue;
+  text-decoration: underline;
+  font-family: 'Roboto', sans-serif;
+}
+
+.writerPrvateBlogsImage{
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
 }

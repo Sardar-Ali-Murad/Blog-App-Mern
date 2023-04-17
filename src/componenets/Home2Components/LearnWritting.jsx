@@ -11,14 +11,14 @@ const LearnWritting = () => {
       <div className="learnMain">
         {/*  */}
         <div className="leanContentMain">
-          <h1>Want to Become an author or Learn Writing </h1>
+          <h1 style={{ color: "#FAF9F6" }}>Want to Become an author or Learn Writing </h1>
           <div className="learnMainContent">
-            <p>
+            <p style={{ color: "#f1f1f1" }}>
               Dynamically underwhelm integrated outsourcing via timely models.
               Rapidiously reconceptualize visionary imperatives without 24/365
               catalysts for change. Completely streamline functionalized models.
             </p>
-            <p>
+            <p style={{ color: "#f1f1f1" }}>
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
               ever since the 1500s, when an unknown printer took a galley of

@@ -17,6 +17,7 @@ import CircularProgress from '@mui/joy/CircularProgress';
 import WriterBlogs from "../componenets/WriterPublicProfileComponents/WriterBlogs"
 
 const WriterPublicProfile = () => {
+  let {category}=useSelector((state)=>state.blog)
   let dispatch=useDispatch()
   let {writerId}=useParams()
   let [loading,setLoading]=React.useState(true)
@@ -25,14 +26,14 @@ const WriterPublicProfile = () => {
   React.useEffect(()=>{
     let start=async ()=>{
       setLoading(true)
-      let writerBlogsInfo=await axios.get(`${BACK_END_URL}/blog/singleWriterBlogs/${writerId}`)
+      let writerBlogsInfo=await axios.get(`${BACK_END_URL}/blog/singleWriterBlogs/${writerId}?category=${category}`)
       let currentWriterInfo=await axios.get(`${BACK_END_URL}/writer/${writerId}`)
       dispatch(getCurrentWriterBlogs(writerBlogsInfo.data.WritterBlogs))
       dispatch(getCurrentWriterInfo(currentWriterInfo.data.Writter))
       setLoading(false)
     }
     start()
-  },[])
+  },[category])
 
   React.useEffect(()=>{
     dispatch(withoutFiltersBlogs())

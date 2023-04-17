@@ -7,12 +7,14 @@ let initialState = {
   showAlert: false,
   currentWriterInfo: [],
   image: "",
+  ApprovedWritters:[]
 };
 
 import {
   getCurrentWriter,
   // writerImage,
   updateCurrentWriter,
+  getAllApprovedWriters
 } from "./writerRequestThunk";
 
 export const setupUpdateWriter = createAsyncThunk(
@@ -33,6 +35,8 @@ export const setupGetCurrentWriter = createAsyncThunk(
   "writer/setupGetCurrentWriter",
   getCurrentWriter
 );
+
+export const setupGetApprovedWriters = createAsyncThunk("writer/setupGetApprovedWriters",getAllApprovedWriters);
 
 const writerRequestSlice = createSlice({
   name: "writerRequest",
@@ -87,6 +91,20 @@ const writerRequestSlice = createSlice({
         (state.alertType = "danger"),
         (state.alertText = payload);
     },
+
+
+    // The Arroved Writers
+    [setupGetApprovedWriters.pending]:(state)=>{
+      state.isLoading=true
+    },
+    [setupGetApprovedWriters.fulfilled]:(state,{payload})=>{
+      state.isLoading=false
+      state.ApprovedWritters=payload.ApprovedWritters
+    },
+    [setupGetApprovedWriters.rejected]:(state,payload)=>{
+       state.isLoading=false  
+       console.log(payload)
+    }
   },
 });
 
