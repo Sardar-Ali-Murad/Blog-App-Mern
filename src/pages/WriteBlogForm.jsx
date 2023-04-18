@@ -7,7 +7,7 @@ import Body from "../componenets/WriteBlogComponents/WriteBody";
 const WriteBlogForm = () => {
   return (
     <div>
-      <LightNavbar signIn={true} getStarted={true} />
+      <LightNavbar  />
       {/* <Header /> */}
       <div style={{background:"white"}}>
       <Body />

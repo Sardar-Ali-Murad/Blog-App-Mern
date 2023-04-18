@@ -54,7 +54,7 @@ const SingleBlog = () => {
   ];
   return (
     <div>
-      <LightNavbar signIn={true} getStarted={true} />
+      <LightNavbar />
       <div className="singleBlogMain">
         {/*  */}
         <div className="singleBlogContent">

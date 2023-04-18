@@ -1,0 +1,9 @@
+.useDetailsWrapper{
+    width: 80%;
+    transform: translateX(-50%);
+    margin-left: 50%;
+}
+
+.field{
+    margin-bottom: 20px;
+}

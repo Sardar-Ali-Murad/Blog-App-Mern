@@ -53,3 +53,10 @@
   gap: 30px;
   width: 100%;
 }
+
+
+/* @media screen and (max-width:700px) {
+  .writeMain{
+    width: 100%;
+  }
+} */

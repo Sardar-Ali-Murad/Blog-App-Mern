@@ -18,6 +18,7 @@ import Footer from "../componenets/CommonComponents/Footer";
 import WriterDetailForm from "./WriterDetailForm";
 import WriterPublicProfile from "./WriterPublicProfile";
 import SingleBlog from "./SingleBlog";
+import UserProfile from "./UserProfile";
 
 export {
   Home,
@@ -40,4 +41,5 @@ export {
   WriterDetailForm,
   WriterPublicProfile,
   SingleBlog,
+  UserProfile
 };

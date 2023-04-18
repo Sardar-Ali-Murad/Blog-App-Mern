@@ -1,18 +1,16 @@
 import React from "react";
 import "./WriterProfileContent.css";
-import Writer from "../../assets/writerImage.png";
 import { FaFacebookF } from "react-icons/fa";
-import { TbScaleOutlineOff, TbVectorBezierCircle } from "react-icons/tb";
-import BlogCard from "../CommonComponents/BlogCard";
+import {  TbVectorBezierCircle } from "react-icons/tb";
 import { CiTwitter } from "react-icons/ci";
-import { writerProfileContent } from "../data";
-import Footer from "../CommonComponents/Footer";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import {BACK_END_URL}  from "../../utils"
 import { useParams } from "react-router-dom";
 import Blog from "./Blogs"
 import CircularProgress from '@mui/joy/CircularProgress'
+import { Link } from "react-router-dom";
+import Footer from "../CommonComponents/Footer"
 
 
 const WriterProfileContent = () => {
@@ -41,6 +39,9 @@ const WriterProfileContent = () => {
           {/*  */}
           <div className="writerImageBio">
             <img src={currentWriterInfo?.photo} />
+            <Link to="/WriterDetailForm">
+            <button className="commonBtn" style={{marginTop:"10px",marginBottom:"4px"}}>Edit Profile</button>
+            </Link>
             <p className="writerName">{currentWriterInfo?.name}</p>
             <p className="writerBio">{currentWriterInfo?.purpose}</p>
             <div className="writtersIcons">
@@ -81,7 +82,9 @@ const WriterProfileContent = () => {
               blogs.map((item)=>{
                 return (
                   <div className="writerArticlesFlex">
-                  <Blog item={item}/>
+                    <Link to={`/blog/${item?._id}`}>
+                      <Blog item={item}/>
+                    </Link>
                   <div className={`Chips ${item?.status==="selected"?"articleChip":""} ${item?.status==="pending"?"pendingChip":""} ${item?.status==="rejected"?"rejectedChip":""}`}>
                     <p>{item?.status}</p>
                   </div>

@@ -6,7 +6,7 @@ import ResetComponent from "../componenets/AuthComponents/ResetPassword";
 const ForgetPassword = () => {
   return (
     <div>
-      <NavbarLight signIn={true} getStarted={true} />
+      <NavbarLight />
       <ResetComponent />
       <Footer />
     </div>

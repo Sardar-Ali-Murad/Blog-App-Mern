@@ -20,24 +20,26 @@ import {
   WriterDetailForm,
   WriterPublicProfile,
   SingleBlog,
+  UserProfile,
 } from "./pages/index";
-import {setupGetCurrentWriter}  from "./features/writerRequest/writerRequestSlice"
-import { useSelector,useDispatch } from "react-redux";
+import { setupGetCurrentWriter } from "./features/writerRequest/writerRequestSlice";
+import { useSelector, useDispatch } from "react-redux";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import {setupGetApprovedWriters}  from "./features/writerRequest/writerRequestSlice"
-import {withoutFiltersBlogs}  from "./features/blog/blogSlice"
-import {getCurrentUser} from "./features/user/userSlice"
+import { setupGetApprovedWriters } from "./features/writerRequest/writerRequestSlice";
+import { withoutFiltersBlogs } from "./features/blog/blogSlice";
+import { getCurrentUser } from "./features/user/userSlice";
+import ProtectedRoute from "./componenets/CommonComponents/ProtectedRoute";
 
-import Testing from "./Testing"
+import Testing from "./Testing";
 
 const App = () => {
-   let dispatch=useDispatch()
-  React.useEffect(()=>{
-    dispatch(setupGetCurrentWriter())
-    dispatch(setupGetApprovedWriters())
-    dispatch(withoutFiltersBlogs())
-    dispatch(getCurrentUser())
-  },[])
+  let dispatch = useDispatch();
+  React.useEffect(() => {
+    dispatch(setupGetCurrentWriter());
+    dispatch(setupGetApprovedWriters());
+    dispatch(withoutFiltersBlogs());
+    dispatch(getCurrentUser());
+  }, []);
 
   return (
     <div className="appMain">
@@ -46,7 +48,14 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/test" element={<Testing />} />
           <Route path="/about" element={<Home2 />} />
-
+          <Route
+            path="/userProfile"
+            element={
+              <ProtectedRoute>
+                <UserProfile />
+              </ProtectedRoute>
+            }
+          />
           <Route path="/courses" element={<Courses />} />
           <Route path="/FAQ" element={<FAQ />} />
           <Route path="/writeBlog" element={<WriteBlogForm />} />
@@ -66,7 +75,14 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/getStarted" element={<GetStarted />} />
           <Route path="/writersList" element={<WritersList />} />
-          <Route path="/writer/:writerId" element={<WriterProfile />} />
+          <Route
+            path="/writer/:writerId"
+            element={
+              <ProtectedRoute>
+                <WriterProfile />
+              </ProtectedRoute>
+            }
+          />
           <Route path="category/:categoryName" element={<Category />} />
         </Routes>
       </BrowserRouter>

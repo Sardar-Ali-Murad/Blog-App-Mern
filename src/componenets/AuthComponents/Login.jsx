@@ -34,7 +34,7 @@ const Login = () => {
   }
 
   return (
-    <div className="registerBigMian">
+    <div className="BasicForms">
       <div className="registerMain" ref={alert}>
         {isLoading && <CircularProgress />}
         {showAlert && <Alert />}
@@ -69,10 +69,10 @@ const Login = () => {
 
           <div className="loginBtnsWrapper">
             <div className="authFlex">
-              <div className="checkFlex">
+              {/* <div className="checkFlex">
                 <input type="checkbox" />
                 <p>Remember Me</p>
-              </div>
+              </div> */}
               <Link to="/forgetPassword">
                 <p className="forgerPassword">Forgot your password?</p>
               </Link>

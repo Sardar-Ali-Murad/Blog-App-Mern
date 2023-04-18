@@ -6,7 +6,7 @@ import ForgetComponent from "../componenets/AuthComponents/ForgetPassword";
 const ForgetPassword = () => {
   return (
     <div>
-      <NavbarLight signIn={true} getStarted={true} />
+      <NavbarLight />
       <ForgetComponent />
       <Footer />
     </div>

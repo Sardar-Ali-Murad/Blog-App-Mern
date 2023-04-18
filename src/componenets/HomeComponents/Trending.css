@@ -17,6 +17,7 @@
   font-weight: 500;
   font-size: 24px;
   margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .trendingContainer {
@@ -29,7 +30,8 @@
   color: #222222;
   font-weight: 500;
   font-size: 17px;
-  font-family: "Noto Sans", sans-serif;
+  font-family: 'Roboto', sans-serif;
+  /* font-family: "Noto Sans", sans-serif; */
 }
 
 .trendingFlex {
@@ -39,7 +41,7 @@
 }
 
 .trendingFlex p {
-  font-family: "Noto Sans", sans-serif;
+  /* font-family: "Noto Sans", sans-serif; */
   color: #777777;
   font-size: 12px;
   font-weight: 400;
@@ -52,14 +54,14 @@
 }
 
 .trendingTime p {
-  font-family: "Noto Sans", sans-serif;
+  /* font-family: "Noto Sans", sans-serif; */
   color: #777777;
   font-weight: 400;
   font-size: 11px;
 }
 
 .trendingEnd {
-  font-family: "Noto Sans", sans-serif;
+  /* font-family: "Noto Sans", sans-serif; */
   color: #555555;
   font-size: 14px;
   font-weight: 400;

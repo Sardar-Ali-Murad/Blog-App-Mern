@@ -37,7 +37,7 @@ const Register = () => {
   }
 
   return (
-    <div className="registerBigMian">
+    <div className="BasicForms">
       <div className="registerMain" ref={alert}>
         {isLoading && <CircularProgress />}
         <div className="divCenter">{showAlert && <Alert />}</div>

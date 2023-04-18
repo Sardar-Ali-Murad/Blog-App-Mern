@@ -4,13 +4,10 @@ import RightComponent from "../componenets/CommonComponents/RightComponent";
 import Footer from "../componenets/CommonComponents/Footer";
 import LightNavbar from "../componenets/CommonComponents/LightNavbar";
 import "./index.css";
-import { writers } from "./data";
-import BlogCard from "../componenets/CommonComponents/BlogCard";
-import { blogsData } from "../componenets/data";
 import { useParams } from "react-router-dom";
 import {BACK_END_URL} from "../utils"
 import axios from "axios";
-import {withoutFiltersBlogs} from "../features/blog/blogSlice"
+import {changeCategory, withoutFiltersBlogs} from "../features/blog/blogSlice"
 import { useDispatch, useSelector } from "react-redux";
 import {getCurrentWriterInfo,getCurrentWriterBlogs} from "../features/blog/blogSlice"
 import CircularProgress from '@mui/joy/CircularProgress';
@@ -21,6 +18,9 @@ const WriterPublicProfile = () => {
   let dispatch=useDispatch()
   let {writerId}=useParams()
   let [loading,setLoading]=React.useState(true)
+  React.useEffect(()=>{
+    dispatch(changeCategory("All"))
+  },[])
 
 
   React.useEffect(()=>{
@@ -47,7 +47,7 @@ const WriterPublicProfile = () => {
 
   return (
     <div>
-      <LightNavbar signIn={true} getStarted={true} />
+      <LightNavbar  />
       <div className="writerPublicProfileMain">
         <div className="writerIntro">
           <WriterIntro/>

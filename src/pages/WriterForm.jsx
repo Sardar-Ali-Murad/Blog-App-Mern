@@ -66,8 +66,8 @@ const writerRequest = () => {
   return (
     <div>
       <PopUp open={open} setOpen={setOpen}/>
-      <LightNavbar signIn={true} getStarted={true} />
-      <div className="registerBigMian">
+      <LightNavbar />
+      <div className="BasicForms">
         <div className="registerMain" ref={alert}>
           {/* {isLoading && <CircularProgress />} */}
           <div className="divCenter">{showAlert && <Alert />}</div>

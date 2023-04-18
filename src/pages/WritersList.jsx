@@ -10,7 +10,7 @@ import Header from "../componenets/CommonComponents/Header";
 const WritersList = () => {
   return (
     <div>
-      <LightNavbar signIn={true} getStarted={true} person={false} />
+      <LightNavbar  />
       {/*  */}
       <Header
         head="writers List"

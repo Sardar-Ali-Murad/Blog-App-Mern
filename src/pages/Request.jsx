@@ -58,8 +58,8 @@ const Register = () => {
 
   return (
     <div>
-      <LightNavbar signIn={true} getStarted={true} />
-      <div className="registerBigMian">
+      <LightNavbar />
+      <div className="BasicForms">
         <div className="registerMain" ref={alert}>
           {/* {isLoading && <CircularProgress />} */}
           {/* <Alert/> */}

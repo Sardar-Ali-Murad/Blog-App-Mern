@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200&family=Nunito:wght@300&family=Open+Sans:wght@500&family=Poppins:wght@200&family=Roboto:wght@400;700&family=Source+Serif+Pro&display=swap');
+
 *{
   margin: 0px;
   padding: 0px;
@@ -176,4 +178,8 @@ a svg{
 .appMain{
 background: radial-gradient(780px at 37.8% 100.3%, rgb(19, 55, 115) 2.2%, rgb(32, 7, 80) 20.2%, rgb(27, 88, 111) 58.6%, rgb(115, 88, 44) 75%, rgb(99, 19, 90) 89.6%, rgb(12, 51, 76) 96.1%);
 color: #f1f1f1;
+}
+
+h1,h2,h3,h4,h5,p{
+  font-family: 'Roboto', sans-serif;
 }

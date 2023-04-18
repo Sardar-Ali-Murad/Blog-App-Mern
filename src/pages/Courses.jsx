@@ -7,7 +7,7 @@ import CoursesBody from "../componenets/CoursesComponents/CoursesBody";
 const Courses = () => {
   return (
     <div>
-      <LightNavbar signIn={true} getStarted={true} />
+      <LightNavbar/>
       {/* <CoursesHeader /> */}
       <CoursesBody />
       <Footer />

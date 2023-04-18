@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { SlCalender } from "react-icons/sl";
 import { BiCircle } from "react-icons/bi";
 import moment from "moment";
+import { Link } from "react-router-dom";
 
 const WriterBlogs = () => {
   let { currentWritterBlogs } = useSelector((state) => state.blog);
@@ -13,6 +14,7 @@ const WriterBlogs = () => {
     <div>
       {currentWritterBlogs.map((item) => {
         return (
+          <Link to={`/blog/${item?._id}`}>
           <div className="blogsPart1">
             <div>
               <div className="singleBlog">
@@ -44,6 +46,7 @@ const WriterBlogs = () => {
               </div>
             </div>
           </div>
+      </Link>
         );
       })}
     </div>

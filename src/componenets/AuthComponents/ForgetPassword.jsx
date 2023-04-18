@@ -19,7 +19,7 @@ const Login = () => {
   }
   
   return (
-    <div className="registerBigMian">
+    <div className="BasicForms">
       <div className="registerMain">
         {isLoading && <CircularProgress />}
         {showAlert && <Alert />}

@@ -9,6 +9,7 @@ let initialState = {
   token: JSON.parse(localStorage.getItem("token")) || "",
   userImage: "",
 };
+
 import {
   setupUserLogin,
   setupUserRegister,
@@ -70,6 +71,12 @@ function addUserToLocalStorage(user, token) {
   localStorage.setItem("token", JSON.stringify(token));
 }
 
+
+function removeFromLocalStorage(){
+  localStorage.removeItem("user")
+  localStorage.removeItem("token")
+}
+
 const userSlice = createSlice({
   name: "user",
   initialState,
@@ -85,6 +92,14 @@ const userSlice = createSlice({
     deleteUserImage: (state) => {
       state.userImage = "";
     },
+    changeUserImage:(state,action)=>{
+      state.userImage=action.payload
+    },
+    LogoutUser:(state)=>{
+      state.user=null,
+      state.token=""
+      removeFromLocalStorage()
+    }
   },
   extraReducers: {
     //
@@ -93,6 +108,7 @@ const userSlice = createSlice({
     },
     [setupUserLoginApi.fulfilled]: (state, { payload }) => {
       state.user = payload.user;
+      // state.userImage=payload.user.image
       state.token = payload.token;
       state.isLoading = false;
       state.showAlert = true;
@@ -117,7 +133,8 @@ const userSlice = createSlice({
       state.isLoading = false;
       state.showAlert = true;
       state.alertType = "success";
-      state.alertText = "Auth Success!";
+      state.alertText = "Auth Success! Redirecting";
+      state.userImage=payload.image
       addUserToLocalStorage(payload.user, payload.token);
     },
     [GoogleAuthApi.rejected]: (state, { payload }) => {
@@ -137,7 +154,7 @@ const userSlice = createSlice({
       state.isLoading = false;
       state.showAlert = true;
       state.alertType = "success";
-      state.alertText = "Register Success!";
+      state.alertText = "Register Success! Redirecting";
       addUserToLocalStorage(payload.user, payload.token);
     },
     [setupUserRegisternApi.rejected]: (state, { payload }) => {
@@ -205,6 +222,7 @@ const userSlice = createSlice({
       state.isLoading=false
       state.user = payload.user;
       state.token = payload.token;
+      state.userImage=payload.user.image
       addUserToLocalStorage(payload.user, payload.token);
     },
     [getCurrentUser.rejected]:(state,payload)=>{
@@ -214,7 +232,7 @@ const userSlice = createSlice({
   },
 });
 
-export const { removeAlert, logoutUser, deleteUserImage, changeLight } =
+export const { removeAlert, logoutUser, deleteUserImage, changeLight,changeUserImage,LogoutUser } =
   userSlice.actions;
 
 export default userSlice.reducer;

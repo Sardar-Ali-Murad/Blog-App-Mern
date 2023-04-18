@@ -9,8 +9,11 @@ import { SlCalender } from "react-icons/sl";
 import { BiCircle } from "react-icons/bi";
 
 const Blogs = () => {
-  let { withFilterBlogs } = useSelector((state) => state.blog);
+  let { withFilterBlogs,filterLoading } = useSelector((state) => state.blog);
 
+  //  if(filterLoading){
+  //   return "Loading"
+  //  }
   return (
     <div className="blogsMain">
       {/*  */}

@@ -3,19 +3,15 @@ import "./LightNavbar.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 import Logo from "../../assets/writerNavLogo.png";
-import writerMan from "../../assets/writerMan.png";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import Avatar from '@mui/material/Avatar';
-import No from "../../assets/no.webp"
+import Logout from "./Logout"
 
-const Navbar = ({ signIn, getStarted, person }) => {
+const Navbar = () => {
   let [ham, setHam] = React.useState(true);
-  let user=JSON.parse(localStorage.getItem("user"))
-  let {image,isLoading}=useSelector((state)=>state.writerRequest)
-
-  let {currentWriterInfo}=useSelector((state)=>state.writerRequest)
-
+  // let user = JSON.parse(localStorage.getItem("user"));
+  let {user}=useSelector((state)=>state.store)
+  let { currentWriterInfo } = useSelector((state) => state.writerRequest);
 
   return (
     <div className="nav bigScreenNavWriter darkNav">
@@ -27,80 +23,92 @@ const Navbar = ({ signIn, getStarted, person }) => {
         <nav className="big-screen-nav darkNavNavbar">
           <ul>
             <li>
-              <Link className="fancy-link" to="/" style={{ color: "#FAF9F6",fontSize:'20px' }}>
+              <Link
+                className="fancy-link"
+                to="/"
+                style={{ color: "#FAF9F6", fontSize: "20px" }}
+              >
                 Home
               </Link>
             </li>
             <li>
-              <Link className="fancy-link" to="/about" style={{ color: "#FAF9F6",fontSize:'20px' }}>
+              <Link
+                className="fancy-link"
+                to="/about"
+                style={{ color: "#FAF9F6", fontSize: "20px" }}
+              >
                 About Us
               </Link>
             </li>
             <li>
-              <Link className="fancy-link" to="/courses" style={{ color: "#FAF9F6",fontSize:'20px' }}>
-              Courses
+              <Link
+                className="fancy-link"
+                to="/courses"
+                style={{ color: "#FAF9F6", fontSize: "20px" }}
+              >
+                Courses
               </Link>
             </li>
             <li>
-              <Link className="fancy-link" to="/WriterForm" style={{ color: "#FAF9F6",fontSize:'20px' }}>
+              <Link
+                className="fancy-link"
+                to="/WriterForm"
+                style={{ color: "#FAF9F6", fontSize: "20px" }}
+              >
                 Write
               </Link>
             </li>
             <li>
-              <Link className="fancy-link" to="/Request" style={{ color: "#FAF9F6",fontSize:'20px' }}>
+              <Link
+                className="fancy-link"
+                to="/Request"
+                style={{ color: "#FAF9F6", fontSize: "20px" }}
+              >
                 Contact Us
               </Link>
             </li>
-            {
-              user?.writer &&
+            {user?.writer && (
               <li>
-              <Link className="fancy-link" to="/writeBlog" style={{ color: "#FAF9F6",fontSize:'20px' }}>
-                Write Blog
-              </Link>
-            </li>
-            }
+                <Link
+                  className="fancy-link"
+                  to="/writeBlog"
+                  style={{ color: "#FAF9F6", fontSize: "20px" }}
+                >
+                  Write Blog
+                </Link>
+              </li>
+            )}
           </ul>
         </nav>
 
         <div className="navBtnsBigScreen">
           {/*  */}
-          {signIn && (
+          {!user && (
             <Link to="/register">
-              <button className="signUp" style={{ background: "#0065FD" }}>
-                Sign In
-              </button>
+              <button className="commonBtn">Sign In</button>
             </Link>
           )}
           {/* <button className="login">Get Started</button> */}
 
           {/*  */}
-          {user?.writer ? 
+          {user?.writer && (
             <Link to={`/writer/${currentWriterInfo._id}`}>
-              <button className="getStartedWriter">Profile</button>
+              <button className="commonBtn">Writer Profile</button>
             </Link>
-          :
-            <Link to={`/writer/${currentWriterInfo._id}`}>
-              <button className="getStartedWriter">Profile</button>
-            </Link>
-        }
-
-          {person && (
-            <div className="writerPerson">
-              <img src={writerMan} />
-            </div>
           )}
-           {
-            (user?.writer && !isLoading) &&
-            <Link to="/WriterDetailForm">
-             <Avatar alt="Remy Sharp" src={image?image:No} style={{cursor:"pointer"}} />
+          {user && (
+            <Link to="/userProfile">
+              <button className="commonBtn">User Profile</button>
             </Link>
+          )}
+          {
+            user && <Logout/>
           }
-          {/*  */}
         </div>
 
         <GiHamburgerMenu
           className="ham hamWriter"
-          style={{color:"#f1f1f1"}}
+          style={{ color: "#f1f1f1" }}
           onClick={() => setHam(false)}
         />
       </div>
@@ -114,61 +122,85 @@ const Navbar = ({ signIn, getStarted, person }) => {
         />
         <nav>
           <ul>
-          <li>
-              <Link className="links fancy-link" to="/" onClick={()=>setHam(true)}>
+            <li>
+              <Link
+                className="links fancy-link"
+                to="/"
+                onClick={() => setHam(true)}
+              >
                 Home
               </Link>
             </li>
             <li>
-              <Link className="links fancy-link" to="/about" onClick={()=>setHam(true)}>
+              <Link
+                className="links fancy-link"
+                to="/about"
+                onClick={() => setHam(true)}
+              >
                 About Us
               </Link>
             </li>
             <li>
-              <Link className="links fancy-link" to="/courses" onClick={()=>setHam(true)}>
-              Courses
+              <Link
+                className="links fancy-link"
+                to="/courses"
+                onClick={() => setHam(true)}
+              >
+                Courses
               </Link>
             </li>
             <li>
-              <Link className="links fancy-link" to="/WriterForm" onClick={()=>setHam(true)}>
+              <Link
+                className="links fancy-link"
+                to="/WriterForm"
+                onClick={() => setHam(true)}
+              >
                 Write
               </Link>
             </li>
             <li>
-              <Link className="links fancy-link" to="/Request" onClick={()=>setHam(true)}>
+              <Link
+                className="links fancy-link"
+                to="/Request"
+                onClick={() => setHam(true)}
+              >
                 Contact Us
               </Link>
             </li>
-            {
-              user?.writer &&
+            {user?.writer && (
               <li>
-              <Link className="fancy-link links" to="/writeBlog"
-              onClick={()=>setHam(true)}
-              >
-                Write Blog
-              </Link>
-            </li>
-            }
+                <Link
+                  className="fancy-link links"
+                  to="/writeBlog"
+                  onClick={() => setHam(true)}
+                >
+                  Write Blog
+                </Link>
+              </li>
+            )}
           </ul>
         </nav>
         <div className="navBtnsSmallScreen navBtnsSmallScreenWriter">
-        {user?.writer ? 
+          {!user && (
+            <Link to="/register">
+              <button className="commonBtn">Sign In</button>
+            </Link>
+          )}
+          {/* <button className="login">Get Started</button> */}
+
+          {/*  */}
+          {user?.writer && (
             <Link to={`/writer/${currentWriterInfo._id}`}>
-              <button className="getStartedWriter">Profile</button>
+              <button className="commonBtn">Writer Profile</button>
             </Link>
-          :
-            <Link to={`/writer/${currentWriterInfo._id}`}>
-              <button className="getStartedWriter">Profile</button>
+          )}
+          {user && (
+            <Link to="/userProfile">
+              <button className="commonBtn">User Profile</button>
             </Link>
-        }
-          <div className="writerPerson">
-            <img src={writerMan} />
-          </div>
-          {
-          (user?.writer && !isLoading) &&
-            <Link to="/WriterDetailForm">
-             <Avatar alt="Remy Sharp" src={image?image:No} style={{cursor:"pointer"}} />
-            </Link>
+          )}
+           {
+            user && <Logout/>
           }
         </div>
       </div>
