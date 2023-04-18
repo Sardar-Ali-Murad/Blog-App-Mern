@@ -7,7 +7,7 @@
 }
 
 .trendingText {
-  width: 90%;
+  width: 95%;
   margin-left: 50%;
   transform: translateX(-50%);
 }
@@ -91,5 +91,11 @@
 @media screen and (max-width:700px) {
   .trendingGrid{
     grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width:700px) {
+  .trendingText{
+    width: 100%;
   }
 }

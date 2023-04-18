@@ -99,3 +99,90 @@
     left: 10px;
   }
 }
+
+
+/* TEH RAIN ANIMATION */
+.rainAnimation{
+  margin: 0;
+  padding: 0;
+  background-image: url("../../assets/background.jpg");
+  background-size: cover;
+  height: 80vh;
+  overflow: hidden;
+}
+.rain{
+  height: 100vh;
+  background-image: url("../../assets/rain.png");
+  animation: rain 0.3s linear infinite;
+}
+@keyframes rain{
+  0%{
+      background-position: 0% 0%;
+  }
+  100%{
+      background-position: 20% 100%;
+  }
+}
+.rain::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  background-image: url("../../assets/lightining.png");
+  top: -100px;
+  transform: rotate(180deg);
+  animation: lightining 4s linear infinite;
+  opacity: 1;
+}
+@keyframes lightining{
+  0%{
+      opacity: 0;
+  }
+  20%{
+      opacity: 0;
+  }
+  21%{
+      opacity: 1;
+  }
+  25%{
+      opacity: 0;
+  }
+  30%{
+      opacity: 0;
+  }
+  31%{
+      opacity: 1;
+  }
+  35%{
+      opacity: 0;
+  }
+  100%{
+      opacity: 0;
+  }
+}
+
+
+.FrontHeroMain{
+  position: relative;
+}
+
+.FrontHeroContent{
+  position: absolute;
+  top: 30%;
+  width: 50%;
+  left: 10%;
+}
+
+.heroHead{
+  margin-bottom: 10px;
+}
+
+.heroPara{
+  letter-spacing: 6px;
+}
+
+@media screen and (max-width:500px) {
+  .FrontHeroContent{
+    width: 70%;
+  }
+}

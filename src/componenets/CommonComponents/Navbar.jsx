@@ -172,7 +172,7 @@ const Navbar = () => {
             )}
           </ul>
         </nav>
-        <div className="navBtnsSmallScreen">
+        <div className="navBtnsSmallScreen" style={{display:"flex",gap:"10px"}}>
           {!user && (
             <Link to="/register">
               <button className="commonBtn">Sign In</button>
