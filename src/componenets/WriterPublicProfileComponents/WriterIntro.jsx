@@ -22,7 +22,7 @@ const WriterIntro = () => {
           <img src={writer?.photo} style={{height:"200px",width:"200px"}} />
           <div className="writtersContent">
             <div>
-              <p className="writterName">{writer.name}</p>
+              <p className="writterName" style={{color:"#FAF9F6"}}>{writer.name}</p>
               <p className="writterBio">{writer?.shortBio}</p>
             </div>
             <p className="writterInfo">{writer?.purpose}</p>
@@ -53,7 +53,7 @@ const WriterIntro = () => {
       <section
         dangerouslySetInnerHTML={{ __html: htmlDecode(writer.description) }}
         className="writerDescription"
-        style={{marginTop:"40px"}}
+        style={{marginTop:"40px",color:"#f1f1f1"}}
       />
 
       <div >

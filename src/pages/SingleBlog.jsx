@@ -59,7 +59,7 @@ const SingleBlog = () => {
         {/*  */}
         <div className="singleBlogContent">
           <IntroLeft />
-          <BlogContent />
+          <BlogContent blogId={blogId}/>
           <BlogChips chips={arr} />
           <WriterEnd />
           <BlogComments />

@@ -15,6 +15,7 @@ const WriterDetailForm = () => {
   } = useSelector((state) => state.writerRequest);
 
 
+
   let dispatch = useDispatch();
   let [data, setData] = React.useState({
     name: writer?.name,
@@ -33,8 +34,13 @@ const WriterDetailForm = () => {
     youtube: writer?.youtube,
     shortBio: writer?.shortBio,
   });
+  function htmlDecode(content) {
+    let e = document.createElement('div');
+    e.innerHTML = content;
+    return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+  }
 
-  let [content, setContent] = React.useState("");
+  let [content, setContent] = React.useState(htmlDecode(writer.description));
 
   function handleChange(e) {
     setData((pre) => {

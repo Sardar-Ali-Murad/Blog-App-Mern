@@ -6,10 +6,37 @@ import { TbVectorBezierCircle } from "react-icons/tb";
 import { IoLogoInstagram } from "react-icons/io";
 import "./Footer.css";
 import Logo from "../../assets/Logo.png";
+import axios from "axios";
+import { BACK_END_URL } from "../../utils";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Footer = () => {
+  let [email,setEmail]=React.useState('')
+  console.log(email)
+  const Subscribe=async ()=>{
+    if(!email){
+      toast.error("Please Provide the email to proceed", {
+        position: toast.POSITION.TOP_CENTER
+    });
+    }
+    try {
+      await axios.post(`${BACK_END_URL}/newsLetter/${email}`)
+      toast.success('ThankYou For Subscribing to Our NewLetter!', {
+        position: toast.POSITION.TOP_CENTER
+    });
+    } catch (error) {
+      toast.error(error?.response?.data?.msg, {
+        position: toast.POSITION.TOP_CENTER
+    });
+    }
+  }
+
+
   return (
     <div className="footerBigMain">
+      <ToastContainer/>
       <div className="footerMain">
         {/*  */}
         <div className="footerPart1">
@@ -36,8 +63,8 @@ const Footer = () => {
         <div className="footerInfo footerLast">
           <p>Subscribe for newsletter</p>
           <div className="footerInputWrapper footerInputWrapperBtn footerLast">
-            <input placeholder="Your Email" className="footerTextField" />
-            <button className="sub">Subcribe</button>
+            <input placeholder="Your Email" className="footerTextField" onChange={(e)=>setEmail(e.target.value)} />
+            <button className="sub" onClick={Subscribe}>Subcribe</button>
             <p>follow on:</p>
           </div>
           <div className="footerIcons">
