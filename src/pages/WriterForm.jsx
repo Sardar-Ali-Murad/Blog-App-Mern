@@ -46,7 +46,7 @@ const writerRequest = () => {
   const Send=async ()=>{
     alert.current.scrollIntoView({ behavior: "smooth" });
     try {
-     await axios.post(`${BACK_END_URL}/writer`,{name:data.name,age:data.age,city:data.city,province:data.province,country:data.country,qualifications:data.qualifications,contactNumber:data.contactNumber,designation:data.designation,purpose:data.purpose},{
+     await axios.post(`${BACK_END_URL}/writer/postWriter/createWriter`,{name:data.name,age:data.age,city:data.city,province:data.province,country:data.country,qualifications:data.qualifications,contactNumber:data.contactNumber,designation:data.designation,purpose:data.purpose},{
       headers: {
         authorization: `Bearer ${token}`,
       },
