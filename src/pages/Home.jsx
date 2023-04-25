@@ -3,20 +3,21 @@ import Hero from "../componenets/CommonComponents/Hero";
 import Trending from "../componenets/HomeComponents/Trending";
 import Footer from "../componenets/CommonComponents/Footer";
 import Blogs from "../componenets/HomeComponents/Blogs";
-import { useSelector,useDispatch } from "react-redux";
-import CircularProgress from '@mui/joy/CircularProgress';
-import {changeCategory}  from "../features/blog/blogSlice"
+import { useSelector, useDispatch } from "react-redux";
+import CircularProgress from "@mui/joy/CircularProgress";
+import { changeCategory } from "../features/blog/blogSlice";
+// import Loader from "../componenets/Loader/index"
 
 const Home = () => {
-  let{isLoading}=useSelector((state)=>state.blog)
-   let dispatch=useDispatch()
+  let { isLoading } = useSelector((state) => state.blog);
+  let dispatch = useDispatch();
 
-  React.useEffect(()=>{  
-    dispatch(changeCategory('All'))
-  },[])
+  React.useEffect(() => {
+    dispatch(changeCategory("All"));
+  }, []);
 
-  if(isLoading){
-    return  <CircularProgress size="lg" />
+  if (isLoading) {
+    return <CircularProgress size="lg" />;
   }
   return (
     <div className="homeMain">

@@ -95,13 +95,13 @@ const RightComponent = () => {
           return (
             <div className="writterWrapper">
               <Link to={`/WriterPublicProfile/${writer?._id}`}>
-                <img src={writer?.photo} />
+                <img src={writer?.photo} style={{width:"230px",height:"130px"}} />
               </Link>
               <div className="writtersContent">
                 <div  style={{ color: "#FAF9F6" }}>
-                  <p className="writterName"  style={{ color: "#FAF9F6" }}>{writer.name}</p>
+                  <p className="writterName"  style={{ color: "#FAF9F6" }}>{writer?.name}</p>
                   <p className="writterBio"  style={{ color: "#FAF9F6" }}>
-                    {writer?.shortBio.slice(0, 100)}...
+                    {writer?.shortBio?.slice(0, 100)}...
                   </p>
                 </div>
                 <div className="writtersIcons">

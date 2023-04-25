@@ -59,10 +59,10 @@ const SingleBlog = () => {
         {/*  */}
         <div className="singleBlogContent">
           <IntroLeft />
-          <BlogContent blogId={blogId}/>
+          <BlogContent blogId={blogId} />
           <BlogChips chips={arr} />
           <WriterEnd />
-          <BlogComments />
+          <BlogComments blogId={blogId}/>
         </div>
         {/*  */}
         <div className="singleBlogSideBar">

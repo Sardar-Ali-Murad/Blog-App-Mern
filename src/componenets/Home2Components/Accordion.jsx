@@ -5,6 +5,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { accordionData } from "./data";
 
 const Accordions = () => {
@@ -23,7 +24,7 @@ const Accordions = () => {
             return (
               <Accordion style={{ marginBottom: "20px" }}>
                 <AccordionSummary
-                  expandIcon={<AddIcon style={{ color: "#00AAA1" }} />}
+                  expandIcon={<ExpandMoreIcon style={{ color: "#00AAA1" }} />}
                   aria-controls="panel1a-content"
                   id="panel1a-header"
                 >

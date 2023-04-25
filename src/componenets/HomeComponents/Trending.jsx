@@ -19,37 +19,32 @@ const Trending = () => {
           {withOutFilterBlogs.slice(0, 6).map((item) => {
             return (
               <Link to={`/blog/${item?._id}`}>
-              <div className="trendingContainer">
-                <div className="mainImageWrapper">
-                <img
-                  src={item?.posterImage}
-                  className="mainImage"
-
-                  />
+                <div className="trendingContainer">
+                  <div className="mainImageWrapper">
+                    <img src={item?.posterImage} className="mainImage" />
                   </div>
-                <a className="trendingHead">{item?.title}</a>
-                <div className="trendingFlex">
-                <Link to={`/WriterPublicProfile/${item?.writer?._id}`}>
-                  <img
-                    src={item?.writer?.photo}
-                    style={{
-                      width: "30px",
-                      height: "30px",
-                      borderRadius: "50%",
-                    }}
-                    />
+                  <a className="trendingHead">{item?.title}</a>
+                  <div className="trendingFlex">
+                    <Link to={`/WriterPublicProfile/${item?.writer?._id}`}>
+                      <img
+                        src={item?.writer?.photo}
+                        style={{
+                          width: "30px",
+                          height: "30px",
+                          borderRadius: "50%",
+                        }}
+                      />
                     </Link>
-                  <p>{item?.writer?.name}</p>
+                    <p>{item?.writer?.name}</p>
+                  </div>
+                  <div className="trendingTime">
+                    <img src={calender} />
+                    <p> {moment(item?.createdAt).format("DD/MM/YYYY")}</p>
+                    <img src={time} />
+                    <p>3 min to read</p>
+                  </div>
+                  <p className="trendingEnd">{item?.subTitle}</p>
                 </div>
-                <div className="trendingTime">
-                  <img src={calender} />
-                  <p>                       {moment(item?.createdAt).format("DD/MM/YYYY")}
-</p>
-                  <img src={time} />
-                  <p>3 min to read</p>
-                </div>
-                <p className="trendingEnd">{item?.subTitle}</p>
-              </div>
               </Link>
             );
           })}

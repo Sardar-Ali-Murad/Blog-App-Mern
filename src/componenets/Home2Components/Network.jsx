@@ -25,18 +25,18 @@ const Network = () => {
         </div>
         <div>
 
-          <div>
+          <div className="approvedritersGrid">
         {ApprovedWritters.map((writer) => {
           return (
             <div className="writterWrapper">
               <Link to={`/WriterPublicProfile/${writer?._id}`}>
-                <img src={writer?.photo} style={{borderRadius:"50%"}} />
+                <img src={writer?.photo} style={{borderRadius:"50%",height:"100px",width:'100px'}} />
               </Link>
               <div className="writtersContent">
                 <div  style={{ color: "#FAF9F6" }}>
                   <p className="writterName"  style={{ color: "black" }}>{writer.name}</p>
                   <p className="writterBio"  style={{ color: "black" }}>
-                    {writer?.shortBio.slice(0, 100)}...
+                    {writer?.shortBio?.slice(0, 100)}...
                   </p>
                 </div>
                 <div className="writtersIcons">

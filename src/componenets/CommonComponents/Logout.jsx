@@ -26,7 +26,7 @@ export default function PopoverPopupState() {
               horizontal: 'center',
             }}
           >
-            <Typography sx={{ p: 2 }} style={{cursor:"pointer"}} onClick={()=>dispatch(LogoutUser())}>Logout</Typography>
+            <Typography sx={{ p: 2 }} style={{cursor:"pointer",color:"black"}} onClick={()=>dispatch(LogoutUser())}>Logout</Typography>
           </Popover>
         </div>
       )}

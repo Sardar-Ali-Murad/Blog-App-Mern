@@ -67,8 +67,8 @@ const HeroText = () => {
       <div class="lightining"></div>
       </div>
       <div className="FrontHeroContent">
-        <h1 className="heroHead">{data[activeIndex].head}</h1>
-        <p className="heroPara">{data[activeIndex].para}</p>
+        <h1 className="heroHead" style={{color:"#f2f4f8"}}>{data[activeIndex].head}</h1>
+        <p className="heroPara" style={{color:"#f1f1f1"}}>{data[activeIndex].para}</p>
       </div>
     </div>
   );

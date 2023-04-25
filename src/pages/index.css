@@ -7,6 +7,7 @@
   padding-top: 70px;
 }
 
+
 .writerIntro {
   flex: 2;
 }
@@ -53,4 +54,10 @@
   .singleBlogMain {
     flex-direction: column;
   }
+}
+
+
+
+.homeMain{
+  min-height: 100vh;
 }

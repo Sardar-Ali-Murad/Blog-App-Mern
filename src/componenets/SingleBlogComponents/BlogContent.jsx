@@ -4,32 +4,31 @@ import Add from "../CommonComponents/Add";
 import { useSelector } from "react-redux";
 import { VscSaveAs } from "react-icons/vsc";
 import Tooltip from "@mui/material/Tooltip";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import axios from "axios"
-import {BACK_END_URL}  from "../../utils"
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
+import { BACK_END_URL } from "../../utils";
+import CopyAllIcon from "@mui/icons-material/CopyAll";
+import IconButton from "@mui/material/IconButton";
 
-
-const BlogContent = ({blogId}) => {
-  let token = JSON.parse(localStorage.getItem("token")); 
-   const saveBlog=async ()=>{
+const BlogContent = ({ blogId }) => {
+  let token = JSON.parse(localStorage.getItem("token"));
+  const saveBlog = async () => {
     try {
-      await axios.get(`${BACK_END_URL}/saveBlog/${blogId}`,
-      {
+      await axios.get(`${BACK_END_URL}/saveBlog/${blogId}`, {
         headers: {
           authorization: `Bearer ${token}`,
         },
-      }
-      )
-      toast.success('The Blog Is Saved Successfully', {
-        position: toast.POSITION.TOP_RIGHT
-    });
+      });
+      toast.success("The Blog Is Saved Successfully", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
     } catch (error) {
       toast.error(error?.response?.data?.msg, {
-        position: toast.POSITION.TOP_RIGHT
-    });
+        position: toast.POSITION.TOP_RIGHT,
+      });
     }
-  }
+  };
 
   let { singleBlog } = useSelector((state) => state.blog);
   function htmlDecode(content) {
@@ -40,9 +39,10 @@ const BlogContent = ({blogId}) => {
 
   return (
     <div className="blogContentMain">
-      <ToastContainer/>
-      <Tooltip title="SaveBlog" style={{ color: "white" }} placement="right-start">
-          <VscSaveAs
+      {/* <ToastContainer /> */}
+      <Tooltip title="Save">
+        <IconButton>
+          <CopyAllIcon
             style={{
               color: "#FAF9F6",
               fontSize: "30px",
@@ -52,8 +52,11 @@ const BlogContent = ({blogId}) => {
             }}
             onClick={saveBlog}
           />
-        </Tooltip>
-      <h1 className="blogContentHeading" style={{ color: "#FAF9F6" }}>{singleBlog?.title}</h1>
+        </IconButton>
+      </Tooltip>
+      <h1 className="blogContentHeading" style={{ color: "#FAF9F6" }}>
+        {singleBlog?.title}
+      </h1>
       <section
         dangerouslySetInnerHTML={{
           __html: htmlDecode(singleBlog?.description),

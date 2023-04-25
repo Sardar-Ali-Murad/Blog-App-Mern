@@ -256,3 +256,11 @@
     flex-direction: column;
   }
 }
+
+.rightSideBarSingleCategoryWhite p{
+  color: white;
+}
+
+.Chips p{
+  color: black;
+}

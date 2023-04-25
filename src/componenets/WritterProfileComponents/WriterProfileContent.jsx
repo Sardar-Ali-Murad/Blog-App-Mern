@@ -1,34 +1,45 @@
 import React from "react";
 import "./WriterProfileContent.css";
 import { FaFacebookF } from "react-icons/fa";
-import {  TbVectorBezierCircle } from "react-icons/tb";
+import { TbVectorBezierCircle } from "react-icons/tb";
 import { CiTwitter } from "react-icons/ci";
 import { useSelector } from "react-redux";
 import axios from "axios";
-import {BACK_END_URL}  from "../../utils"
+import { BACK_END_URL } from "../../utils";
 import { useParams } from "react-router-dom";
-import Blog from "./Blogs"
-import CircularProgress from '@mui/joy/CircularProgress'
+import Blog from "./Blogs";
+import CircularProgress from "@mui/joy/CircularProgress";
 import { Link } from "react-router-dom";
-import Footer from "../CommonComponents/Footer"
+import Footer from "../CommonComponents/Footer";
 
-
+import Pagination from '@mui/material/Pagination';
 const WriterProfileContent = () => {
-  let {writerId}=useParams()
-  let {currentWriterInfo}=useSelector((state)=>state.writerRequest)
-  let [active,setActive]=React.useState("All")
-  let [blogs,setBlogs]=React.useState([])
-  let [loading,setLoading]=React.useState(true)
+  let { writerId } = useParams();
+  let { currentWriterInfo } = useSelector((state) => state.writerRequest);
+  let [active, setActive] = React.useState("All");
+  let [blogs, setBlogs] = React.useState([]);
+  let [loading, setLoading] = React.useState(true);
 
-  React.useEffect(()=>{
-    let start=async ()=>{
-      setLoading(true)
-       let {data}=await axios.get(`${BACK_END_URL}/blog/getSingleWriterAllBLogs/${writerId}?status=${active}`)
-       setBlogs(data?.writerAllBlogs)
-       setLoading(false)
-    }
-    start()
-  },[active])
+  let totalPages = 3;
+  let count = Math.ceil(blogs.length / totalPages);
+
+  let [currentPage, setCurrentPage] = React.useState(1);
+
+  function handlePagination(e, page) {
+    setCurrentPage(page);
+  }
+
+  React.useEffect(() => {
+    let start = async () => {
+      setLoading(true);
+      let { data } = await axios.get(
+        `${BACK_END_URL}/blog/getSingleWriterAllBLogs/${writerId}?status=${active}`
+      );
+      setBlogs(data?.writerAllBlogs);
+      setLoading(false);
+    };
+    start();
+  }, [active]);
 
   return (
     <div className="WriterProfileContentBigMain">
@@ -40,7 +51,12 @@ const WriterProfileContent = () => {
           <div className="writerImageBio">
             <img src={currentWriterInfo?.photo} />
             <Link to="/WriterDetailForm">
-            <button className="commonBtn" style={{marginTop:"10px",marginBottom:"4px"}}>Edit Profile</button>
+              <button
+                className="commonBtn"
+                style={{ marginTop: "10px", marginBottom: "4px" }}
+              >
+                Edit Profile
+              </button>
             </Link>
             <p className="writerName">{currentWriterInfo?.name}</p>
             <p className="writerBio">{currentWriterInfo?.purpose}</p>
@@ -70,32 +86,62 @@ const WriterProfileContent = () => {
 
         <div className="writerArticlesInfo">
           <div className="writerArticleLinks">
-            <p className={`${active==="All"?"activeLink":"WriterBlogsOptions"}`} onClick={()=>setActive("All")}>All Articles</p>
-            <p onClick={()=>setActive("pending")} className={`${active==="pending"?"activeLink":"WriterBlogsOptions"}`} >Pending Articles </p>
-            <p onClick={()=>setActive("rejected")} className={`${active==="rejected"?"activeLink":"WriterBlogsOptions"}`} >Rejected Articles</p>
+            <p
+              className={`${
+                active === "All" ? "activeLink" : "WriterBlogsOptions"
+              }`}
+              onClick={() => setActive("All")}
+            >
+              All Articles
+            </p>
+            <p
+              onClick={() => setActive("pending")}
+              className={`${
+                active === "pending" ? "activeLink" : "WriterBlogsOptions"
+              }`}
+            >
+              Pending Articles{" "}
+            </p>
+            <p
+              onClick={() => setActive("rejected")}
+              className={`${
+                active === "rejected" ? "activeLink" : "WriterBlogsOptions"
+              }`}
+            >
+              Rejected Articles
+            </p>
           </div>
           <div className="writerLine"></div>
-          {
-            loading? <CircularProgress size="lg" />:
+          {loading ? (
+            <CircularProgress size="lg" />
+          ) : (
             <div className="writerBlogs">
-            {
-              blogs.map((item)=>{
+              {blogs.slice(currentPage*totalPages-totalPages,currentPage*totalPages).map((item) => {
                 return (
                   <div className="writerArticlesFlex">
-                    <Link to={`/blog/${item?._id}`}>
-                      <Blog item={item}/>
-                    </Link>
-                  <div className={`Chips ${item?.status==="selected"?"articleChip":""} ${item?.status==="pending"?"pendingChip":""} ${item?.status==="rejected"?"rejectedChip":""}`}>
-                    <p>{item?.status}</p>
+                    {item?.status !== "pending" &&
+                    item?.status !== "rejected" ? (
+                      <Link to={`/blog/${item?._id}`}>
+                        <Blog item={item} />
+                      </Link>
+                    ) : (
+                      <Blog item={item} />
+                    )}
+                    <div
+                      className={`Chips ${
+                        item?.status === "selected" ? "articleChip" : ""
+                      } ${item?.status === "pending" ? "pendingChip" : ""} ${
+                        item?.status === "rejected" ? "rejectedChip" : ""
+                      }`}
+                    >
+                      <p>{item?.status}</p>
+                    </div>
                   </div>
-                </div>
-                  )
-              })
-            }
-        
-          </div>
-          }
-
+                );
+              })}
+            </div>
+          )}
+          <Pagination count={count} shape="rounded" onChange={handlePagination} value={currentPage} />
         </div>
       </div>
 
