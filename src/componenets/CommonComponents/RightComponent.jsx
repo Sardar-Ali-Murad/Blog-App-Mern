@@ -41,9 +41,9 @@ const RightComponent = () => {
       </div>
       {/*  */}
       <div>
-        {withOutFilterBlogs.slice(0, 3).map((item) => {
+        {withOutFilterBlogs.slice(0, 3).map((item,i) => {
           return (
-            <Link to={`/blog/${item?._id}`}>
+            <Link to={`/blog/${item?._id}`} key={i}>
               <div className="singleBlogRightSidebar">
                 <img
                   src={item?.posterImage}
@@ -91,9 +91,9 @@ const RightComponent = () => {
       </div>
       {/*  */}
       <div>
-        {ApprovedWritters.map((writer) => {
+        {ApprovedWritters.map((writer,i) => {
           return (
-            <div className="writterWrapper">
+            <div className="writterWrapper" key={i}>
               <Link to={`/WriterPublicProfile/${writer?._id}`}>
                 <img src={writer?.photo} style={{width:"230px",height:"130px"}} />
               </Link>

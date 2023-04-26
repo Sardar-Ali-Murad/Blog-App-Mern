@@ -26,9 +26,9 @@ const Network = () => {
         <div>
 
           <div className="approvedritersGrid">
-        {ApprovedWritters.map((writer) => {
+        {ApprovedWritters.map((writer,i) => {
           return (
-            <div className="writterWrapper">
+            <div className="writterWrapper" key={i}>
               <Link to={`/WriterPublicProfile/${writer?._id}`}>
                 <img src={writer?.photo} style={{borderRadius:"50%",height:"100px",width:'100px'}} />
               </Link>

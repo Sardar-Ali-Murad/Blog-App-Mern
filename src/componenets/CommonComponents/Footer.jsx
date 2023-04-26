@@ -14,7 +14,6 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Footer = () => {
   let [email,setEmail]=React.useState('')
-  console.log(email)
   const Subscribe=async ()=>{
     if(!email){
       toast.error("Please Provide the email to proceed", {

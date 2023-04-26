@@ -11,9 +11,9 @@ const CoursesBody = () => {
         <div>
           <h1 className="coursesHeader" style={{ color: "#FAF9F6" }}>View programs by age</h1>
           <div className="coursesGrid1">
-            {courses1.map((item) => {
+            {courses1.map((item,i) => {
               return (
-                <div className="coursesSingleBox">
+                <div className="coursesSingleBox" key={i}>
                   <img src={item?.img} />
                   <div className="coursesSingleBoxText">
                     <p>{item?.bigText}</p>
@@ -36,9 +36,9 @@ const CoursesBody = () => {
         <div>
           <h1 className="coursesHeader" style={{ color: "#FAF9F6" }}>View programs by type</h1>
           <div className="coursesGrid1">
-            {courses2.map((item) => {
+            {courses2.map((item,i) => {
               return (
-                <div className="coursesSingleBox">
+                <div className="coursesSingleBox" key={i}>
                   <img src={item?.img} />
                   <div className="coursesSingleBoxText">
                     <p>{item?.bigText}</p>
@@ -64,9 +64,9 @@ const CoursesBody = () => {
 
       <div>
         <div className="coursesGrid1">
-          {courses3.map((item) => {
+          {courses3.map((item,i) => {
             return (
-              <div className="coursesSingleBox">
+              <div className="coursesSingleBox" key={i}>
                 <img src={item?.img} />
                 <div className="coursesSingleBoxText">
                   <p>{item?.bigText}</p>

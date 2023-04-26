@@ -63,8 +63,8 @@ const HeroText = () => {
   return (
     <div className="FrontHeroMain">
       <div className="rainAnimation">
-      <div class="rain"></div>
-      <div class="lightining"></div>
+      <div className="rain"></div>
+      <div className="lightining"></div>
       </div>
       <div className="FrontHeroContent">
         <h1 className="heroHead" style={{color:"#f2f4f8"}}>{data[activeIndex].head}</h1>

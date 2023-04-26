@@ -18,9 +18,9 @@ const WriterBlogs = () => {
   }
   return (
     <div>
-      {currentWritterBlogs.slice(currentPage*totalPages-totalPages,currentPage*totalPages).map((item) => {
+      {currentWritterBlogs.slice(currentPage*totalPages-totalPages,currentPage*totalPages).map((item,i) => {
         return (
-          <Link to={`/blog/${item?._id}`}>
+          <Link to={`/blog/${item?._id}`} key={i}>
             <div className="blogsPart1">
               <div>
                 <div className="singleBlog">

@@ -33,7 +33,7 @@ const WriterPublicProfile = () => {
       setLoading(false)
     }
     start()
-  },[category])
+  },[category,writerId])
 
   React.useEffect(()=>{
     dispatch(withoutFiltersBlogs())

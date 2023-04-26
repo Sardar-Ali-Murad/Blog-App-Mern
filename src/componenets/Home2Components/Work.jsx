@@ -15,9 +15,9 @@ const Work = () => {
       </div>
 
       <div className="workContent">
-        {WorkData?.map((item) => {
+        {WorkData?.map((item,i) => {
           return (
-            <div className="singleWorkWrapper">
+            <div className="singleWorkWrapper" key={i}>
               <div className="workBox">
                 <img src={item.img} />
               </div>

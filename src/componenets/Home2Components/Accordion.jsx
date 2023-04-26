@@ -20,9 +20,9 @@ const Accordions = () => {
 
         <div className="accordionWrapper">
           {/*  */}
-          {accordionData?.map((item) => {
+          {accordionData?.map((item,i) => {
             return (
-              <Accordion style={{ marginBottom: "20px" }}>
+              <Accordion style={{ marginBottom: "20px" }} key={i}>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon style={{ color: "#00AAA1" }} />}
                   aria-controls="panel1a-content"
