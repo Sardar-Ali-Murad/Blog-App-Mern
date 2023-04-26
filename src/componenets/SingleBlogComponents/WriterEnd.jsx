@@ -6,14 +6,17 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const SingleEnd = () => {
-    let {singleBlog}=useSelector((state)=>state.blog)
+  let { singleBlog } = useSelector((state) => state.blog);
 
   return (
     <div>
       <div className="singleWritterWrapper">
-      <Link to={`/WriterPublicProfile/${singleBlog?.writer?._id}`}>
-        <img src={singleBlog?.writer?.photo} style={{height:"130px",width:"130px",borderRadius:"50%"}}/>
-      </Link>
+        <Link to={`/WriterPublicProfile/${singleBlog?.writer?._id}`}>
+          <img
+            src={singleBlog?.writer?.photo}
+            style={{ height: "130px", width: "130px", borderRadius: "50%" }}
+          />
+        </Link>
         <div className="writtersContent">
           <div>
             <p className="writterName">{singleBlog?.writer?.name}</p>
@@ -25,13 +28,13 @@ const SingleEnd = () => {
               className="rightComponentWritersIcons active"
               style={{ color: "white" }}
             >
-              <FaFacebookF style={{ color: "#FAF9F6" }}/>
+              <FaFacebookF style={{ color: "#FAF9F6" }} />
             </div>
             <div className="rightComponentWritersIcons">
               <TbVectorBezierCircle style={{ color: "#FAF9F6" }} />
             </div>
             <div className="rightComponentWritersIcons">
-              <IoLogoInstagram style={{ color: "#FAF9F6" }}/>
+              <IoLogoInstagram style={{ color: "#FAF9F6" }} />
             </div>
           </div>
         </div>

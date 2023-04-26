@@ -37,18 +37,16 @@ export const updateCurrentWriter = async (data, thunkAPI) => {
   }
 };
 
-
 export const getAllApprovedWriters = async (_, thunkAPI) => {
   try {
     let props = await axios.get(
-      `${BACK_END_URL}/writer/writers/approvedWriters`,);
+      `${BACK_END_URL}/writer/writers/approvedWriters`
+    );
     return props.data;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.response.data.msg);
   }
 };
-
-
 
 // export const writerImage = async (event, thunkAPI) => {
 //   try {

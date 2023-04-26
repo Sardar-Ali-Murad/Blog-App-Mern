@@ -7,7 +7,7 @@ const Work = () => {
     <div className="workMain">
       <div className="worksHeaderText">
         <h1 style={{ color: "#FAF9F6" }}>How does it works</h1>
-        <p style={{ marginBottom: "40px",color: "#f1f1f1"  }}>
+        <p style={{ marginBottom: "40px", color: "#f1f1f1" }}>
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's <br /> standard dummy
           text ever since the 1500s.
@@ -15,7 +15,7 @@ const Work = () => {
       </div>
 
       <div className="workContent">
-        {WorkData?.map((item,i) => {
+        {WorkData?.map((item, i) => {
           return (
             <div className="singleWorkWrapper" key={i}>
               <div className="workBox">

@@ -126,12 +126,7 @@
   }
 }
 
-
-
-
-
 /*  */
-
 
 .customer .customerPart1 {
   padding-right: 15px !important;
@@ -145,15 +140,15 @@
 .customer .customTableHead {
   margin-bottom: 26px !important;
 }
-.customer .profileHead{
+.customer .profileHead {
   display: flex;
   align-items: center;
   margin-bottom: 20px !important;
 }
-.profile{
+.profile {
   border: 2px dotted #2b5b6d !important;
 }
-.profileAvatar{
+.profileAvatar {
   border: 2px solid #2b5b6d !important;
 }
 .customer .inputGroup {

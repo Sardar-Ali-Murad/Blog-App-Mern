@@ -166,19 +166,18 @@
   }
 }
 
-
-.writerArticleLinks .WriterBlogsOptions{
+.writerArticleLinks .WriterBlogsOptions {
   cursor: pointer;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
-.writerArticleLinks .activeLink{
+.writerArticleLinks .activeLink {
   color: blue;
   text-decoration: underline;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
-.writerPrvateBlogsImage{
+.writerPrvateBlogsImage {
   width: 200px;
   height: 200px;
   border-radius: 20px;

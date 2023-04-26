@@ -16,7 +16,7 @@ const BlogCard = ({ item }) => {
                 <p>{item?.category}</p>
               </div>
               <div className="blogsHead">
-                <p style={{color:"black"}}>{item?.title}</p>
+                <p style={{ color: "black" }}>{item?.title}</p>
               </div>
 
               <div className="trendingTime">

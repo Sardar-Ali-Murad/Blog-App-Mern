@@ -12,7 +12,7 @@ import CircularProgress from "@mui/joy/CircularProgress";
 import { Link } from "react-router-dom";
 import Footer from "../CommonComponents/Footer";
 
-import Pagination from '@mui/material/Pagination';
+import Pagination from "@mui/material/Pagination";
 const WriterProfileContent = () => {
   let { writerId } = useParams();
   let { currentWriterInfo } = useSelector((state) => state.writerRequest);
@@ -116,32 +116,42 @@ const WriterProfileContent = () => {
             <CircularProgress size="lg" />
           ) : (
             <div className="writerBlogs">
-              {blogs.slice(currentPage*totalPages-totalPages,currentPage*totalPages).map((item) => {
-                return (
-                  <div className="writerArticlesFlex">
-                    {item?.status !== "pending" &&
-                    item?.status !== "rejected" ? (
-                      <Link to={`/blog/${item?._id}`}>
+              {blogs
+                .slice(
+                  currentPage * totalPages - totalPages,
+                  currentPage * totalPages
+                )
+                .map((item) => {
+                  return (
+                    <div className="writerArticlesFlex">
+                      {item?.status !== "pending" &&
+                      item?.status !== "rejected" ? (
+                        <Link to={`/blog/${item?._id}`}>
+                          <Blog item={item} />
+                        </Link>
+                      ) : (
                         <Blog item={item} />
-                      </Link>
-                    ) : (
-                      <Blog item={item} />
-                    )}
-                    <div
-                      className={`Chips ${
-                        item?.status === "selected" ? "articleChip" : ""
-                      } ${item?.status === "pending" ? "pendingChip" : ""} ${
-                        item?.status === "rejected" ? "rejectedChip" : ""
-                      }`}
-                    >
-                      <p>{item?.status}</p>
+                      )}
+                      <div
+                        className={`Chips ${
+                          item?.status === "selected" ? "articleChip" : ""
+                        } ${item?.status === "pending" ? "pendingChip" : ""} ${
+                          item?.status === "rejected" ? "rejectedChip" : ""
+                        }`}
+                      >
+                        <p>{item?.status}</p>
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
             </div>
           )}
-          <Pagination count={count} shape="rounded" onChange={handlePagination} value={currentPage} />
+          <Pagination
+            count={count}
+            shape="rounded"
+            onChange={handlePagination}
+            value={currentPage}
+          />
         </div>
       </div>
 

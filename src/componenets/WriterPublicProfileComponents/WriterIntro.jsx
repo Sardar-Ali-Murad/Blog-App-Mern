@@ -19,10 +19,15 @@ const WriterIntro = () => {
     <div>
       <div>
         <div className="singleWritterWrapper">
-          <img src={writer?.photo} style={{height:"200px",width:"200px"}} />
+          <img
+            src={writer?.photo}
+            style={{ height: "200px", width: "200px" }}
+          />
           <div className="writtersContent">
             <div>
-              <p className="writterName" style={{color:"#FAF9F6"}}>{writer.name}</p>
+              <p className="writterName" style={{ color: "#FAF9F6" }}>
+                {writer.name}
+              </p>
               <p className="writterBio">{writer?.shortBio}</p>
             </div>
             <p className="writterInfo">{writer?.purpose}</p>
@@ -34,13 +39,13 @@ const WriterIntro = () => {
                   className="rightComponentWritersIcons active"
                   style={{ color: "white" }}
                 >
-                  <FaFacebookF style={{ color: "#FAF9F6" }}/>
+                  <FaFacebookF style={{ color: "#FAF9F6" }} />
                 </div>
                 <div className="rightComponentWritersIcons">
                   <TbVectorBezierCircle style={{ color: "#FAF9F6" }} />
                 </div>
                 <div className="rightComponentWritersIcons">
-                  <IoLogoInstagram style={{ color: "#FAF9F6" }}/>
+                  <IoLogoInstagram style={{ color: "#FAF9F6" }} />
                 </div>
               </div>
               {/*  */}
@@ -53,14 +58,20 @@ const WriterIntro = () => {
       <section
         dangerouslySetInnerHTML={{ __html: htmlDecode(writer.description) }}
         className="writerDescription"
-        style={{marginTop:"40px",color:"#f1f1f1"}}
+        style={{ marginTop: "40px", color: "#f1f1f1" }}
       />
 
-      <div >
-        <h1 className="PostBy" style={{ color: "#FAF9F6" }}>posts By {writer?.name}</h1>
+      <div>
+        <h1 className="PostBy" style={{ color: "#FAF9F6" }}>
+          posts By {writer?.name}
+        </h1>
         <div className="categoryLinks">
-          <p className="categoryActiveLink" style={{ color: "#FAF9F6" }}>Latest</p>
-          <p className="categoryLink" style={{ color: "#FAF9F6" }}>Top Stories</p>
+          <p className="categoryActiveLink" style={{ color: "#FAF9F6" }}>
+            Latest
+          </p>
+          <p className="categoryLink" style={{ color: "#FAF9F6" }}>
+            Top Stories
+          </p>
         </div>
         <div className="categoryLine"></div>
       </div>

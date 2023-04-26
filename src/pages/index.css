@@ -7,7 +7,6 @@
   padding-top: 70px;
 }
 
-
 .writerIntro {
   flex: 2;
 }
@@ -33,16 +32,20 @@
   flex: 1;
 }
 
-.BasicForms{
+.BasicForms {
   margin-top: 50px;
 }
 
-
-.homeMain h1,h2,h3,h4,h5,p{
-  font-family: 'Roboto', sans-serif;
+.homeMain h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  font-family: "Roboto", sans-serif;
 }
-@media screen and (max-width:700px) {
-  .registerMain{
+@media screen and (max-width: 700px) {
+  .registerMain {
     width: 90%;
   }
 }
@@ -56,8 +59,6 @@
   }
 }
 
-
-
-.homeMain{
+.homeMain {
   min-height: 100vh;
 }

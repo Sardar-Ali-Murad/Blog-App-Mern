@@ -37,12 +37,15 @@
   margin: 20px 0px;
 }
 
-.writerDescription p{
+.writerDescription p {
   color: #f1f1f1;
 }
 
-.writerDescription h1,h2,h3,h4{
-  color: #FAF9F6;
+.writerDescription h1,
+h2,
+h3,
+h4 {
+  color: #faf9f6;
 }
 
 .PostBy {
@@ -52,12 +55,11 @@
   font-family: "Noto Sans", sans-serif;
 }
 
-
-.writerDescription{
-  font-family: 'Roboto', sans-serif; 
+.writerDescription {
+  font-family: "Roboto", sans-serif;
 }
 
-.writerBlogsMainImage{
+.writerBlogsMainImage {
   width: 300px;
   border-radius: 20px;
   height: 230px;

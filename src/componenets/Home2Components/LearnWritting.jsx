@@ -11,7 +11,9 @@ const LearnWritting = () => {
       <div className="learnMain">
         {/*  */}
         <div className="leanContentMain">
-          <h1 style={{ color: "#FAF9F6" }}>Want to Become an author or Learn Writing </h1>
+          <h1 style={{ color: "#FAF9F6" }}>
+            Want to Become an author or Learn Writing{" "}
+          </h1>
           <div className="learnMainContent">
             <p style={{ color: "#f1f1f1" }}>
               Dynamically underwhelm integrated outsourcing via timely models.

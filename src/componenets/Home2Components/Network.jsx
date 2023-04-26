@@ -7,7 +7,6 @@ import { FaFacebookF } from "react-icons/fa";
 import { TbVectorBezierCircle } from "react-icons/tb";
 import { IoLogoInstagram } from "react-icons/io";
 
-
 const Network = () => {
   let { ApprovedWritters } = useSelector((state) => state.writerRequest);
   return (
@@ -24,37 +23,54 @@ const Network = () => {
           </p>
         </div>
         <div>
-
           <div className="approvedritersGrid">
-        {ApprovedWritters.map((writer,i) => {
-          return (
-            <div className="writterWrapper" key={i}>
-              <Link to={`/WriterPublicProfile/${writer?._id}`}>
-                <img src={writer?.photo} style={{borderRadius:"50%",height:"100px",width:'100px'}} />
-              </Link>
-              <div className="writtersContent">
-                <div  style={{ color: "#FAF9F6" }}>
-                  <p className="writterName"  style={{ color: "black" }}>{writer.name}</p>
-                  <p className="writterBio"  style={{ color: "black" }}>
-                    {writer?.shortBio?.slice(0, 100)}...
-                  </p>
+            {ApprovedWritters.map((writer, i) => {
+              return (
+                <div className="writterWrapper" key={i}>
+                  <Link to={`/WriterPublicProfile/${writer?._id}`}>
+                    <img
+                      src={writer?.photo}
+                      style={{
+                        borderRadius: "50%",
+                        height: "100px",
+                        width: "100px",
+                      }}
+                    />
+                  </Link>
+                  <div className="writtersContent">
+                    <div style={{ color: "#FAF9F6" }}>
+                      <p className="writterName" style={{ color: "black" }}>
+                        {writer.name}
+                      </p>
+                      <p className="writterBio" style={{ color: "black" }}>
+                        {writer?.shortBio?.slice(0, 100)}...
+                      </p>
+                    </div>
+                    <div className="writtersIcons">
+                      <div
+                        className="rightComponentWritersIcons"
+                        style={{ color: "black" }}
+                      >
+                        <FaFacebookF />
+                      </div>
+                      <div
+                        className="rightComponentWritersIcons"
+                        style={{ color: "black" }}
+                      >
+                        <TbVectorBezierCircle />
+                      </div>
+                      <div
+                        className="rightComponentWritersIcons"
+                        style={{ color: "black" }}
+                      >
+                        <IoLogoInstagram />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="writtersIcons">
-                  <div className="rightComponentWritersIcons"  style={{ color: "black" }}>
-                    <FaFacebookF />
-                  </div>
-                  <div className="rightComponentWritersIcons"  style={{ color: "black" }}>
-                    <TbVectorBezierCircle />
-                  </div>
-                  <div className="rightComponentWritersIcons"  style={{ color: "black" }}>
-                    <IoLogoInstagram />
-                  </div>
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>

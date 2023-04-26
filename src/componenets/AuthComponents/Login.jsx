@@ -69,10 +69,6 @@ const Login = () => {
 
           <div className="loginBtnsWrapper">
             <div className="authFlex">
-              {/* <div className="checkFlex">
-                <input type="checkbox" />
-                <p>Remember Me</p>
-              </div> */}
               <Link to="/forgetPassword">
                 <p className="forgerPassword">Forgot your password?</p>
               </Link>
@@ -83,7 +79,6 @@ const Login = () => {
 
             <div>
               <p className="or">Or</p>
-              {/* <button className="authRedBtn"> <GoogleLogin /></button> */}
               <GoogleLogin />
             </div>
             <p className="alreadyAuth">

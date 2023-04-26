@@ -5,8 +5,7 @@ import axios from "axios";
 import { BACK_END_URL } from "../../utils";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import fakeImage from "../../assets/fake.webp"
-
+import fakeImage from "../../assets/fake.webp";
 
 const CommentItem = ({ comment, start }) => {
   let token = JSON.parse(localStorage.getItem("token"));

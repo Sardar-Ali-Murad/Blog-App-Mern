@@ -30,7 +30,6 @@
   font-family: "Nunito", sans-serif;
 }
 
-
 .arrow1 {
   font-size: 51px;
   position: absolute;
@@ -49,60 +48,71 @@
   cursor: pointer;
 }
 
- .activeNext{
+.activeNext {
   animation-name: example1;
   animation-duration: 4s;
-} 
+}
 
-.activePre{
+.activePre {
   animation-name: example2;
   animation-duration: 4s;
 }
 
 @keyframes example1 {
-  0%   {transform: translateX(0%);}
-  90% {transform: translateX(700%)}
-  100% {transform: translateX(0%)}
+  0% {
+    transform: translateX(0%);
+  }
+  90% {
+    transform: translateX(700%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 @keyframes example2 {
-  0%   {transform: translateX(0%);}
-  90% {transform: translateX(-700%)}
-  100% {transform: translateX(0%)}
+  0% {
+    transform: translateX(0%);
+  }
+  90% {
+    transform: translateX(-700%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 
-
-@media screen and (max-width:900px) {
-  .arrow1,.arrow2{
+@media screen and (max-width: 900px) {
+  .arrow1,
+  .arrow2 {
     font-size: 30px;
   }
 
-  .arrow1{
+  .arrow1 {
     right: 20px;
   }
 
-  .arrow2{
+  .arrow2 {
     left: 20px;
   }
 }
 
-
-@media screen and (max-width:500px) {
-  .arrow1,.arrow2{
+@media screen and (max-width: 500px) {
+  .arrow1,
+  .arrow2 {
     font-size: 20px;
   }
 
-  .arrow1{
+  .arrow1 {
     right: 10px;
   }
 
-  .arrow2{
+  .arrow2 {
     left: 10px;
   }
 }
 
-
 /* TEH RAIN ANIMATION */
-.rainAnimation{
+.rainAnimation {
   margin: 0;
   padding: 0;
   background-image: url("../../assets/background.jpg");
@@ -110,20 +120,20 @@
   height: 80vh;
   overflow: hidden;
 }
-.rain{
+.rain {
   height: 100vh;
   background-image: url("../../assets/rain.png");
   animation: rain 0.3s linear infinite;
 }
-@keyframes rain{
-  0%{
-      background-position: 0% 0%;
+@keyframes rain {
+  0% {
+    background-position: 0% 0%;
   }
-  100%{
-      background-position: 20% 100%;
+  100% {
+    background-position: 20% 100%;
   }
 }
-.rain::before{
+.rain::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -134,55 +144,54 @@
   animation: lightining 4s linear infinite;
   opacity: 1;
 }
-@keyframes lightining{
-  0%{
-      opacity: 0;
+@keyframes lightining {
+  0% {
+    opacity: 0;
   }
-  20%{
-      opacity: 0;
+  20% {
+    opacity: 0;
   }
-  21%{
-      opacity: 1;
+  21% {
+    opacity: 1;
   }
-  25%{
-      opacity: 0;
+  25% {
+    opacity: 0;
   }
-  30%{
-      opacity: 0;
+  30% {
+    opacity: 0;
   }
-  31%{
-      opacity: 1;
+  31% {
+    opacity: 1;
   }
-  35%{
-      opacity: 0;
+  35% {
+    opacity: 0;
   }
-  100%{
-      opacity: 0;
+  100% {
+    opacity: 0;
   }
 }
 
-
-.FrontHeroMain{
+.FrontHeroMain {
   position: relative;
 }
 
-.FrontHeroContent{
+.FrontHeroContent {
   position: absolute;
   top: 30%;
   width: 50%;
   left: 10%;
 }
 
-.heroHead{
+.heroHead {
   margin-bottom: 10px;
 }
 
-.heroPara{
+.heroPara {
   letter-spacing: 6px;
 }
 
-@media screen and (max-width:500px) {
-  .FrontHeroContent{
+@media screen and (max-width: 500px) {
+  .FrontHeroContent {
     width: 70%;
   }
 }

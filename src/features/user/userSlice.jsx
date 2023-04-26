@@ -17,7 +17,7 @@ import {
   setupForgetPassword,
   setupResetPassword,
   GoogleAuth,
-  setupGetCurrentUser
+  setupGetCurrentUser,
 } from "./userThunk";
 
 export const setupUserLoginApi = createAsyncThunk(
@@ -55,8 +55,10 @@ export const ResetPasswordApi = createAsyncThunk(
   }
 );
 
-
-export const getCurrentUser = createAsyncThunk("user/getCurrentUser",setupGetCurrentUser);
+export const getCurrentUser = createAsyncThunk(
+  "user/getCurrentUser",
+  setupGetCurrentUser
+);
 
 // This is needed if we are doing this in the backend
 export const uploadUserImage = createAsyncThunk(
@@ -71,10 +73,9 @@ function addUserToLocalStorage(user, token) {
   localStorage.setItem("token", JSON.stringify(token));
 }
 
-
-function removeFromLocalStorage(){
-  localStorage.removeItem("user")
-  localStorage.removeItem("token")
+function removeFromLocalStorage() {
+  localStorage.removeItem("user");
+  localStorage.removeItem("token");
 }
 
 const userSlice = createSlice({
@@ -92,14 +93,13 @@ const userSlice = createSlice({
     deleteUserImage: (state) => {
       state.userImage = "";
     },
-    changeUserImage:(state,action)=>{
-      state.userImage=action.payload
+    changeUserImage: (state, action) => {
+      state.userImage = action.payload;
     },
-    LogoutUser:(state)=>{
-      state.user=null,
-      state.token=""
-      removeFromLocalStorage()
-    }
+    LogoutUser: (state) => {
+      (state.user = null), (state.token = "");
+      removeFromLocalStorage();
+    },
   },
   extraReducers: {
     //
@@ -134,7 +134,7 @@ const userSlice = createSlice({
       state.showAlert = true;
       state.alertType = "success";
       state.alertText = "Auth Success! Redirecting";
-      state.userImage=payload.image
+      state.userImage = payload.image;
       addUserToLocalStorage(payload.user, payload.token);
     },
     [GoogleAuthApi.rejected]: (state, { payload }) => {
@@ -213,26 +213,32 @@ const userSlice = createSlice({
       state.isLoading = false;
     },
 
-    // 
+    //
 
-    [getCurrentUser.pending]:(state)=>{
-      state.isLoading=true
+    [getCurrentUser.pending]: (state) => {
+      state.isLoading = true;
     },
-    [getCurrentUser.fulfilled]:(state,{payload})=>{
-      state.isLoading=false
+    [getCurrentUser.fulfilled]: (state, { payload }) => {
+      state.isLoading = false;
       state.user = payload.user;
       state.token = payload.token;
-      state.userImage=payload.user.image
+      state.userImage = payload.user.image;
       addUserToLocalStorage(payload.user, payload.token);
     },
-    [getCurrentUser.rejected]:(state,payload)=>{
-     state.isLoading=false
-     console.log(payload)
-    }
+    [getCurrentUser.rejected]: (state, payload) => {
+      state.isLoading = false;
+      console.log(payload);
+    },
   },
 });
 
-export const { removeAlert, logoutUser, deleteUserImage, changeLight,changeUserImage,LogoutUser } =
-  userSlice.actions;
+export const {
+  removeAlert,
+  logoutUser,
+  deleteUserImage,
+  changeLight,
+  changeUserImage,
+  LogoutUser,
+} = userSlice.actions;
 
 export default userSlice.reducer;

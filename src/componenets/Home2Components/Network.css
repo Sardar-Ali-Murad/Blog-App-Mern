@@ -7,7 +7,6 @@
   width: 80%;
   margin-left: 50%;
   transform: translateX(-50%);
-  /* display: flex; */
   gap: 30px;
 }
 
@@ -35,14 +34,8 @@
   .networkMain {
     flex-direction: column;
   }
-  .writterWrapper{
+  .writterWrapper {
     flex-direction: column;
   }
 }
 
-
-/* .approvedritersGrid{
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
-  gap: 10px;
-} */

@@ -6,7 +6,6 @@ import Blogs from "../componenets/HomeComponents/Blogs";
 import { useSelector, useDispatch } from "react-redux";
 import CircularProgress from "@mui/joy/CircularProgress";
 import { changeCategory } from "../features/blog/blogSlice";
-// import Loader from "../componenets/Loader/index"
 
 const Home = () => {
   let { isLoading } = useSelector((state) => state.blog);
@@ -22,8 +21,7 @@ const Home = () => {
   return (
     <div className="homeMain">
       <Hero />
-      {/* <ThreeJsCarpet/> */}
-      {/* <ImageGrid /> */}
+
       <Trending />
       <Blogs />
       <Footer />

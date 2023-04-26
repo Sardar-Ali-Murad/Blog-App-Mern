@@ -26,10 +26,10 @@ const Blogs = () => {
       {/*  */}
       <div>
         <div className="blogsPart1">
-          {withFilterBlogs.slice(0, 1).map((item,i) => {
+          {withFilterBlogs.slice(0, 1).map((item, i) => {
             return (
-              <Link to={`/blog/${item?._id}`}  key={i}>
-                <div className="singleBlog" >
+              <Link to={`/blog/${item?._id}`} key={i}>
+                <div className="singleBlog">
                   <div className="singeBlogImages">
                     <img
                       src={item?.posterImage}
@@ -83,9 +83,9 @@ const Blogs = () => {
               currentPage * totalPages - totalPages + 1,
               currentPage * totalPages
             )
-            .map((item,i) => {
+            .map((item, i) => {
               return (
-                <Link to={`/blog/${item?._id}`}  key={i}>
+                <Link to={`/blog/${item?._id}`} key={i}>
                   <div className="singleBlog">
                     <div className="singeBlogImages">
                       <img

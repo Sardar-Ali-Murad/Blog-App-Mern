@@ -16,7 +16,7 @@ const Trending = () => {
         <h2 className="fancyDectorationTrading">tranding</h2>
 
         <div className="trendingGrid">
-          {withOutFilterBlogs.slice(0, 6).map((item,i) => {
+          {withOutFilterBlogs.slice(0, 6).map((item, i) => {
             return (
               <Link to={`/blog/${item?._id}`} key={i}>
                 <div className="trendingContainer">

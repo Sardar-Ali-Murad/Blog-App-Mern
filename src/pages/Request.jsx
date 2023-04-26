@@ -2,14 +2,13 @@
 
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import CircularProgress from "@mui/material/CircularProgress";
 import LightNavbar from "../componenets/CommonComponents/LightNavbar";
 import Footer from "../componenets/CommonComponents/Footer";
-import {removeAlert,dispalyAlert,handleEvents,removeEvents}  from "../features/contact/contactSlice"
-import Alert from "../componenets/Alert/ContactAlert"
+import { removeAlert, dispalyAlert } from "../features/contact/contactSlice";
+import Alert from "../componenets/Alert/ContactAlert";
 import axios from "axios";
 
-import {BACK_END_URL}  from "../utils"
+import { BACK_END_URL } from "../utils";
 const Register = () => {
   let { showAlert } = useSelector((state) => state.contact);
   let dispatch = useDispatch();
@@ -19,7 +18,7 @@ const Register = () => {
     email: "",
     contact: "",
     message: "",
-    reason:""
+    reason: "",
   });
 
   function handleChange(e) {
@@ -29,40 +28,52 @@ const Register = () => {
         [e.target.name]: e.target.value,
       };
     });
-    // dispatch(handleEvents({name:e.target.name,value:e.target.value}))
   }
 
-
-  const Send=async ()=>{
+  const Send = async () => {
     alert.current.scrollIntoView({ behavior: "smooth" });
-     try {
-      await axios.post(`${BACK_END_URL}/contact`,{name:info.name,email:info.email,contact:info.contact,reason:info.reason,message:info.message})
-      dispatch(dispalyAlert({showAlert:true,alertType:"success",alertText:"Your Messsage is recieved successfully"}))
-      // dispatch(removeEvents())
+    try {
+      await axios.post(`${BACK_END_URL}/contact`, {
+        name: info.name,
+        email: info.email,
+        contact: info.contact,
+        reason: info.reason,
+        message: info.message,
+      });
+      dispatch(
+        dispalyAlert({
+          showAlert: true,
+          alertType: "success",
+          alertText: "Your Messsage is recieved successfully",
+        })
+      );
       setinfo({
         name: "",
         email: "",
         contact: "",
         message: "",
-        reason:""
-      })
-     } catch (error) {
-      dispatch(dispalyAlert({showAlert:true,alertType:"danger",alertText:error.response.data.msg}))
-     }
+        reason: "",
+      });
+    } catch (error) {
+      dispatch(
+        dispalyAlert({
+          showAlert: true,
+          alertType: "danger",
+          alertText: error.response.data.msg,
+        })
+      );
+    }
 
-     setTimeout(()=>{
-       dispatch(removeAlert())
-     },3000)
-
-  }
+    setTimeout(() => {
+      dispatch(removeAlert());
+    }, 3000);
+  };
 
   return (
     <div>
       <LightNavbar />
       <div className="BasicForms">
         <div className="registerMain" ref={alert}>
-          {/* {isLoading && <CircularProgress />} */}
-          {/* <Alert/> */}
           <div className="divCenter">{showAlert && <Alert />}</div>
           <div>
             <h1 className="authHead">Submit a request</h1>

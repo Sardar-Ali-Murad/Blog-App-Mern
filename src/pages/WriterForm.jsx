@@ -3,21 +3,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import CircularProgress from "@mui/material/CircularProgress";
 import LightNavbar from "../componenets/CommonComponents/LightNavbar";
 import Footer from "../componenets/CommonComponents/Footer";
-import {removeAlert,dispalyAlert}  from "../features/writerRequest/writerRequestSlice"
+import {
+  removeAlert,
+  dispalyAlert,
+} from "../features/writerRequest/writerRequestSlice";
 import axios from "axios";
-import {BACK_END_URL}  from "../utils"
-import Alert from "../componenets/Alert/WriterRequestAlert"
-import PopUp from "../componenets/CommonComponents/PopUp"
+import { BACK_END_URL } from "../utils";
+import Alert from "../componenets/Alert/WriterRequestAlert";
+import PopUp from "../componenets/CommonComponents/PopUp";
 
 const writerRequest = () => {
-
   let { showAlert, isLoading } = useSelector((state) => state.writerRequest);
   let dispatch = useDispatch();
   let alert = React.useRef(null);
-  let [open,setOpen]=React.useState(false)
+  let [open, setOpen] = React.useState(false);
   let [data, setData] = React.useState({
     name: "",
     age: "",
@@ -25,7 +26,7 @@ const writerRequest = () => {
     province: "",
     country: "",
     qualifications: "",
-    // email: "",
+
     contactNumber: "",
     designation: "",
     purpose: "",
@@ -40,52 +41,61 @@ const writerRequest = () => {
     });
   }
 
-  let token=(JSON.parse(localStorage.getItem("token")))
-  
+  let token = JSON.parse(localStorage.getItem("token"));
 
-  const Send=async ()=>{
+  const Send = async () => {
     alert.current.scrollIntoView({ behavior: "smooth" });
     try {
-     await axios.post(`${BACK_END_URL}/writer/postWriter/createWriter`,{name:data.name,age:data.age,city:data.city,province:data.province,country:data.country,qualifications:data.qualifications,contactNumber:data.contactNumber,designation:data.designation,purpose:data.purpose},{
-      headers: {
-        authorization: `Bearer ${token}`,
-      },
-    })
+      await axios.post(
+        `${BACK_END_URL}/writer/postWriter/createWriter`,
+        {
+          name: data.name,
+          age: data.age,
+          city: data.city,
+          province: data.province,
+          country: data.country,
+          qualifications: data.qualifications,
+          contactNumber: data.contactNumber,
+          designation: data.designation,
+          purpose: data.purpose,
+        },
+        {
+          headers: {
+            authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
-    setOpen(true)
-
+      setOpen(true);
     } catch (error) {
-     dispatch(dispalyAlert({showAlert:true,alertType:"danger",alertText:error.response.data.msg}))
+      dispatch(
+        dispalyAlert({
+          showAlert: true,
+          alertType: "danger",
+          alertText: error.response.data.msg,
+        })
+      );
     }
-    setTimeout(()=>{
-      dispatch(removeAlert())
-    },3000)
-
-  }
+    setTimeout(() => {
+      dispatch(removeAlert());
+    }, 3000);
+  };
 
   return (
     <div>
-      <PopUp open={open} setOpen={setOpen}/>
+      <PopUp open={open} setOpen={setOpen} />
       <LightNavbar />
       <div className="BasicForms">
         <div className="registerMain" ref={alert}>
-          {/* {isLoading && <CircularProgress />} */}
           <div className="divCenter">{showAlert && <Alert />}</div>
           <div>
             <h1 className="authHead">Writer Sign Up</h1>
-            <p className="authPara">Please Login First Then Submit the request for the writer</p>
+            <p className="authPara">
+              Please Login First Then Submit the request for the writer
+            </p>
           </div>
 
           <div className="registerTextFields">
-            {/* <div className="TextFields">
-              <p>Name</p>
-              <input
-                className="textarea"
-                name="name"
-                value={data.name}
-                onChange={handleChange}
-              />
-            </div> */}
             <div className="TextFields">
               <p>Age</p>
               <input
@@ -150,15 +160,7 @@ const writerRequest = () => {
                 onChange={handleChange}
               />
             </div>
-            {/* <div className="TextFields">
-              <p>Email</p>
-              <input
-                className="textarea"
-                name="email"
-                value={data.email}
-                onChange={handleChange}
-              />
-            </div> */}
+
             <div className="TextFields">
               <p>Contact Number</p>
               <input

@@ -17,7 +17,7 @@
   font-weight: 500;
   font-size: 24px;
   margin-bottom: 20px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .trendingContainer {
@@ -30,7 +30,7 @@
   color: #222222;
   font-weight: 500;
   font-size: 17px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   /* font-family: "Noto Sans", sans-serif; */
 }
 
@@ -67,8 +67,6 @@
   font-weight: 400;
 }
 
-
-
 .trendingGrid {
   display: grid;
   /* grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); */
@@ -76,26 +74,25 @@
   gap: 50px;
 }
 
-
-.trendingContainer .mainImage{
- height: 200px;
- width: 100%;
- border-radius: 10px;
+.trendingContainer .mainImage {
+  height: 200px;
+  width: 100%;
+  border-radius: 10px;
 }
 
-@media screen and (max-width:1000px) {
-  .trendingGrid{
+@media screen and (max-width: 1000px) {
+  .trendingGrid {
     grid-template-columns: 1fr 1fr;
   }
 }
-@media screen and (max-width:700px) {
-  .trendingGrid{
+@media screen and (max-width: 700px) {
+  .trendingGrid {
     grid-template-columns: 1fr;
   }
 }
 
-@media screen and (max-width:700px) {
-  .trendingText{
+@media screen and (max-width: 700px) {
+  .trendingText {
     width: 100%;
   }
 }

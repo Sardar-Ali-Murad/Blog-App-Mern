@@ -12,7 +12,6 @@
   display: flex;
   gap: 80px;
   color: #f1f1f1;
-
 }
 
 .blogsPart1 {
@@ -44,7 +43,6 @@
   font-size: 12px;
   font-weight: 400px;
   color: #f1f1f1;
-
 }
 
 .addHere {
@@ -62,7 +60,6 @@
   font-weight: 600;
   font-family: "Noto Sans", sans-serif;
   color: #f1f1f1;
-
 }
 
 .blogsHead p {
@@ -71,79 +68,73 @@
   color: #222222;
   font-family: "Noto Sans", sans-serif;
   color: #f1f1f1;
-  
 }
 
-  .HomeBlogsMainImage{
-    width: 250px ; 
-    height: 260px ;
-    border-radius: 10px;
-  }
-  
-  
-  
-  .singleBlog{
-    cursor: pointer;
-  }
-  
-  
-  .paraColor{
-    color: #FAF9F6;
-  }
-  
-  .Chips{
-    color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Roboto', sans-serif;
-    padding: 2px 4px;
-    background-color: lightgrey;
-    width: 90px;
-  }
-  
-  .singleBlog{
-    margin-bottom: 40px;
-  }
-  
-  .blogsContent{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .writtersIconsWhite{
-    border: 2px solid white;
-    color: white;
-  }
- 
+.HomeBlogsMainImage {
+  width: 250px;
+  height: 260px;
+  border-radius: 10px;
+}
 
+.singleBlog {
+  cursor: pointer;
+}
 
-  .singleBlog .blogsContent{
-    flex: 1;
-  }
+.paraColor {
+  color: #faf9f6;
+}
 
-  .singleBlog .singeBlogImages{
-    width: 35%;
-  }
+.Chips {
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  padding: 2px 4px;
+  background-color: lightgrey;
+  width: 90px;
+}
 
-  .anim {
-    width: 100vw;
-    height: 100vh;
-    background-color: black;
-  }
+.singleBlog {
+  margin-bottom: 40px;
+}
+
+.blogsContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.writtersIconsWhite {
+  border: 2px solid white;
+  color: white;
+}
+
+.singleBlog .blogsContent {
+  flex: 1;
+}
+
+.singleBlog .singeBlogImages {
+  width: 35%;
+}
+
+.anim {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+}
 
 @media screen and (max-width: 1150px) {
   .blogsMain {
     flex-direction: column;
   }
-  .singleBlog .HomeBlogsMainImage{
+  .singleBlog .HomeBlogsMainImage {
     width: 100%;
   }
-  .singleBlog{
+  .singleBlog {
     width: 100%;
   }
-  .HomeBlogsMainImage{
+  .HomeBlogsMainImage {
     width: 100%;
   }
 }
@@ -152,28 +143,26 @@
   .singleBlog {
     flex-direction: column;
   }
-  .singleBlog .singeBlogImages{
+  .singleBlog .singeBlogImages {
     width: 100%;
   }
 }
 
 /* The pagination */
-.css-19xm0h7-MuiButtonBase-root-MuiPaginationItem-root{
-  background:white !important;
+.css-19xm0h7-MuiButtonBase-root-MuiPaginationItem-root {
+  background: white !important;
 }
-.css-g2z002-MuiSvgIcon-root-MuiPaginationItem-icon{
+.css-g2z002-MuiSvgIcon-root-MuiPaginationItem-icon {
   color: black !important;
 }
-.css-19micn4-MuiButtonBase-root-MuiPaginationItem-root{
+.css-19micn4-MuiButtonBase-root-MuiPaginationItem-root {
   color: wheat !important;
 }
 
-.css-19micn4-MuiButtonBase-root-MuiPaginationItem-root{
+.css-19micn4-MuiButtonBase-root-MuiPaginationItem-root {
   color: wheat !important;
 }
 
-
-.css-1v2lvtn-MuiPaginationItem-root{
+.css-1v2lvtn-MuiPaginationItem-root {
   color: wheat !important;
 }
-

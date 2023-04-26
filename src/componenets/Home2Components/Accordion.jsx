@@ -5,7 +5,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { accordionData } from "./data";
 
 const Accordions = () => {
@@ -20,7 +20,7 @@ const Accordions = () => {
 
         <div className="accordionWrapper">
           {/*  */}
-          {accordionData?.map((item,i) => {
+          {accordionData?.map((item, i) => {
             return (
               <Accordion style={{ marginBottom: "20px" }} key={i}>
                 <AccordionSummary

@@ -6,16 +6,19 @@ import { BiCircle } from "react-icons/bi";
 import axios from "axios";
 import { BACK_END_URL } from "../../utils";
 
-const BlogCard = ({ item,getAllSavedBlogs }) => {
+const BlogCard = ({ item, getAllSavedBlogs }) => {
   let token = JSON.parse(localStorage.getItem("token"));
   const remove = async () => {
     try {
-      await axios.delete(`${BACK_END_URL}/saveBlog/deleteSavedBlog/${item?._id}`, {
-        headers: {
-          authorization: `Bearer ${token}`,
-        },
-      });
-      getAllSavedBlogs()
+      await axios.delete(
+        `${BACK_END_URL}/saveBlog/deleteSavedBlog/${item?._id}`,
+        {
+          headers: {
+            authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      getAllSavedBlogs();
     } catch (error) {
       console.log(error?.response?.data?.msg);
     }
@@ -36,9 +39,12 @@ const BlogCard = ({ item,getAllSavedBlogs }) => {
             </div>
             <div
               className="Chips"
-              style={{ background: "rgb(214, 91, 91)", color: "white",cursor:"pointer" }}
+              style={{
+                background: "rgb(214, 91, 91)",
+                color: "white",
+                cursor: "pointer",
+              }}
               onClick={remove}
-
             >
               <p>remove</p>
             </div>

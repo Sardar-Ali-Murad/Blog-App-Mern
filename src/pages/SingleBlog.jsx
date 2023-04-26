@@ -62,7 +62,7 @@ const SingleBlog = () => {
           <BlogContent blogId={blogId} />
           <BlogChips chips={arr} />
           <WriterEnd />
-          <BlogComments blogId={blogId}/>
+          <BlogComments blogId={blogId} />
         </div>
         {/*  */}
         <div className="singleBlogSideBar">

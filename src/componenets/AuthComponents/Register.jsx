@@ -1,7 +1,10 @@
 import React from "react";
 import "./Register.css";
 import { Link } from "react-router-dom";
-import { setupUserRegisternApi, removeAlert } from "../../features/user/userSlice";
+import {
+  setupUserRegisternApi,
+  removeAlert,
+} from "../../features/user/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Alert from "../Alert/UserAlert";
 import CircularProgress from "@mui/material/CircularProgress";

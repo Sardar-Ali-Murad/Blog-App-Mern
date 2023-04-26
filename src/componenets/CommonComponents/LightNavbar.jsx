@@ -5,12 +5,11 @@ import { AiOutlineClose } from "react-icons/ai";
 import Logo from "../../assets/writerNavLogo.png";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import Logout from "./Logout"
+import Logout from "./Logout";
 
 const Navbar = () => {
   let [ham, setHam] = React.useState(true);
-  // let user = JSON.parse(localStorage.getItem("user"));
-  let {user}=useSelector((state)=>state.store)
+  let { user } = useSelector((state) => state.store);
   let { currentWriterInfo } = useSelector((state) => state.writerRequest);
 
   return (
@@ -101,9 +100,7 @@ const Navbar = () => {
               <button className="commonBtn">User Profile</button>
             </Link>
           )}
-          {
-            user && <Logout/>
-          }
+          {user && <Logout />}
         </div>
 
         <GiHamburgerMenu
@@ -199,9 +196,7 @@ const Navbar = () => {
               <button className="commonBtn">User Profile</button>
             </Link>
           )}
-           {
-            user && <Logout/>
-          }
+          {user && <Logout />}
         </div>
       </div>
     </div>

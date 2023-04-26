@@ -7,17 +7,14 @@ import { Box, Avatar, IconButton } from "@mui/material";
 import { changeUserImage } from "../../features/user/userSlice";
 import { BACK_END_URL } from "../../utils";
 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const WritterDetailsHeader = () => {
-    let dispatch = useDispatch();
+  let dispatch = useDispatch();
   let token = JSON.parse(localStorage.getItem("token"));
-  let {user}=useSelector((state)=>state.store)
-  // let { userImage } = useSelector((state) => state.store);
+  let { user } = useSelector((state) => state.store);
   let [image, setImage] = React.useState(user?.image);
-
 
   const handleImage = async (event) => {
     const imageFile = event.target.files[0];
@@ -43,7 +40,7 @@ const WritterDetailsHeader = () => {
           },
         }
       );
-      toast("Image is Saved Successfully")
+      toast("Image is Saved Successfully");
     } catch (error) {
       console.log(error.response.data.msg);
     }
@@ -51,7 +48,7 @@ const WritterDetailsHeader = () => {
 
   return (
     <div className="uploadBigMain">
-                <ToastContainer />
+      <ToastContainer />
       <div className="uploadMain">
         <div className="uploadWriterImageMain">
           <Box className="profileHead">

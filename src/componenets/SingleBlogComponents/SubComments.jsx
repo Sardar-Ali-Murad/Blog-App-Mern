@@ -1,7 +1,6 @@
 import React from "react";
 import moment from "moment";
-import fakeImage from "../../assets/fake.webp"
-
+import fakeImage from "../../assets/fake.webp";
 
 const SubComments = ({ singleComment }) => {
   return (

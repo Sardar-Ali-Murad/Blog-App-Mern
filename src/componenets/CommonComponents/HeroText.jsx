@@ -2,8 +2,6 @@
 
 import React from "react";
 import "./HeroText.css";
-import { FaRegArrowAltCircleRight } from "react-icons/fa";
-import { FaRegArrowAltCircleLeft } from "react-icons/fa";
 
 let data = [
   {
@@ -63,12 +61,16 @@ const HeroText = () => {
   return (
     <div className="FrontHeroMain">
       <div className="rainAnimation">
-      <div className="rain"></div>
-      <div className="lightining"></div>
+        <div className="rain"></div>
+        <div className="lightining"></div>
       </div>
       <div className="FrontHeroContent">
-        <h1 className="heroHead" style={{color:"#f2f4f8"}}>{data[activeIndex].head}</h1>
-        <p className="heroPara" style={{color:"#f1f1f1"}}>{data[activeIndex].para}</p>
+        <h1 className="heroHead" style={{ color: "#f2f4f8" }}>
+          {data[activeIndex].head}
+        </h1>
+        <p className="heroPara" style={{ color: "#f1f1f1" }}>
+          {data[activeIndex].para}
+        </p>
       </div>
     </div>
   );

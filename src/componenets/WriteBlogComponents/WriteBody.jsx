@@ -13,17 +13,16 @@ import "react-quill/dist/quill.snow.css";
 import BlogImage from "./BlogMainImage";
 
 const WriteBody = () => {
-  let { showAlert, title, subTitle, category,contentBlog } = useSelector(
+  let { showAlert, title, subTitle, category, contentBlog } = useSelector(
     (state) => state.blog
   );
   let dispatch = useDispatch();
   let alert = React.useRef(null);
   let [content, setContent] = React.useState(contentBlog);
 
-
-  React.useEffect(()=>{
-     setContent(contentBlog)
-  },[contentBlog])
+  React.useEffect(() => {
+    setContent(contentBlog);
+  }, [contentBlog]);
 
   function handleChange(e) {
     dispatch(handleEvents({ name: e.target.name, value: e.target.value }));

@@ -104,7 +104,7 @@ const blogSlice = createSlice({
 
     // With Filter Blogs
     [withFiltersBlogs.pending]: (state) => {
-       state.filterLoading=true
+      state.filterLoading = true;
     },
     [withFiltersBlogs.fulfilled]: (state, { payload }) => {
       state.withFilterBlogs = payload.Blogs;

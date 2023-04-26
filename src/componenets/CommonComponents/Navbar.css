@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200&family=Nunito:wght@300&family=Open+Sans:wght@500&family=Poppins:wght@200&family=Roboto:wght@400;700&family=Source+Serif+Pro&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200&family=Nunito:wght@300&family=Open+Sans:wght@500&family=Poppins:wght@200&family=Roboto:wght@400;700&family=Source+Serif+Pro&display=swap");
 
 .nav-main {
   display: flex;
@@ -329,8 +329,8 @@
   cursor: pointer;
 }
 
-.fancy-link{
-  font-family: 'Roboto', sans-serif;
+.fancy-link {
+  font-family: "Roboto", sans-serif;
 }
 
 .darkNav {
@@ -338,7 +338,6 @@
   background-image: linear-gradient(315deg, #000000 0%, #7f8c8d 74%);
 }
 
-
-.smal-screen-nav nav{
+.smal-screen-nav nav {
   margin-top: 90px;
 }

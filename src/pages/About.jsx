@@ -10,7 +10,7 @@ import Footer from "../componenets/CommonComponents/Footer";
 const About = () => {
   return (
     <div>
-      <LightNavbar/>
+      <LightNavbar />
       <AboutHeader />
       <AboutContent />
       <AboutCompanies />

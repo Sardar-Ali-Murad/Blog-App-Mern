@@ -1,11 +1,9 @@
 import axios from "axios";
 import { BACK_END_URL } from "../../utils";
-import {setupGetCurrentWriter}  from "../writerRequest/writerRequestSlice"
 
 export const setupUserLogin = async (data, route, thunkAPI) => {
   try {
     let props = await axios.post(`${BACK_END_URL}/auth/${route}`, data);
-    // thunkAPI.dispatch(setupGetCurrentWriter());
     return props.data;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.response.data.msg);
@@ -15,13 +13,11 @@ export const setupUserLogin = async (data, route, thunkAPI) => {
 export const setupGetCurrentUser = async (_, thunkAPI) => {
   let token = JSON.parse(localStorage.getItem("token"));
   try {
-    let props = await axios.get(`${BACK_END_URL}/auth/getCurrentUser`,
-    {
+    let props = await axios.get(`${BACK_END_URL}/auth/getCurrentUser`, {
       headers: {
         authorization: `Bearer ${token}`,
       },
-    }
-    );
+    });
     return props.data;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.response.data.msg);

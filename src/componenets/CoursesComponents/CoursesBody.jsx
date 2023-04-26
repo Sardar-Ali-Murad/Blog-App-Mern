@@ -9,9 +9,11 @@ const CoursesBody = () => {
       {/*  */}
       <div className="coursesGrids">
         <div>
-          <h1 className="coursesHeader" style={{ color: "#FAF9F6" }}>View programs by age</h1>
+          <h1 className="coursesHeader" style={{ color: "#FAF9F6" }}>
+            View programs by age
+          </h1>
           <div className="coursesGrid1">
-            {courses1.map((item,i) => {
+            {courses1.map((item, i) => {
               return (
                 <div className="coursesSingleBox" key={i}>
                   <img src={item?.img} />
@@ -34,9 +36,11 @@ const CoursesBody = () => {
       {/*  */}
       <div className="coursesGrids">
         <div>
-          <h1 className="coursesHeader" style={{ color: "#FAF9F6" }}>View programs by type</h1>
+          <h1 className="coursesHeader" style={{ color: "#FAF9F6" }}>
+            View programs by type
+          </h1>
           <div className="coursesGrid1">
-            {courses2.map((item,i) => {
+            {courses2.map((item, i) => {
               return (
                 <div className="coursesSingleBox" key={i}>
                   <img src={item?.img} />
@@ -64,7 +68,7 @@ const CoursesBody = () => {
 
       <div>
         <div className="coursesGrid1">
-          {courses3.map((item,i) => {
+          {courses3.map((item, i) => {
             return (
               <div className="coursesSingleBox" key={i}>
                 <img src={item?.img} />

@@ -9,7 +9,7 @@ import Logout from "./Logout";
 
 const Navbar = () => {
   // let user = JSON.parse(localStorage.getItem("user"));
-  let {user}=useSelector((state)=>state.store)
+  let { user } = useSelector((state) => state.store);
   let [ham, setHam] = React.useState(true);
   let { isLoading } = useSelector((state) => state.writerRequest);
   let { currentWriterInfo } = useSelector((state) => state.writerRequest);
@@ -172,7 +172,10 @@ const Navbar = () => {
             )}
           </ul>
         </nav>
-        <div className="navBtnsSmallScreen" style={{display:"flex",gap:"10px"}}>
+        <div
+          className="navBtnsSmallScreen"
+          style={{ display: "flex", gap: "10px" }}
+        >
           {!user && (
             <Link to="/register">
               <button className="commonBtn">Sign In</button>

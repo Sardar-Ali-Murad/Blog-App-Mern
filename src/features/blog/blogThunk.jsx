@@ -11,7 +11,7 @@ export const createBlog = async (blog, thunkAPI) => {
         subTitle: blog.subTitle,
         description: blog.content,
         category: blog.category,
-        posterImage:blog.posterImage
+        posterImage: blog.posterImage,
       },
       {
         headers: {
@@ -25,25 +25,21 @@ export const createBlog = async (blog, thunkAPI) => {
   }
 };
 
-
-
 export const getAllBlogsWithOutFilters = async (_, thunkAPI) => {
   try {
-    let props = await axios.get(
-      `${BACK_END_URL}/blog/withOutFilters`);
+    let props = await axios.get(`${BACK_END_URL}/blog/withOutFilters`);
     return props.data;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.response.data.msg);
   }
-}
+};
 
 export const getAllBlogsWithFilters = async (_, thunkAPI) => {
   try {
     let category = thunkAPI.getState().blog.category;
-    let props = await axios.get(
-      `${BACK_END_URL}/blog?category=${category}`);
+    let props = await axios.get(`${BACK_END_URL}/blog?category=${category}`);
     return props.data;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.response.data.msg);
   }
-}
+};

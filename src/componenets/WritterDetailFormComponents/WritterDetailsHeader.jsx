@@ -1,23 +1,18 @@
 import React from "react";
 import "./index.css";
-import {
-  // getWriterImage,
-  // removeWriterImage,
-  setWriterImage
-} from "../../features/writerRequest/writerRequestSlice";
+import { setWriterImage } from "../../features/writerRequest/writerRequestSlice";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 
 import { Box, Avatar, IconButton } from "@mui/material";
 
 const WritterDetailsHeader = () => {
-  let { image:storeImage } = useSelector((state) => state.writerRequest);
+  let { image: storeImage } = useSelector((state) => state.writerRequest);
 
   let [image, setImage] = React.useState(storeImage);
 
   let dispatch = useDispatch();
   const handleImage = async (event) => {
-    // dispatch(getWriterImage(event));
     const imageFile = event.target.files[0];
     const formData = new FormData();
     formData.append("file", imageFile);
@@ -27,7 +22,7 @@ const WritterDetailsHeader = () => {
       formData
     );
     setImage(data.data.secure_url);
-    dispatch(setWriterImage(data.data.secure_url))
+    dispatch(setWriterImage(data.data.secure_url));
   };
 
   return (
@@ -61,14 +56,13 @@ const WritterDetailsHeader = () => {
           </Box>
           {/*  */}
           <div className="uploadWriterImageContent">
-            <h1 style={{color:"#f1f1f1"}}>Profile Photo</h1>
-            <p style={{color:"#f1f1f1"}}>
+            <h1 style={{ color: "#f1f1f1" }}>Profile Photo</h1>
+            <p style={{ color: "#f1f1f1" }}>
               Recommended: Square JPG, PNG, or GIF, at least 1,000 pixels per
               side.
             </p>
             <div className="uploadBtns">
-              {/* <button className="red" onClick={dispatch(removeWriterImage())}> */}
-              <button className="red" onClick={()=>setImage("")}>
+              <button className="red" onClick={() => setImage("")}>
                 Remove
               </button>
             </div>

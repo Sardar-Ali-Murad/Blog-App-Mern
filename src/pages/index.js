@@ -41,5 +41,5 @@ export {
   WriterDetailForm,
   WriterPublicProfile,
   SingleBlog,
-  UserProfile
+  UserProfile,
 };

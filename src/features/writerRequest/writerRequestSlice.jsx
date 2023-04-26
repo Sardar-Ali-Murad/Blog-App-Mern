@@ -7,14 +7,13 @@ let initialState = {
   showAlert: false,
   currentWriterInfo: [],
   image: "",
-  ApprovedWritters:[]
+  ApprovedWritters: [],
 };
 
 import {
   getCurrentWriter,
-  // writerImage,
   updateCurrentWriter,
-  getAllApprovedWriters
+  getAllApprovedWriters,
 } from "./writerRequestThunk";
 
 export const setupUpdateWriter = createAsyncThunk(
@@ -24,19 +23,15 @@ export const setupUpdateWriter = createAsyncThunk(
   }
 );
 
-// export const getWriterImage = createAsyncThunk(
-//   "writer/getWriterImage",
-//   async (event, thunkAPI) => {
-//     return writerImage(event, thunkAPI);
-//   }
-// );
-
 export const setupGetCurrentWriter = createAsyncThunk(
   "writer/setupGetCurrentWriter",
   getCurrentWriter
 );
 
-export const setupGetApprovedWriters = createAsyncThunk("writer/setupGetApprovedWriters",getAllApprovedWriters);
+export const setupGetApprovedWriters = createAsyncThunk(
+  "writer/setupGetApprovedWriters",
+  getAllApprovedWriters
+);
 
 const writerRequestSlice = createSlice({
   name: "writerRequest",
@@ -52,12 +47,9 @@ const writerRequestSlice = createSlice({
         (state.alertType = action.payload.alertType),
         (state.showAlert = true);
     },
-    setWriterImage:(state,action)=>{
-      state.image=action.payload
-    }
-    // removeWriterImage: (state) => {
-    //   state.image = "";
-    // },
+    setWriterImage: (state, action) => {
+      state.image = action.payload;
+    },
   },
   extraReducers: {
     [setupGetCurrentWriter.pending]: (state) => {
@@ -71,16 +63,7 @@ const writerRequestSlice = createSlice({
     [setupGetCurrentWriter.rejected]: (state, payload) => {
       state.isLoading = false;
     },
-    // [getWriterImage.pending]:(state)=>{
-    //   state.isLoading=true
-    // },
-    // [getWriterImage.fulfilled]: (state, { payload }) => {
-    //   state.isLoading=false
-    //   state.image = payload.data.secure_url;
-    // },
-    // [getWriterImage.rejected]: (state, payload) => {
-    //   state.isLoading=false
-    // },
+
     [setupUpdateWriter.fulfilled]: (state, { payload }) => {
       state.showAlert = true;
       state.alertType = "success";
@@ -92,26 +75,22 @@ const writerRequestSlice = createSlice({
         (state.alertText = payload);
     },
 
-
     // The Arroved Writers
-    [setupGetApprovedWriters.pending]:(state)=>{
-      state.isLoading=true
+    [setupGetApprovedWriters.pending]: (state) => {
+      state.isLoading = true;
     },
-    [setupGetApprovedWriters.fulfilled]:(state,{payload})=>{
-      state.isLoading=false
-      state.ApprovedWritters=payload.ApprovedWritters
+    [setupGetApprovedWriters.fulfilled]: (state, { payload }) => {
+      state.isLoading = false;
+      state.ApprovedWritters = payload.ApprovedWritters;
     },
-    [setupGetApprovedWriters.rejected]:(state,payload)=>{
-       state.isLoading=false  
-       console.log(payload)
-    }
+    [setupGetApprovedWriters.rejected]: (state, payload) => {
+      state.isLoading = false;
+      console.log(payload);
+    },
   },
 });
 
-export const { removeAlert, dispalyAlert,
-  //  removeWriterImage,
-  setWriterImage
-   } =
+export const { removeAlert, dispalyAlert, setWriterImage } =
   writerRequestSlice.actions;
 
 export default writerRequestSlice.reducer;
